@@ -39,26 +39,29 @@
   </div>
 
   <div class="specimenzone">
-    <div class="herostrip" aria-hidden="true">
-      <button class="tile a" onclick="openCountry('Nigeria')">NG</button>
-      <button class="tile a" onclick="openCountry('Kenya')">KE</button>
-      <button class="tile a" onclick="openCountry('South Africa')">ZA</button>
-      <button class="tile d" onclick="openCountry('Cameroon')">CM</button>
-      <button class="tile a" onclick="openCountry('Ghana')">GH</button>
-      <button class="tile n" onclick="openCountry('Libya')">LY</button>
-      <button class="tile a" onclick="openCountry('Egypt')">EG</button>
-      <button class="tile d" onclick="openCountry('Namibia')">NA</button>
-    </div>
+    <div class="specgrid">
+      <div class="mapcol">
+        <div class="mapfilters" id="mapfilters"></div>
+        <div class="worldmap" id="worldmap" role="img" aria-label="World map of data protection law status by country"></div>
+        <div class="maplegend">
+          <span><i class="dot a"></i> Active law</span>
+          <span><i class="dot d"></i> Bill / draft in progress</span>
+          <span><i class="dot n"></i> No comprehensive law</span>
+        </div>
+        <div class="hoverbar" id="maphover">Hover a country — click to open its plate.</div>
+      </div>
 
-    <div class="cardrow">
-      <div class="mini centered" id="herocard"></div>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><div class="num">194</div><div class="lbl">Countries tracked</div></div>
-      <div class="stat s-active"><div class="num">139</div><div class="lbl">Active laws</div></div>
-      <div class="stat s-draft"><div class="num">18</div><div class="lbl">Bills in progress</div></div>
-      <div class="stat"><div class="num">6</div><div class="lbl">Continents</div></div>
+      <div class="sidecol">
+        <div class="stats grid2">
+          <div class="stat"><div class="num">194</div><div class="lbl">Countries tracked</div></div>
+          <div class="stat s-active"><div class="num">151</div><div class="lbl">Active laws</div></div>
+          <div class="stat s-draft"><div class="num">20</div><div class="lbl">Bills in progress</div></div>
+          <div class="stat"><div class="num">6</div><div class="lbl">Continents</div></div>
+        </div>
+        <div class="cardrow">
+          <div class="mini centered" id="herocard"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -84,9 +87,12 @@
         <span>Popular:</span>
         <button onclick="openCountry('Nigeria')">Nigeria</button>
         <button onclick="openCountry('Kenya')">Kenya</button>
-        <button onclick="openCountry('South Africa')">South Africa</button>
-        <button onclick="openCountry('Ghana')">Ghana</button>
-        <button onclick="openCountry('Egypt')">Egypt</button>
+        <button onclick="openCountry('Germany')">Germany</button>
+        <button onclick="openCountry('United Kingdom')">United Kingdom</button>
+        <button onclick="openCountry('United States')">United States</button>
+        <button onclick="openCountry('India')">India</button>
+        <button onclick="openCountry('Brazil')">Brazil</button>
+        <button onclick="openCountry('Australia')">Australia</button>
       </div>
     </div>
     <div class="contgrid" id="contgrid"></div>
@@ -142,6 +148,7 @@
 
 <div id="toast" role="status"></div>
 
+<script src="assets/map-data.js"></script>
 <script>
   const toast = document.getElementById("toast");
   let toastTimer;
@@ -256,6 +263,56 @@
   homesearch.addEventListener("input", renderSugg);
   homesearch.addEventListener("blur", () => setTimeout(() => homesugg.classList.remove("show"), 180));
   homesearch.addEventListener("focus", renderSugg);
+
+  // ── Interactive world map ───────────────────
+  const STATUS_LABEL = { a: "Active law", d: "Bill / draft in progress", n: "No comprehensive law" };
+  const MAP_CONTINENTS = [
+    ["all", "All"], ["africa", "Africa"], ["europe", "Europe"], ["asia", "Asia"],
+    ["north-america", "N. America"], ["south-america", "S. America"], ["oceania", "Oceania"]
+  ];
+  const maphover = document.getElementById("maphover");
+  const mapfilters = document.getElementById("mapfilters");
+  let mapEls = [];
+
+  function applyMapFilter(cont) {
+    mapEls.forEach(({ el, rec }) => {
+      el.classList.toggle("dimmed", cont !== "all" && rec[3] !== cont);
+    });
+  }
+
+  MAP_CONTINENTS.forEach(([slug, label], i) => {
+    const b = document.createElement("button");
+    b.className = "fbtn" + (i === 0 ? " on" : "");
+    b.textContent = label;
+    b.addEventListener("click", () => {
+      mapfilters.querySelectorAll(".fbtn").forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+      applyMapFilter(slug);
+    });
+    mapfilters.appendChild(b);
+  });
+
+  fetch("assets/world.svg")
+    .then(r => r.text())
+    .then(text => {
+      const worldmap = document.getElementById("worldmap");
+      worldmap.innerHTML = text;
+      const svg = worldmap.querySelector("svg");
+      svg.insertAdjacentHTML("afterbegin",
+        '<defs><pattern id="hatchmap" width="5" height="5" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">' +
+        '<line x1="0" y1="0" x2="0" y2="5" stroke="var(--hatch)" stroke-width="1.8"/></pattern></defs>');
+      Object.entries(MAP_DATA).forEach(([code, rec]) => {
+        const el = svg.querySelector("#" + code.toLowerCase());
+        if (!el) return;
+        el.classList.add("cty", "st-" + rec[2]);
+        el.addEventListener("mouseenter", () => {
+          maphover.innerHTML = "<b>" + rec[0] + "</b> — " + STATUS_LABEL[rec[2]] + (rec[4] ? " · " + rec[4] : "");
+        });
+        el.addEventListener("click", () => { location.href = "countries/" + rec[1] + ".html"; });
+        mapEls.push({ el, rec });
+      });
+    })
+    .catch(() => { maphover.textContent = "The map needs the site to be served over HTTP — open the country index below instead."; });
 </script>
 
 </body>
