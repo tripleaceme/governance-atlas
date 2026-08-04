@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Governance Atlas — Data protection law for every country</title>
 <meta name="description" content="Executive summaries, obligations, and official sources for data protection and privacy law in every country. Free and open source.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='24' cy='24' r='22' fill='none' stroke='%23a23c2a' stroke-width='1.5' stroke-dasharray='2 3'/><circle cx='24' cy='24' r='17' fill='none' stroke='%2322304a' stroke-width='2.5'/><ellipse cx='24' cy='24' rx='8' ry='17' fill='none' stroke='%2322304a' stroke-width='1.6'/><line x1='7' y1='24' x2='41' y2='24' stroke='%2322304a' stroke-width='1.6'/><line x1='24' y1='7' x2='24' y2='41' stroke='%2322304a' stroke-width='1.6'/><circle cx='21' cy='27' r='3' fill='%23a23c2a'/></svg>">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -15,12 +15,12 @@
     <a class="logo" href="index.html" title="GovernanceAtlas home">
       <svg class="logomark" width="36" height="36" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 3"/><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="2"/><ellipse cx="24" cy="24" rx="8" ry="17" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="7" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="1.4"/><line x1="24" y1="7" x2="24" y2="41" stroke="currentColor" stroke-width="1.4"/><circle cx="21" cy="27" r="2.4" fill="var(--accent)"/></svg>
       <div>
-        <div class="mark">Governance<span>Atlas</span></div>
+        <div class="mark">Governance<span>·</span>Atlas</div>
         <div class="tag">Data protection law, by country</div>
       </div>
     </a>
     <nav class="main">
-      <a href="index.html" class="active">Countries</a>
+      <a href="index.html" class="active">Atlas</a>
       <a href="compare.html">Compare</a>
       <a href="learn.html">Learn</a>
       <a href="resources.html">Resources</a>
@@ -32,22 +32,9 @@
 <div class="wrap">
   <div class="hero ceremony">
     <div class="plate">Plate I · The World</div>
-    <h1 class="big">Understand any country's data protection law in minutes.</h1>
-    <p class="lawline">Every country's privacy law as a short, plain-English brief — what the law is, who enforces it, what you must do, and where the official sources are.</p>
+    <h1 class="big">Every data protection law on Earth, in plain English.</h1>
+    <p class="lawline">Summaries you can take into a meeting — with the official sources to prove them.</p>
     <div class="rule-orn"><i></i></div>
-
-    <div class="searchbig center">
-      <input type="search" id="homesearch" placeholder="Which country do you need? e.g. Nigeria, Germany, Brazil" aria-label="Search a country" autocomplete="off">
-      <div class="sugg" id="homesugg"></div>
-    </div>
-    <div class="popchips center">
-      <span>Popular:</span>
-      <button onclick="openCountry('Nigeria')">Nigeria</button>
-      <button onclick="openCountry('Kenya')">Kenya</button>
-      <button onclick="openCountry('South Africa')">South Africa</button>
-      <button onclick="openCountry('Ghana')">Ghana</button>
-      <button onclick="openCountry('Egypt')">Egypt</button>
-    </div>
     <a class="cta" href="#continents">Open the Atlas</a>
 
     <div class="herostrip" aria-hidden="true">
@@ -85,7 +72,21 @@
 
   <div class="contzone" id="continents">
     <h2 class="sect">Browse by continent</h2>
-    <p class="sect-sub">Each bar shows legislative coverage — active laws, bills in progress, and countries with no comprehensive law yet.</p>
+    <p class="sect-sub">Search a country directly, or explore the coverage bars — active laws, bills in progress, and countries with no comprehensive law yet.</p>
+    <div class="findrow">
+      <div class="searchbig">
+        <input type="search" id="homesearch" placeholder="Which country do you need? e.g. Nigeria, Germany, Brazil" aria-label="Search a country" autocomplete="off">
+        <div class="sugg" id="homesugg"></div>
+      </div>
+      <div class="popchips">
+        <span>Popular:</span>
+        <button onclick="openCountry('Nigeria')">Nigeria</button>
+        <button onclick="openCountry('Kenya')">Kenya</button>
+        <button onclick="openCountry('South Africa')">South Africa</button>
+        <button onclick="openCountry('Ghana')">Ghana</button>
+        <button onclick="openCountry('Egypt')">Egypt</button>
+      </div>
+    </div>
     <div class="contgrid" id="contgrid"></div>
   </div>
 
@@ -171,21 +172,20 @@
     ["Australia","a","Privacy Act 1988","Oceania"], ["New Zealand","a","Privacy Act 2020","Oceania"]
   ];
 
-  // ── Hero card: one country per continent, continent shown on the card ──
+  // ── Hero card: one country per continent, styled like a plate dossier ──
   const HEROCARDS = [
-    { title: "Nigeria — NDPA 2023", continent: "Africa", rows: [["DPO required", "Yes"], ["Breach notification", "72 hours"], ["Max fine", "₦10m / 2%"], ["Last verified", "Aug 2026"]] },
-    { title: "Germany — GDPR + BDSG", continent: "Europe", rows: [["DPO required", "Yes"], ["Breach notification", "72 hours"], ["Max fine", "€20m / 4%"], ["Last verified", "Jul 2026"]] },
-    { title: "India — DPDP Act 2023", continent: "Asia", rows: [["DPO required", "Significant fiduciaries"], ["Breach notification", "Report to Board"], ["Max fine", "₹250 crore"], ["Last verified", "Jul 2026"]] },
-    { title: "Brazil — LGPD 2018", continent: "South America", rows: [["DPO required", "Yes"], ["Breach notification", "Reasonable time"], ["Max fine", "R$50m / 2%"], ["Last verified", "Jun 2026"]] },
-    { title: "Canada — PIPEDA", continent: "North America", rows: [["Accountable person", "Required"], ["Breach notification", "As soon as feasible"], ["Max fine", "C$100k / offence"], ["Last verified", "Jun 2026"]] },
-    { title: "Australia — Privacy Act 1988", continent: "Oceania", rows: [["Privacy officer", "Recommended"], ["Breach notification", "30 days (NDB)"], ["Max fine", "A$50m"], ["Last verified", "Jul 2026"]] }
+    { name: "Nigeria", code: "NG", continent: "Africa", rows: [["Primary law", "NDPA 2023"], ["Authority", "NDPC"], ["Breach notice", "72 hours"], ["Maximum fine", "₦10m / 2% turnover"]] },
+    { name: "Germany", code: "DE", continent: "Europe", rows: [["Primary law", "GDPR + BDSG"], ["Authority", "BfDI + state DPAs"], ["Breach notice", "72 hours"], ["Maximum fine", "€20m / 4% turnover"]] },
+    { name: "India", code: "IN", continent: "Asia", rows: [["Primary law", "DPDP Act 2023"], ["Authority", "Data Protection Board"], ["Breach notice", "Report to Board"], ["Maximum fine", "₹250 crore"]] },
+    { name: "Brazil", code: "BR", continent: "South America", rows: [["Primary law", "LGPD 2018"], ["Authority", "ANPD"], ["Breach notice", "Reasonable time"], ["Maximum fine", "R$50m / 2% turnover"]] },
+    { name: "Canada", code: "CA", continent: "North America", rows: [["Primary law", "PIPEDA"], ["Authority", "OPC"], ["Breach notice", "As soon as feasible"], ["Maximum fine", "C$100k / offence"]] },
+    { name: "Australia", code: "AU", continent: "Oceania", rows: [["Primary law", "Privacy Act 1988"], ["Authority", "OAIC"], ["Breach notice", "30 days (NDB)"], ["Maximum fine", "A$50m"]] }
   ];
   const herocard = document.getElementById("herocard");
   function renderHerocard(c) {
-    herocard.innerHTML = '<div class="mhead"><span class="mdot"></span>' + c.title +
-      '<span class="mcont">' + c.continent + "</span></div>" +
-      c.rows.map((r, i) =>
-        '<div class="mrow"><span>' + r[0] + "</span><b" + (i === c.rows.length - 1 ? ' class="gold"' : "") + ">" + r[1] + "</b></div>"
+    herocard.innerHTML = '<div class="mhead"><b>' + c.name + '</b><span class="mplate">Plate ' + c.code + " · " + c.continent + "</span></div>" +
+      c.rows.map(r =>
+        '<div class="mrow"><span>' + r[0] + "</span><b>" + r[1] + "</b></div>"
       ).join("");
   }
   renderHerocard(HEROCARDS[0]);

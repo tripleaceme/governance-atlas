@@ -80,12 +80,13 @@ nav.main a:hover { text-decoration: none; color: var(--ink); }
 .crumbs .sep { opacity: 0.5; }
 .crumbs .here { color: var(--ink); font-weight: 700; }
 
-/* ── Hero ────────────────────────────────── */
-.hero { padding: 52px 0 76px; border-bottom: 1px solid var(--line); }
+/* ── Hero — centered plates, site-wide ───── */
+.hero { padding: 56px 0 76px; border-bottom: 1px solid var(--line); text-align: center; }
 .hero .eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
-.hero h1 { font-family: var(--display); font-size: clamp(1.9rem, 4.5vw, 2.9rem); line-height: 1.16; margin: 0 0 16px; letter-spacing: -0.005em; font-weight: 700; text-wrap: balance; }
-.hero .lawline { color: var(--ink-soft); font-size: 1.05rem; max-width: 60ch; margin: 0 0 20px; }
+.hero h1 { font-family: var(--display); font-size: clamp(1.9rem, 4.5vw, 2.9rem); line-height: 1.16; margin: 0 auto 16px; letter-spacing: -0.005em; font-weight: 700; text-wrap: balance; }
+.hero .lawline { color: var(--ink-soft); font-size: 1.05rem; max-width: 60ch; margin: 0 auto 20px; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.hero .chips { justify-content: center; }
 .chip { font-size: 0.7rem; font-weight: 700; padding: 5px 13px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--panel); letter-spacing: 0.08em; text-transform: uppercase; }
 .chip.active { background: var(--green-soft); border-color: var(--green); color: var(--green); }
 .chip.verified { background: var(--gold-soft); border-color: var(--gold); color: var(--gold); }
@@ -256,6 +257,8 @@ td .n2 { color: var(--ink-faint); }
   font-size: 0.78rem; font-weight: 700; border-bottom: 1.5px solid var(--ink);
   letter-spacing: 0.06em;
 }
+.mini .mhead b { letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.85rem; font-family: var(--display); }
+.mini .mplate { margin-left: auto; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
 .mini .mdot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 .mini .mcont {
   margin-left: auto; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.14em;
@@ -313,6 +316,8 @@ td .n2 { color: var(--ink-faint); }
 
 /* ── Home: sections ──────────────────────── */
 .contzone { padding: 68px 0 12px; }
+.findrow { margin: 0 0 34px; }
+.findrow .searchbig { margin: 0 0 14px; }
 .recentzone { padding: 68px 0 24px; }
 .contgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); gap: 18px; }
 .cont {
