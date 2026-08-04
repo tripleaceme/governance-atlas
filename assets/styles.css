@@ -232,10 +232,10 @@ td .n2 { color: var(--ink-faint); }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
 .specimenzone { padding: 76px 0 72px; border-bottom: 1px solid var(--line); }
-.specgrid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 44px; align-items: start; }
+.specgrid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 44px; align-items: stretch; }
 @media (max-width: 940px) { .specgrid { grid-template-columns: 1fr; } }
 .mapfilters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
-.worldmap { border: 1.5px solid var(--ink); background: var(--panel); box-shadow: 6px 6px 0 var(--shadow); padding: 10px; }
+.worldmap { background: transparent; padding: 0; }
 .worldmap svg { width: 100%; height: auto; display: block; }
 .worldmap svg path { fill: var(--map-base); stroke: var(--panel); stroke-width: 0.5; }
 .worldmap .cty { cursor: pointer; }
@@ -246,12 +246,11 @@ td .n2 { color: var(--ink-faint); }
 .worldmap .cty:hover, .worldmap .cty:hover path { fill: var(--accent); }
 .worldmap .dimmed, .worldmap .dimmed path { opacity: 0.15; }
 .sidecol { display: flex; flex-direction: column; }
-.sidecol .stats { margin: 0; }
-.stats.grid2 { display: grid; grid-template-columns: 1fr 1fr; }
-.stats.grid2 .stat { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sidecol .stats { margin: 0; flex: 1; }
+.stats.grid2 { display: grid; grid-template-columns: 1fr 1fr; border: 0; box-shadow: none; background: transparent; }
+.stats.grid2 .stat { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; }
 .stats.grid2 .stat:nth-child(2n) { border-right: 0; }
 .stats.grid2 .stat:nth-child(n+3) { border-bottom: 0; }
-.sidecol .cardrow { margin-top: 32px; }
 .hero.ceremony h1 { margin-left: auto; margin-right: auto; }
 .hero.ceremony .lawline { margin-left: auto; margin-right: auto; font-style: italic; color: var(--green); }
 .plate { font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; font-weight: 700; }

@@ -58,9 +58,6 @@
           <div class="stat s-draft"><div class="num">20</div><div class="lbl">Bills in progress</div></div>
           <div class="stat"><div class="num">6</div><div class="lbl">Continents</div></div>
         </div>
-        <div class="cardrow">
-          <div class="mini centered" id="herocard"></div>
-        </div>
       </div>
     </div>
   </div>
@@ -180,35 +177,6 @@
     ["Canada","a","PIPEDA","North America"], ["United States","d","State laws only (no federal)","North America"],
     ["Australia","a","Privacy Act 1988","Oceania"], ["New Zealand","a","Privacy Act 2020","Oceania"]
   ];
-
-  // ── Hero card: one country per continent, styled like a plate dossier ──
-  const HEROCARDS = [
-    { name: "Nigeria", code: "NG", continent: "Africa", rows: [["Primary law", "NDPA 2023"], ["Authority", "NDPC"], ["Breach notice", "72 hours"], ["Maximum fine", "₦10m / 2% turnover"]] },
-    { name: "Germany", code: "DE", continent: "Europe", rows: [["Primary law", "GDPR + BDSG"], ["Authority", "BfDI + state DPAs"], ["Breach notice", "72 hours"], ["Maximum fine", "€20m / 4% turnover"]] },
-    { name: "India", code: "IN", continent: "Asia", rows: [["Primary law", "DPDP Act 2023"], ["Authority", "Data Protection Board"], ["Breach notice", "Report to Board"], ["Maximum fine", "₹250 crore"]] },
-    { name: "Brazil", code: "BR", continent: "South America", rows: [["Primary law", "LGPD 2018"], ["Authority", "ANPD"], ["Breach notice", "Reasonable time"], ["Maximum fine", "R$50m / 2% turnover"]] },
-    { name: "Canada", code: "CA", continent: "North America", rows: [["Primary law", "PIPEDA"], ["Authority", "OPC"], ["Breach notice", "As soon as feasible"], ["Maximum fine", "C$100k / offence"]] },
-    { name: "Australia", code: "AU", continent: "Oceania", rows: [["Primary law", "Privacy Act 1988"], ["Authority", "OAIC"], ["Breach notice", "30 days (NDB)"], ["Maximum fine", "A$50m"]] }
-  ];
-  const herocard = document.getElementById("herocard");
-  function renderHerocard(c) {
-    herocard.innerHTML = '<div class="mhead"><b>' + c.name + '</b><span class="mplate">Plate ' + c.code + " · " + c.continent + "</span></div>" +
-      c.rows.map(r =>
-        '<div class="mrow"><span>' + r[0] + "</span><b>" + r[1] + "</b></div>"
-      ).join("");
-  }
-  renderHerocard(HEROCARDS[0]);
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    let heroIdx = 0;
-    setInterval(() => {
-      herocard.classList.add("fading");
-      setTimeout(() => {
-        heroIdx = (heroIdx + 1) % HEROCARDS.length;
-        renderHerocard(HEROCARDS[heroIdx]);
-        herocard.classList.remove("fading");
-      }, 360);
-    }, 3400);
-  }
 
   // ── Continent cards ──
   // [name, countries, active, draft, none, href] — coverage is illustrative.
