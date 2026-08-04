@@ -133,7 +133,7 @@
   // col/row place the tile on a rough-geography grid.
   const COUNTRIES = [
     ["Morocco","MA",2,0,"a","Law 09-08 (2009)"], ["Algeria","DZ",3,0,"a","Law 18-07 (2018)"], ["Tunisia","TN",4,0,"a","Organic Act 2004-63"],
-    ["Western Sahara","EH",1,1,"n",""], ["Libya","LY",4,1,"n",""], ["Egypt","EG",5,1,"a","Law 151 (2020)"],
+    ["Libya","LY",4,1,"n",""], ["Egypt","EG",5,1,"a","Law 151 (2020)"],
     ["Cabo Verde","CV",0,2,"a","Law 133/V/2001, rev. 2021"], ["Mauritania","MR",1,2,"a","Law 2017-020"], ["Mali","ML",2,2,"a","Law 2013-015"], ["Niger","NE",3,2,"a","Law 2017-28"], ["Chad","TD",4,2,"a","Law 007/PR/2015"], ["Sudan","SD",5,2,"n",""], ["Eritrea","ER",6,2,"n",""],
     ["Senegal","SN",0,3,"a","Law 2008-12"], ["Burkina Faso","BF",2,3,"a","Law 001-2021"], ["Benin","BJ",3,3,"a","Digital Code (2018)"], ["Nigeria","NG",4,3,"a","NDPA 2023"], ["Central African Rep.","CF",5,3,"n",""], ["South Sudan","SS",6,3,"n",""], ["Ethiopia","ET",7,3,"a","Proclamation 1321 (2024)"], ["Djibouti","DJ",8,3,"n",""],
     ["Gambia","GM",0,4,"d","Bill in progress"], ["Guinea","GN",1,4,"a","Law 2016-037"], ["Côte d'Ivoire","CI",2,4,"a","Law 2013-450"], ["Togo","TG",3,4,"a","Law 2019-014"], ["Cameroon","CM",4,4,"d","Bill in progress"], ["Uganda","UG",6,4,"a","DPPA 2019"], ["Kenya","KE",7,4,"a","DPA 2019"], ["Somalia","SO",8,4,"a","DPA 2023"], ["Seychelles","SC",9,4,"a","DPA 2023"],
@@ -144,16 +144,9 @@
   ];
   const STATUS_LABEL = { a: "Active law", d: "Bill / draft in progress", n: "No comprehensive law" };
 
-  // Countries with built pages get a URL; the rest show a notice.
-  const PAGES = {
-    "Nigeria": "../countries/nigeria.html",
-    "Kenya": "../countries/kenya.html",
-    "South Africa": "../countries/south-africa.html"
-  };
-  function openCountry(name) {
-    if (PAGES[name]) { location.href = PAGES[name]; return; }
-    notify("Only Nigeria's page is built so far — " + name + " is on the roadmap.");
-  }
+  // Every country has a page — filenames derive from the name (matches scripts/generate.py).
+  const slugify = n => n.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  function openCountry(name) { location.href = "../countries/" + slugify(name) + ".html"; }
 
   const tilemap = document.getElementById("tilemap");
   const hoverbar = document.getElementById("hoverbar");
@@ -161,7 +154,7 @@
 
   COUNTRIES.forEach(([name, code, col, row, status, law]) => {
     const t = document.createElement("button");
-    t.className = "tile " + status + (PAGES[name] ? " linked" : "");
+    t.className = "tile " + status;
     t.style.gridColumn = col + 1;
     t.style.gridRow = row + 1;
     t.textContent = code;

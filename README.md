@@ -19,21 +19,32 @@ governance-atlas/
 ├── about.html               Mission, data methodology, disclaimer, credits
 ├── assets/
 │   └── styles.css           Shared design system (light + dark theme)
+├── data/
+│   └── countries.json       Canonical data — one record per country (194 total)
+├── scripts/
+│   └── generate.py          Renders data/countries.json → countries/*.html stubs
 ├── continents/              One page per continent: stats, tile map, regional
-│   ├── africa.html            frameworks (Malabo, ECOWAS, SADC, EAC…),
-│   ├── europe.html            searchable country index
-│   ├── asia.html
-│   ├── north-america.html
-│   ├── south-america.html
-│   └── oceania.html
-├── countries/               One page per country: at-a-glance dossier, executive
-│   ├── nigeria.html           summary, key obligations, official sources,
-│   ├── kenya.html             comparison table
-│   └── south-africa.html
+│   ├── africa.html            frameworks (Malabo, ECOWAS, GDPR, APEC…),
+│   └── …                      searchable country index (6 pages)
+├── countries/               One page per country — ALL 194 countries:
+│   ├── nigeria.html           · 3 verified hand-written dossiers
+│   ├── kenya.html               (Nigeria, Kenya, South Africa)
+│   ├── south-africa.html      · 191 generated stubs marked
+│   └── … (191 more)             "Awaiting verification"
 └── README.md
 ```
 
-Adding a country = adding one file to `countries/` (using `nigeria.html` as the template) and registering it in the `PAGES` map on the home page and its continent page.
+## How country pages work
+
+- `data/countries.json` is the canonical dataset. Country page filenames derive
+  from the country name via a shared slugify rule implemented identically in
+  `scripts/generate.py` (Python) and on the map/search pages (JS) — so links
+  never need a registry.
+- Regenerate stubs after editing the data: `python3 scripts/generate.py`
+  (zero dependencies, idempotent, skips the hand-written pages).
+- To promote a stub to a full dossier: replace the generated file with a
+  hand-written page modeled on `nigeria.html` and add its slug to `RICH`
+  in `scripts/generate.py`.
 
 > ⚠️ All legal statuses, dates, and figures in the mockup are **illustrative placeholders**. Every fact must be verified against official sources before launch.
 
@@ -47,9 +58,10 @@ Adding a country = adding one file to `countries/` (using `nigeria.html` as the 
 
 - [x] Mockup of the three screens
 - [x] Split into real pages (home / continent / country)
-- [ ] Define the country YAML schema
-- [ ] First three verified country files: Nigeria, Kenya, South Africa
-- [ ] Static site generator (YAML → pages) so country pages are generated, not hand-written
+- [x] Canonical dataset (`data/countries.json`) + generator (`scripts/generate.py`)
+- [x] Pages for all 194 countries (3 verified dossiers + 191 stubs)
+- [ ] Verify country data against official sources (Nigeria, Kenya, South Africa first)
+- [ ] Promote stubs to full dossiers, continent by continent (Africa first)
 - [ ] Africa launch (~15–20 countries)
 - [ ] Search & filters ("DPO required", adequacy status)
 - [ ] More continents, JSON API, resources/tools directory

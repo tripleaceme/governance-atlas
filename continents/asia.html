@@ -135,11 +135,9 @@
   ];
   const STATUS_LABEL = { a: "Active law", d: "Bill / draft in progress", n: "No comprehensive law" };
 
-  const PAGES = {};
-  function openCountry(name) {
-    if (PAGES[name]) { location.href = PAGES[name]; return; }
-    notify("Country pages for Asia are on the roadmap — " + name + " will use the same layout as Nigeria.");
-  }
+  // Every country has a page — filenames derive from the name (matches scripts/generate.py).
+  const slugify = n => n.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  function openCountry(name) { location.href = "../countries/" + slugify(name) + ".html"; }
 
   const tilemap = document.getElementById("tilemap");
   const hoverbar = document.getElementById("hoverbar");
@@ -147,7 +145,7 @@
 
   COUNTRIES.forEach(([name, code, col, row, status, law]) => {
     const t = document.createElement("button");
-    t.className = "tile " + status + (PAGES[name] ? " linked" : "");
+    t.className = "tile " + status;
     t.style.gridColumn = col + 1;
     t.style.gridRow = row + 1;
     t.textContent = code;

@@ -56,8 +56,8 @@
 
     <div class="stats">
       <div class="stat"><div class="num">194</div><div class="lbl">Countries tracked</div></div>
-      <div class="stat s-active"><div class="num">138</div><div class="lbl">Active laws</div></div>
-      <div class="stat s-draft"><div class="num">19</div><div class="lbl">Bills in progress</div></div>
+      <div class="stat s-active"><div class="num">139</div><div class="lbl">Active laws</div></div>
+      <div class="stat s-draft"><div class="num">18</div><div class="lbl">Bills in progress</div></div>
       <div class="stat"><div class="num">6</div><div class="lbl">Continents</div></div>
     </div>
   </div>
@@ -103,16 +103,9 @@
     toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
   }
 
-  // Countries with built pages get a URL; the rest show a notice.
-  const PAGES = {
-    "Nigeria": "countries/nigeria.html",
-    "Kenya": "countries/kenya.html",
-    "South Africa": "countries/south-africa.html"
-  };
-  function openCountry(name) {
-    if (PAGES[name]) { location.href = PAGES[name]; return; }
-    notify(name + "'s page is on the roadmap — Nigeria, Kenya, and South Africa are live.");
-  }
+  // Every country has a page — filenames derive from the name (matches scripts/generate.py).
+  const slugify = n => n.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  function openCountry(name) { location.href = "countries/" + slugify(name) + ".html"; }
 
   // ── Searchable countries: [name, status, law, continent] ──
   // status: a = active law, d = draft/bill, n = none. Illustrative data.
@@ -165,7 +158,7 @@
   // ── Continent cards ──
   // [name, countries, active, draft, none, href] — coverage is illustrative.
   const CONTINENTS = [
-    ["Africa", 54, 37, 6, 11, "continents/africa.html"],
+    ["Africa", 54, 38, 5, 11, "continents/africa.html"],
     ["Europe", 44, 44, 0, 0, "continents/europe.html"],
     ["Asia", 47, 33, 5, 9, "continents/asia.html"],
     ["North America", 23, 14, 3, 6, "continents/north-america.html"],
