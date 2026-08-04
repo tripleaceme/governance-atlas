@@ -13,11 +13,14 @@
 <header class="site">
   <div class="wrap">
     <a class="logo" href="index.html" title="GovernanceAtlas home">
-      <div class="mark">Governance<span>Atlas</span></div>
-      <div class="tag">Data protection law, by country</div>
+      <svg class="logomark" width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><rect x="1" y="1" width="10" height="10" rx="3" fill="#1554c0" opacity="0.45"/><rect x="13" y="1" width="10" height="10" rx="3" fill="#1554c0" opacity="0.75"/><rect x="25" y="1" width="10" height="10" rx="3" fill="#1554c0" opacity="0.45"/><rect x="1" y="13" width="10" height="10" rx="3" fill="#1554c0" opacity="0.75"/><rect x="13" y="13" width="10" height="10" rx="3" fill="#17804d"/><rect x="25" y="13" width="10" height="10" rx="3" fill="#1554c0"/><rect x="1" y="25" width="10" height="10" rx="3" fill="#1554c0" opacity="0.45"/><rect x="13" y="25" width="10" height="10" rx="3" fill="#1554c0"/><rect x="25" y="25" width="10" height="10" rx="3" fill="#1554c0" opacity="0.6"/></svg>
+      <div>
+        <div class="mark">Governance<span>Atlas</span></div>
+        <div class="tag">Data protection law, by country</div>
+      </div>
     </a>
     <nav class="main">
-      <a href="index.html" class="active">Browse</a>
+      <a href="index.html" class="active">Countries</a>
       <a href="compare.html">Compare</a>
       <a href="learn.html">Learn</a>
       <a href="resources.html">Resources</a>
@@ -30,12 +33,12 @@
   <div class="hero">
     <div class="herogrid">
       <div>
-        <div class="eyebrow">Free · Open source · Community-verified</div>
-        <h1 class="big">Every data protection law on Earth, in plain English.</h1>
-        <p class="lawline">Executive summaries you can take into a meeting, at-a-glance obligations, side-by-side country comparisons — with links to every official source.</p>
+        <div class="eyebrow">Free · Open source · 194 countries</div>
+        <h1 class="big">Understand any country's data protection law in minutes.</h1>
+        <p class="lawline">Every country's privacy law as a short, plain-English brief: what the law is, who enforces it, what you must do, and where the official sources are — written for beginners and experts alike.</p>
 
         <div class="searchbig">
-          <input type="search" id="homesearch" placeholder="Search a country… e.g. Nigeria, Kenya, Ghana" aria-label="Search a country" autocomplete="off">
+          <input type="search" id="homesearch" placeholder="Which country do you need? e.g. Nigeria, Germany, Brazil" aria-label="Search a country" autocomplete="off">
           <div class="sugg" id="homesugg"></div>
         </div>
         <div class="popchips">
@@ -63,10 +66,45 @@
     </div>
   </div>
 
+  <div class="stepzone">
+    <h2 class="sect">How it works</h2>
+    <p class="sect-sub">Three steps from question to answer — no legal background needed.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Find a country</h3><p>Search by name, or browse the world map continent by continent. Every country has a page.</p></div>
+      <div class="step"><div class="n">2</div><h3>Read the brief</h3><p>A six-minute, plain-English summary: the law, the regulator, the deadlines, the fines — with the key obligations in order.</p></div>
+      <div class="step"><div class="n">3</div><h3>Check the sources</h3><p>Every fact links to official sources, and the compare tool puts countries side by side when you operate in more than one.</p></div>
+    </div>
+  </div>
+
   <div class="contzone">
     <h2 class="sect">Browse by continent</h2>
     <p class="sect-sub">Each bar shows legislative coverage — active laws, bills in progress, and countries with no comprehensive law yet.</p>
     <div class="contgrid" id="contgrid"></div>
+  </div>
+
+  <div class="audzone">
+    <h2 class="sect">Made for both sides of the table</h2>
+    <p class="sect-sub">Data governance isn't only for lawyers or only for engineers — the atlas is written to work for both.</p>
+    <div class="audgrid">
+      <a class="aud" href="learn.html">
+        <span class="who">New to this?</span>
+        <h3>Start with the basics</h3>
+        <p>Five plain-language ideas — the GDPR, adequacy, cross-border transfers — that make every other page click into place.</p>
+        <span class="go2">Go to Learn →</span>
+      </a>
+      <a class="aud" href="continents/africa.html">
+        <span class="who">Expanding into a market?</span>
+        <h3>Get meeting-ready fast</h3>
+        <p>Open the country's brief, skim the at-a-glance panel, and walk in knowing the regulator, the deadlines, and the fines.</p>
+        <span class="go2">Browse countries →</span>
+      </a>
+      <a class="aud" href="compare.html">
+        <span class="who">Data or compliance professional?</span>
+        <h3>Work across jurisdictions</h3>
+        <p>Compare obligations side by side, then jump straight to primary sources when you need the letter of the law.</p>
+        <span class="go2">Open Compare →</span>
+      </a>
+    </div>
   </div>
 
   <div class="recentzone">
