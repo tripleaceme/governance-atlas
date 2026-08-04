@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>France — Governance Atlas</title>
-<meta name="description" content="Data protection law in France: GDPR + Loi Informatique — status, and how it compares. Awaiting full verification.">
+<title>France — GDPR + Loi Informatique et Libertés (Law No. 78-17 of 1978, as amended 2018) — Governance Atlas</title>
+<meta name="description" content="Data protection law in France: GDPR + Loi Informatique et Libertés (Law No. 78-17 of 1978, as amended 2018) — plain-English summary, obligations, and official sources.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -35,11 +35,11 @@
   <div class="hero">
     <div class="eyebrow">Europe</div>
     <h1>France</h1>
-    <p class="lawline">Primary law: <strong>GDPR + Loi Informatique</strong>. Full dossier coming — this page is awaiting verification against official sources.</p>
+    <p class="lawline">Primary law: <strong>GDPR + Loi Informatique et Libertés (Law No. 78-17 of 1978, as amended 2018)</strong> — supervised by Commission Nationale de l&#x27;Informatique et des Libertés (CNIL).</p>
     <div class="chips">
       <span class="chip active">Active law</span>
-      <span class="chip">GDPR + Loi Informatique</span>
-      <span class="chip verified">Awaiting verification</span>
+      <span class="chip">Enacted 1978</span>
+      <span class="chip verified">Researched Aug 2026 · pending review</span>
     </div>
   </div>
 
@@ -47,33 +47,60 @@
     <aside class="dossier">
       <h2>At a glance</h2>
       <dl style="margin:0">
-        <div class="fact"><dt>Continent</dt><dd>Europe</dd></div>
-        <div class="fact"><dt>Status</dt><dd>Active law</dd></div>
-        <div class="fact"><dt>Primary law</dt><dd>GDPR + Loi Informatique</dd></div>
-        <div class="fact"><dt>Page status</dt><dd class="no">Stub — awaiting verification</dd></div>
+        <div class="fact"><dt>Law</dt><dd>GDPR + Loi Informatique et Libertés (Law No. 78-17 of 1978, as amended 2018)</dd></div>
+        <div class="fact"><dt>Authority</dt><dd>CNIL<span class="sub">Commission Nationale de l&#x27;Informatique et des Libertés</span></dd></div>
+        <div class="fact"><dt>DPO</dt><dd>Mandatory in GDPR cases (public bodies, large-scale monitoring or special-category data)</dd></div>
+        <div class="fact"><dt>Registration</dt><dd>No general registration; prior formalities remain for certain health-data processing</dd></div>
+        <div class="fact"><dt>Breach notification</dt><dd>72 hours (GDPR Art. 33)</dd></div>
+        <div class="fact"><dt>Max fine</dt><dd>EUR 20m or 4% of global annual turnover (GDPR)</dd></div>
+        <div class="fact"><dt>Cross-border transfers</dt><dd>Free flow within EU/EEA; GDPR Chapter V tools (adequacy, SCCs, BCRs) for third countries</dd></div>
+        <div class="fact"><dt>Children&#x27;s data</dt><dd>Digital consent age 15; below 15, joint consent of child and parental authority</dd></div>
+
       </dl>
     </aside>
 
     <article>
       <section>
-        <h2>What we know</h2>
-        <span class="readtime">Stub page · not legal advice</span>
-        <p>France has an active comprehensive data protection law: <strong>GDPR + Loi Informatique</strong>. A full plain-English dossier for this page — supervisory authority, DPO and registration requirements, breach deadlines, penalties, and links to official sources — is being prepared and verified against primary sources.</p>
-        <p>For an example of what this page will become, see the completed
-        <a href="nigeria.html">Nigeria dossier</a>.</p>
+        <h2>Executive summary</h2>
+        <span class="readtime">Compiled from public sources · not legal advice</span>
+        <p>France applies the GDPR directly, supplemented by the Loi Informatique et Libertés (Law 78-17 of 6 January 1978) — one of the world&#x27;s oldest data protection laws, comprehensively rewritten in 2018-2019 to fit the GDPR. The national law fills the spaces the GDPR leaves to member states: it sets the digital consent age at 15 (with joint parent-child consent below that), keeps special regimes for health, biometric and criminal-record data, and preserves some prior formalities for sensitive health research processing.</p>
+        <p>Supervision belongs to the CNIL, the 1978-founded regulator that remains one of Europe&#x27;s most influential authorities. The CNIL is a prolific enforcer, and notably uses the ePrivacy framework to fine cookie and tracker violations directly — bypassing the GDPR one-stop-shop — which has produced some of Europe&#x27;s largest penalties against global tech platforms. It pairs enforcement with extensive practical guidance widely used across the French-speaking world.</p>
+        <p>For most organisations the compliance picture is standard GDPR: lawful basis, transparency, 72-hour breach notification, DPOs where required, and Chapter V transfer tools. The distinctive French angles are the age-15 rule for minors, strict CNIL cookie-consent doctrine, and active sectoral rules on health data hosting (HDS certification).</p>
       </section>
 
       <section>
-        <h2>Help verify this page</h2>
-        <p>Governance Atlas is community-maintained. If you know France's data protection
-        landscape — the law, the regulator, official sources — a pull request with citations
-        makes this page real.
-        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">Contribute on GitHub ↗</a></p>
+        <h2>Key obligations</h2>
+        <ul class="obligations">
+          <li><span class="n">01</span><div><b>Lawful basis and transparency</b> — Every processing operation needs a GDPR Art. 6 basis and clear information to data subjects; CNIL doctrine on cookies requires genuine accept/refuse choices.</div></li>
+          <li><span class="n">02</span><div><b>Notify breaches within 72 hours</b> — Personal data breaches must be reported to the CNIL within 72 hours and to individuals when the risk is high.</div></li>
+          <li><span class="n">03</span><div><b>Appoint a DPO where required</b> — Public bodies and organisations doing large-scale monitoring or special-category processing must designate a data protection officer.</div></li>
+          <li><span class="n">04</span><div><b>Handle minors&#x27; data with care</b> — Information-society services relying on consent need joint parental consent for users under 15.</div></li>
+          <li><span class="n">05</span><div><b>Frame international transfers</b> — Transfers outside the EU/EEA require adequacy, SCCs with transfer impact assessments, or another Chapter V mechanism.</div></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+        <div class="sources">
+          <a class="source" href="https://www.cnil.fr" target="_blank" rel="noopener"><span class="kind">Regulator</span><span class="t">CNIL — Commission Nationale de l&#x27;Informatique et des Libertés</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://www.cnil.fr/en/recommendation-1-regulate-capacity-children-act-online" target="_blank" rel="noopener"><span class="kind">Guidance</span><span class="t">CNIL — Recommendation 1: Regulate the capacity of children to act online</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://www.recordinglaw.com/world-laws/world-data-privacy-laws/france-data-privacy-laws/" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">Recording Law — France Data Privacy Laws (2026)</span> <span class="ext">↗</span></a>
+        </div>
+      </section>
+
+      <section>
+        <p class="sect-sub"><em>Note: EU member state, so an adequacy decision is not applicable; CNIL enforces cookie rules under ePrivacy outside the GDPR one-stop-shop, allowing direct fines on non-French companies.</em></p>
+      </section>
+
+      <section>
+        <h2>Help improve this page</h2>
+        <p>Governance Atlas is community-maintained. Corrections and official sources for France are always welcome —
+        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">contribute on GitHub ↗</a></p>
       </section>
 
       <section>
         <h2>Compare</h2>
-        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how verified countries compare side by side</a></p>
+        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how France compares side by side</a></p>
       </section>
     </article>
   </div>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Austria — Governance Atlas</title>
-<meta name="description" content="Data protection law in Austria: GDPR + DSG — status, and how it compares. Awaiting full verification.">
+<title>Austria — GDPR + Datenschutzgesetz (DSG, BGBl. I 165/1999, as amended 2018) — Governance Atlas</title>
+<meta name="description" content="Data protection law in Austria: GDPR + Datenschutzgesetz (DSG, BGBl. I 165/1999, as amended 2018) — plain-English summary, obligations, and official sources.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -35,11 +35,11 @@
   <div class="hero">
     <div class="eyebrow">Europe</div>
     <h1>Austria</h1>
-    <p class="lawline">Primary law: <strong>GDPR + DSG</strong>. Full dossier coming — this page is awaiting verification against official sources.</p>
+    <p class="lawline">Primary law: <strong>GDPR + Datenschutzgesetz (DSG, BGBl. I 165/1999, as amended 2018)</strong> — supervised by Österreichische Datenschutzbehörde (DSB).</p>
     <div class="chips">
       <span class="chip active">Active law</span>
-      <span class="chip">GDPR + DSG</span>
-      <span class="chip verified">Awaiting verification</span>
+      <span class="chip">Enacted 1999</span>
+      <span class="chip verified">Researched Aug 2026 · pending review</span>
     </div>
   </div>
 
@@ -47,33 +47,60 @@
     <aside class="dossier">
       <h2>At a glance</h2>
       <dl style="margin:0">
-        <div class="fact"><dt>Continent</dt><dd>Europe</dd></div>
-        <div class="fact"><dt>Status</dt><dd>Active law</dd></div>
-        <div class="fact"><dt>Primary law</dt><dd>GDPR + DSG</dd></div>
-        <div class="fact"><dt>Page status</dt><dd class="no">Stub — awaiting verification</dd></div>
+        <div class="fact"><dt>Law</dt><dd>GDPR + Datenschutzgesetz (DSG, BGBl. I 165/1999, as amended 2018)</dd></div>
+        <div class="fact"><dt>Authority</dt><dd>DSB<span class="sub">Österreichische Datenschutzbehörde</span></dd></div>
+        <div class="fact"><dt>DPO</dt><dd>Mandatory in GDPR cases (public bodies, large-scale monitoring or special-category data)</dd></div>
+        <div class="fact"><dt>Registration</dt><dd>No — replaced by internal records of processing (GDPR Art. 30)</dd></div>
+        <div class="fact"><dt>Breach notification</dt><dd>72 hours (GDPR Art. 33)</dd></div>
+        <div class="fact"><dt>Max fine</dt><dd>EUR 20m or 4% of global annual turnover (GDPR)</dd></div>
+        <div class="fact"><dt>Cross-border transfers</dt><dd>Free flow within EU/EEA; GDPR Chapter V tools (adequacy, SCCs, BCRs) for third countries</dd></div>
+        <div class="fact"><dt>Children&#x27;s data</dt><dd>Digital consent age 14</dd></div>
+
       </dl>
     </aside>
 
     <article>
       <section>
-        <h2>What we know</h2>
-        <span class="readtime">Stub page · not legal advice</span>
-        <p>Austria has an active comprehensive data protection law: <strong>GDPR + DSG</strong>. A full plain-English dossier for this page — supervisory authority, DPO and registration requirements, breach deadlines, penalties, and links to official sources — is being prepared and verified against primary sources.</p>
-        <p>For an example of what this page will become, see the completed
-        <a href="nigeria.html">Nigeria dossier</a>.</p>
+        <h2>Executive summary</h2>
+        <span class="readtime">Compiled from public sources · not legal advice</span>
+        <p>Austria applies the GDPR directly, supplemented by the Datenschutzgesetz (DSG), whose Section 1 uniquely enshrines data protection as a constitutional right with direct third-party effect — a feature that predates and survives the GDPR. The DSG fills member-state discretion areas: it lowers the digital consent age to 14, sets detailed rules on image processing and video surveillance, protects DPO confidentiality, and adds criminal penalties for intentional data misuse.</p>
+        <p>The supervisory authority is the Datenschutzbehörde (DSB) in Vienna, which handles a heavy complaint caseload — Austria&#x27;s active privacy litigation culture (home of noyb and Max Schrems) keeps it busy. Austrian enforcement has produced significant fines, including EUR 16 million against Austrian Post for profiling political affinity data and EUR 8 million against Rewe International, and Austrian complaints have driven landmark EU-level rulings on tracking and international transfers.</p>
+        <p>Practical compliance is standard GDPR — lawful basis, transparency, 72-hour breach notification, DPIAs, DPOs where triggered — with Austrian specifics around video surveillance, employee data (works council involvement), and the age-14 rule for information-society services.</p>
       </section>
 
       <section>
-        <h2>Help verify this page</h2>
-        <p>Governance Atlas is community-maintained. If you know Austria's data protection
-        landscape — the law, the regulator, official sources — a pull request with citations
-        makes this page real.
-        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">Contribute on GitHub ↗</a></p>
+        <h2>Key obligations</h2>
+        <ul class="obligations">
+          <li><span class="n">01</span><div><b>Lawful basis and transparency</b> — All processing needs a GDPR Art. 6 basis with clear privacy information; the constitutional right in DSG §1 also binds private actors.</div></li>
+          <li><span class="n">02</span><div><b>Notify breaches within 72 hours</b> — Report personal data breaches to the DSB within 72 hours; inform affected individuals when risk is high.</div></li>
+          <li><span class="n">03</span><div><b>Follow video surveillance rules</b> — The DSG imposes specific labelling, logging and proportionality requirements on image processing and CCTV.</div></li>
+          <li><span class="n">04</span><div><b>Appoint a DPO where required</b> — Public bodies and organisations with large-scale monitoring or sensitive-data processing must designate a DPO, who enjoys statutory confidentiality protection.</div></li>
+          <li><span class="n">05</span><div><b>Respect the age-14 consent rule</b> — Consent-based information-society services offered to children are valid from age 14; younger children need parental authorisation.</div></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+        <div class="sources">
+          <a class="source" href="https://dsb.gv.at/" target="_blank" rel="noopener"><span class="kind">Regulator</span><span class="t">Österreichische Datenschutzbehörde (DSB)</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://cms.law/en/int/expert-guides/cms-expert-guide-to-data-protection-and-cyber-security-laws/austria" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">CMS Expert Guide — Data protection and cybersecurity laws in Austria</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://www.linklaters.com/en/insights/data-protected/data-protected---austria" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">Linklaters — Data Protected Austria</span> <span class="ext">↗</span></a>
+        </div>
+      </section>
+
+      <section>
+        <p class="sect-sub"><em>Note: EU member state (adequacy not applicable); DSG §1 makes data protection a constitutional right, and Austria&#x27;s NGO-driven complaint culture (noyb) makes it a frequent origin of landmark EU cases.</em></p>
+      </section>
+
+      <section>
+        <h2>Help improve this page</h2>
+        <p>Governance Atlas is community-maintained. Corrections and official sources for Austria are always welcome —
+        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">contribute on GitHub ↗</a></p>
       </section>
 
       <section>
         <h2>Compare</h2>
-        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how verified countries compare side by side</a></p>
+        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how Austria compares side by side</a></p>
       </section>
     </article>
   </div>

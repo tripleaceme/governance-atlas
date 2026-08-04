@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Russia — Governance Atlas</title>
-<meta name="description" content="Data protection law in Russia: FZ-152 (2006) — status, and how it compares. Awaiting full verification.">
+<title>Russia — Federal Law No. 152-FZ &#x27;On Personal Data&#x27; (2006, heavily amended) — Governance Atlas</title>
+<meta name="description" content="Data protection law in Russia: Federal Law No. 152-FZ &#x27;On Personal Data&#x27; (2006, heavily amended) — plain-English summary, obligations, and official sources.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -35,11 +35,11 @@
   <div class="hero">
     <div class="eyebrow">Europe</div>
     <h1>Russia</h1>
-    <p class="lawline">Primary law: <strong>FZ-152 (2006)</strong>. Full dossier coming — this page is awaiting verification against official sources.</p>
+    <p class="lawline">Primary law: <strong>Federal Law No. 152-FZ &#x27;On Personal Data&#x27; (2006, heavily amended)</strong> — supervised by Roskomnadzor — Federal Service for Supervision of Communications, Information Technology and Mass Media (RKN).</p>
     <div class="chips">
       <span class="chip active">Active law</span>
-      <span class="chip">FZ-152 (2006)</span>
-      <span class="chip verified">Awaiting verification</span>
+      <span class="chip">Enacted 2006</span>
+      <span class="chip verified">Researched Aug 2026 · pending review</span>
     </div>
   </div>
 
@@ -47,33 +47,62 @@
     <aside class="dossier">
       <h2>At a glance</h2>
       <dl style="margin:0">
-        <div class="fact"><dt>Continent</dt><dd>Europe</dd></div>
-        <div class="fact"><dt>Status</dt><dd>Active law</dd></div>
-        <div class="fact"><dt>Primary law</dt><dd>FZ-152 (2006)</dd></div>
-        <div class="fact"><dt>Page status</dt><dd class="no">Stub — awaiting verification</dd></div>
+        <div class="fact"><dt>Law</dt><dd>Federal Law No. 152-FZ &#x27;On Personal Data&#x27; (2006, heavily amended)</dd></div>
+        <div class="fact"><dt>Authority</dt><dd>RKN<span class="sub">Roskomnadzor — Federal Service for Supervision of Communications, Information Technology and Mass Media</span></dd></div>
+        <div class="fact"><dt>DPO</dt><dd>Yes — operators must appoint a person responsible for organising personal data processing</dd></div>
+        <div class="fact"><dt>Registration</dt><dd>Yes — operators must notify Roskomnadzor before processing; RKN keeps a public operator register</dd></div>
+        <div class="fact"><dt>Breach notification</dt><dd>24 hours initial notice to Roskomnadzor, 72 hours for detailed follow-up</dd></div>
+        <div class="fact"><dt>Max fine</dt><dd>RUB 3–15m for data leaks; repeat violations up to 3% of annual turnover, capped at RUB 500m</dd></div>
+        <div class="fact"><dt>Cross-border transfers</dt><dd>Prior notification to Roskomnadzor before any cross-border transfer; transfers to certain countries can be restricted; strict localization — Russian citizens&#x27; data must be stored and processed on servers in Russia</dd></div>
+        <div class="fact"><dt>Children&#x27;s data</dt><dd>No GDPR-style digital consent age — minors&#x27; consent runs through parents/guardians under civil law; misuse of minors&#x27; data carries aggravated criminal penalties</dd></div>
+        <div class="fact"><dt>EU adequacy</dt><dd class="no">No</dd></div>
+
       </dl>
     </aside>
 
     <article>
       <section>
-        <h2>What we know</h2>
-        <span class="readtime">Stub page · not legal advice</span>
-        <p>Russia has an active comprehensive data protection law: <strong>FZ-152 (2006)</strong>. A full plain-English dossier for this page — supervisory authority, DPO and registration requirements, breach deadlines, penalties, and links to official sources — is being prepared and verified against primary sources.</p>
-        <p>For an example of what this page will become, see the completed
-        <a href="nigeria.html">Nigeria dossier</a>.</p>
+        <h2>Executive summary</h2>
+        <span class="readtime">Compiled from public sources · not legal advice</span>
+        <p>Russia&#x27;s Federal Law No. 152-FZ &#x27;On Personal Data&#x27;, enacted in 2006, is a comprehensive consent-centric regime that has been amended repeatedly and now anchors one of the world&#x27;s most restrictive data governance systems. It applies to any &#x27;operator&#x27; processing personal data of Russian citizens, and its most distinctive features are mandatory data localization (databases with Russians&#x27; personal data must be located in Russia — a rule tightened from 1 July 2025 to cover processors as well), mandatory notification of Roskomnadzor before processing begins, and a separate prior notification before any cross-border transfer, with transfers to some jurisdictions subject to restriction.</p>
+        <p>Enforcement has hardened sharply since 2022. Breaches must be reported to Roskomnadzor within 24 hours (with a 72-hour detailed follow-up). Federal Law 420-FZ, in force since 30 May 2025, introduced turnover-based fines: data leaks now attract fines of RUB 3–15 million depending on the number of affected individuals, and repeat leak violations can cost up to 3% of annual turnover, capped at RUB 500 million. Parallel Federal Law 421-FZ created criminal liability — up to four years&#x27; imprisonment — for illegal collection, use or transfer of personal data, with harsher sentences involving minors&#x27; or biometric data.</p>
+        <p>Roskomnadzor is an assertive regulator with website-blocking powers (LinkedIn has been blocked since 2016 over localization). Russia holds no EU adequacy decision, so GDPR-covered transfers into Russia require safeguards, while outbound compliance for foreign companies serving Russian users is dominated by localization, notification and consent formalities.</p>
       </section>
 
       <section>
-        <h2>Help verify this page</h2>
-        <p>Governance Atlas is community-maintained. If you know Russia's data protection
-        landscape — the law, the regulator, official sources — a pull request with citations
-        makes this page real.
-        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">Contribute on GitHub ↗</a></p>
+        <h2>Key obligations</h2>
+        <ul class="obligations">
+          <li><span class="n">01</span><div><b>Localize Russian citizens&#x27; data</b> — Personal data of Russian citizens must be recorded, stored and processed in databases located in Russia; from 1 July 2025 this obligation extends to processors acting for operators.</div></li>
+          <li><span class="n">02</span><div><b>Notify Roskomnadzor before processing</b> — Operators must file a processing notification with Roskomnadzor before starting to process personal data; RKN maintains a public register of operators.</div></li>
+          <li><span class="n">03</span><div><b>Notify cross-border transfers in advance</b> — A separate notification to Roskomnadzor is required before commencing cross-border transfers, and transfers to certain countries may be restricted or refused.</div></li>
+          <li><span class="n">04</span><div><b>Report breaches within 24/72 hours</b> — Data leaks must be reported to Roskomnadzor within 24 hours, with a detailed follow-up report within 72 hours; failure carries fines of RUB 1–3m for legal entities.</div></li>
+          <li><span class="n">05</span><div><b>Obtain specific, documented consent</b> — Processing generally requires specific, informed consent — with separate, stand-alone consent for publicly disseminated data and strict rules for biometric data.</div></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+        <div class="sources">
+          <a class="source" href="https://eng.rkn.gov.ru/" target="_blank" rel="noopener"><span class="kind">Regulator</span><span class="t">Roskomnadzor — official English site</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://securiti.ai/russian-federal-law-no-152-fz/" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">Securiti — Russian Federal Law No. 152-FZ overview</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://konsugroup.com/en/news/new-requirements-personal-data-protection-russia-2025-07/" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">Konsu — New personal data localization requirements from July 2025</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://www.recordinglaw.com/world-laws/world-data-privacy-laws/russia-data-privacy-laws/" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">Recording Law — Russia data privacy laws and 2025 changes</span> <span class="ext">↗</span></a>
+        </div>
+      </section>
+
+      <section>
+        <p class="sect-sub"><em>Note: Regime tightened substantially in 2024–2025: turnover-based fines (from May 2025), criminal liability for data misuse (Law 421-FZ), and localization extended to processors (from July 2025).</em></p>
+      </section>
+
+      <section>
+        <h2>Help improve this page</h2>
+        <p>Governance Atlas is community-maintained. Corrections and official sources for Russia are always welcome —
+        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">contribute on GitHub ↗</a></p>
       </section>
 
       <section>
         <h2>Compare</h2>
-        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how verified countries compare side by side</a></p>
+        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how Russia compares side by side</a></p>
       </section>
     </article>
   </div>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Japan — Governance Atlas</title>
-<meta name="description" content="Data protection law in Japan: APPI (rev. 2022) — status, and how it compares. Awaiting full verification.">
+<title>Japan — Act on the Protection of Personal Information (APPI, Act No. 57 of 2003, as amended) — Governance Atlas</title>
+<meta name="description" content="Data protection law in Japan: Act on the Protection of Personal Information (APPI, Act No. 57 of 2003, as amended) — plain-English summary, obligations, and official sources.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -35,11 +35,12 @@
   <div class="hero">
     <div class="eyebrow">Asia</div>
     <h1>Japan</h1>
-    <p class="lawline">Primary law: <strong>APPI (rev. 2022)</strong>. Full dossier coming — this page is awaiting verification against official sources.</p>
+    <p class="lawline">Primary law: <strong>Act on the Protection of Personal Information (APPI, Act No. 57 of 2003, as amended)</strong> — supervised by Personal Information Protection Commission (PPC).</p>
     <div class="chips">
       <span class="chip active">Active law</span>
-      <span class="chip">APPI (rev. 2022)</span>
-      <span class="chip verified">Awaiting verification</span>
+      <span class="chip">Enacted 2003</span>
+      <span class="chip active">EU adequacy</span>
+      <span class="chip verified">Researched Aug 2026 · pending review</span>
     </div>
   </div>
 
@@ -47,33 +48,61 @@
     <aside class="dossier">
       <h2>At a glance</h2>
       <dl style="margin:0">
-        <div class="fact"><dt>Continent</dt><dd>Asia</dd></div>
-        <div class="fact"><dt>Status</dt><dd>Active law</dd></div>
-        <div class="fact"><dt>Primary law</dt><dd>APPI (rev. 2022)</dd></div>
-        <div class="fact"><dt>Page status</dt><dd class="no">Stub — awaiting verification</dd></div>
+        <div class="fact"><dt>Law</dt><dd>Act on the Protection of Personal Information (APPI, Act No. 57 of 2003, as amended)</dd></div>
+        <div class="fact"><dt>Authority</dt><dd>PPC<span class="sub">Personal Information Protection Commission</span></dd></div>
+        <div class="fact"><dt>DPO</dt><dd>Not required by statute; appointing a privacy manager is standard practice</dd></div>
+        <div class="fact"><dt>Registration</dt><dd>Not required (records of third-party provisions and opt-out filings apply in specific cases)</dd></div>
+        <div class="fact"><dt>Breach notification</dt><dd>Prompt report to the PPC (preliminary within days, final within 30/60 days) for qualifying breaches; affected individuals notified</dd></div>
+        <div class="fact"><dt>Max fine</dt><dd>Up to JPY 100 million (corporations) for certain violations, e.g. breach of PPC orders or unlawful database provision</dd></div>
+        <div class="fact"><dt>Cross-border transfers</dt><dd>Consent, adequate country (EU/UK), or safeguards with enhanced information duties to data subjects</dd></div>
+        <div class="fact"><dt>Children&#x27;s data</dt><dd>No statutory age threshold currently in force; 2026 amendment adds protections for minors under 16</dd></div>
+        <div class="fact"><dt>EU adequacy</dt><dd class="yes">Yes</dd></div>
+
       </dl>
     </aside>
 
     <article>
       <section>
-        <h2>What we know</h2>
-        <span class="readtime">Stub page · not legal advice</span>
-        <p>Japan has an active comprehensive data protection law: <strong>APPI (rev. 2022)</strong>. A full plain-English dossier for this page — supervisory authority, DPO and registration requirements, breach deadlines, penalties, and links to official sources — is being prepared and verified against primary sources.</p>
-        <p>For an example of what this page will become, see the completed
-        <a href="nigeria.html">Nigeria dossier</a>.</p>
+        <h2>Executive summary</h2>
+        <span class="readtime">Compiled from public sources · not legal advice</span>
+        <p>Japan&#x27;s Act on the Protection of Personal Information (APPI), originally enacted in 2003 and substantially rewritten by amendments effective April 2022, is a mature, comprehensive privacy law applying to virtually all private-sector businesses handling personal information, with extraterritorial reach over foreign operators serving people in Japan. It is enforced by the independent Personal Information Protection Commission (PPC). Japan holds an EU adequacy decision (2019, reaffirmed after review), operating a mutual adequacy arrangement with the EU — a distinctive &#x27;data free flow with trust&#x27; posture Japan has championed globally.</p>
+        <p>The APPI is less prescriptive than the GDPR: no DPO mandate, no general registration, and a purpose-notification model rather than strict legal bases. Its sharpest teeth are the mandatory breach regime (report qualifying incidents to the PPC promptly, with a final report within 30 days, or 60 for malicious acts, and notify affected individuals), rules on third-party provision (traceability records and the opt-out filing system), pseudonymized/anonymized data categories, and cross-border transfer conditions requiring consent, an adequate destination, or safeguards plus detailed disclosures about the destination country&#x27;s regime. Corporate fines reach JPY 100 million for order violations and database theft.</p>
+        <p>A significant amendment was enacted in 2026 as part of the APPI&#x27;s triennial review: it introduces protections for minors under 16, extends improper-use and improper-acquisition prohibitions to &#x27;contactable personally referable information,&#x27; and moves individual breach notification to a more risk-based approach; provisions will phase in over the coming years. The PPC enforces mainly through guidance, investigations and binding orders rather than headline fines, but compliance expectations — especially around breach reporting and transfers — are taken seriously by Japanese business.</p>
       </section>
 
       <section>
-        <h2>Help verify this page</h2>
-        <p>Governance Atlas is community-maintained. If you know Japan's data protection
-        landscape — the law, the regulator, official sources — a pull request with citations
-        makes this page real.
-        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">Contribute on GitHub ↗</a></p>
+        <h2>Key obligations</h2>
+        <ul class="obligations">
+          <li><span class="n">01</span><div><b>Purpose specification and use limitation</b> — Specify the purpose of use, notify or publish it, and do not process personal information beyond that purpose without consent.</div></li>
+          <li><span class="n">02</span><div><b>Breach reporting</b> — Report qualifying breaches (sensitive data, financial harm risk, malicious acts, or 1,000+ affected persons) to the PPC — preliminary report promptly, final within 30/60 days — and notify affected individuals.</div></li>
+          <li><span class="n">03</span><div><b>Third-party provision controls</b> — Obtain consent or use the opt-out filing regime before providing personal data to third parties, and keep transfer/receipt records; sensitive data always requires consent.</div></li>
+          <li><span class="n">04</span><div><b>Cross-border transfer conditions</b> — Transfer abroad only with consent, to an adequate country, or with safeguards — accompanied by required information to data subjects about the destination regime.</div></li>
+          <li><span class="n">05</span><div><b>Security management</b> — Implement organizational, human, physical and technical security measures and supervise employees and contractors handling personal data.</div></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+        <div class="sources">
+          <a class="source" href="https://www.ppc.go.jp/en/" target="_blank" rel="noopener"><span class="kind">Regulator</span><span class="t">Personal Information Protection Commission, Japan (PPC)</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://iclg.com/practice-areas/data-protection-laws-and-regulations/japan" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">ICLG — Data Protection Laws and Regulations 2026: Japan</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://www.morihamada.com/en/insights/newsletters/138006" target="_blank" rel="noopener"><span class="kind">Guidance</span><span class="t">Mori Hamada — Proposed Amendments to Japan&#x27;s APPI (2026)</span> <span class="ext">↗</span></a>
+        </div>
+      </section>
+
+      <section>
+        <p class="sect-sub"><em>Note: A 2026 APPI amendment (under-16 protections, contactable personally referable information, risk-based individual breach notice) was enacted but phases in later; current-force rules stem from the 2020 amendment effective April 2022.</em></p>
+      </section>
+
+      <section>
+        <h2>Help improve this page</h2>
+        <p>Governance Atlas is community-maintained. Corrections and official sources for Japan are always welcome —
+        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">contribute on GitHub ↗</a></p>
       </section>
 
       <section>
         <h2>Compare</h2>
-        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how verified countries compare side by side</a></p>
+        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how Japan compares side by side</a></p>
       </section>
     </article>
   </div>

@@ -82,6 +82,7 @@
 
 <div id="toast" role="status"></div>
 
+<script src="assets/compare-data.js"></script>
 <script>
   const toast = document.getElementById("toast");
   let toastTimer;
@@ -92,29 +93,14 @@
     toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
   }
 
-  // Each record mirrors the future country YAML. Fields are illustrative.
-  const DATA = {
-    "Nigeria":        { continent: "Africa", law: "NDPA 2023", authority: "NDPC", dpo: "Yes — major importance", reg: "Yes — major importance", breach: "72 hours", fine: "₦10m or 2% of turnover", xborder: "Adequacy or safeguards", children: "Under 18" },
-    "Kenya":          { continent: "Africa", law: "DPA 2019", authority: "ODPC", dpo: "Designation encouraged", reg: "Yes — mandatory", breach: "72 hours", fine: "KES 5m or 1% of turnover", xborder: "Safeguards + proof to ODPC", children: "Under 18" },
-    "South Africa":   { continent: "Africa", law: "POPIA 2013", authority: "Information Regulator", dpo: "Information Officer — mandatory", reg: "IO registration only", breach: "As soon as reasonably possible", fine: "R10m or 10 years prison", xborder: "Adequacy, consent, or contract", children: "Under 18" },
-    "Ghana":          { continent: "Africa", law: "DPA 2012 (Act 843)", authority: "Data Protection Commission", dpo: "Data protection supervisor", reg: "Yes — mandatory", breach: "No general deadline", fine: "Fines + imprisonment", xborder: "Accountability principles", children: "Parental consent" },
-    "Egypt":          { continent: "Africa", law: "Law 151 (2020)", authority: "PDPC", dpo: "Yes", reg: "Licence required", breach: "72 hours", fine: "Up to EGP 5m", xborder: "Licence required", children: "Parental consent" },
-    "Germany":        { continent: "Europe", law: "GDPR + BDSG", authority: "BfDI + state DPAs", dpo: "Yes — thresholds", reg: "No", breach: "72 hours", fine: "€20m or 4% of turnover", xborder: "Adequacy or SCCs", children: "16" },
-    "United Kingdom": { continent: "Europe", law: "UK GDPR + DPA 2018", authority: "ICO", dpo: "Yes — thresholds", reg: "ICO fee", breach: "72 hours", fine: "£17.5m or 4% of turnover", xborder: "Adequacy or IDTA", children: "13" },
-    "France":         { continent: "Europe", law: "GDPR + Loi Informatique", authority: "CNIL", dpo: "Yes — thresholds", reg: "No", breach: "72 hours", fine: "€20m or 4% of turnover", xborder: "Adequacy or SCCs", children: "15" },
-    "India":          { continent: "Asia", law: "DPDP Act 2023", authority: "Data Protection Board", dpo: "Significant fiduciaries", reg: "No", breach: "Report to Board + users", fine: "Up to ₹250 crore", xborder: "Blacklist approach", children: "Under 18" },
-    "Singapore":      { continent: "Asia", law: "PDPA 2012", authority: "PDPC", dpo: "Yes — mandatory", reg: "No", breach: "3 days once notifiable", fine: "S$1m or 10% of turnover", xborder: "Comparable protection", children: "13" },
-    "Brazil":         { continent: "South America", law: "LGPD 2018", authority: "ANPD", dpo: "Yes — mandatory", reg: "No", breach: "Reasonable time", fine: "R$50m or 2% of turnover", xborder: "Adequacy or SCCs", children: "Parental consent" },
-    "Canada":         { continent: "North America", law: "PIPEDA 2000", authority: "OPC", dpo: "Accountable person", reg: "No", breach: "As soon as feasible", fine: "C$100k per offence", xborder: "Comparable protection", children: "Meaningful consent" },
-    "United States":  { continent: "North America", law: "State laws only", authority: "FTC + state AGs", dpo: "Varies by state", reg: "No", breach: "Varies (30–60 days)", fine: "Varies by state", xborder: "No general restriction", children: "13 (COPPA)" },
-    "Australia":      { continent: "Oceania", law: "Privacy Act 1988", authority: "OAIC", dpo: "No general requirement", reg: "No", breach: "30-day assessment (NDB)", fine: "A$50m or 30% of benefit", xborder: "APP 8 accountability", children: "No fixed age" }
-  };
+  // DATA (all countries) is loaded from assets/compare-data.js, generated
+  // by scripts/generate.py from data/countries.json + data/details.json.
   const ROWS = [
     ["Primary law", "law"], ["Supervisory authority", "authority"], ["DPO", "dpo"],
     ["Registration", "reg"], ["Breach deadline", "breach"], ["Max penalty", "fine"],
     ["Cross-border transfers", "xborder"], ["Children's data", "children"]
   ];
-  const NAMES = Object.keys(DATA);
+  const NAMES = Object.keys(DATA).sort();
   const DEFAULTS = ["Nigeria", "Kenya", "South Africa"];
 
   const sels = [0, 1, 2].map(i => document.getElementById("sel" + i));

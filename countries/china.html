@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>China — Governance Atlas</title>
-<meta name="description" content="Data protection law in China: PIPL (2021) — status, and how it compares. Awaiting full verification.">
+<title>China — Personal Information Protection Law (PIPL, 2021) — Governance Atlas</title>
+<meta name="description" content="Data protection law in China: Personal Information Protection Law (PIPL, 2021) — plain-English summary, obligations, and official sources.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -35,11 +35,11 @@
   <div class="hero">
     <div class="eyebrow">Asia</div>
     <h1>China</h1>
-    <p class="lawline">Primary law: <strong>PIPL (2021)</strong>. Full dossier coming — this page is awaiting verification against official sources.</p>
+    <p class="lawline">Primary law: <strong>Personal Information Protection Law (PIPL, 2021)</strong> — supervised by Cyberspace Administration of China (CAC).</p>
     <div class="chips">
       <span class="chip active">Active law</span>
-      <span class="chip">PIPL (2021)</span>
-      <span class="chip verified">Awaiting verification</span>
+      <span class="chip">Enacted 2021</span>
+      <span class="chip verified">Researched Aug 2026 · pending review</span>
     </div>
   </div>
 
@@ -47,33 +47,62 @@
     <aside class="dossier">
       <h2>At a glance</h2>
       <dl style="margin:0">
-        <div class="fact"><dt>Continent</dt><dd>Asia</dd></div>
-        <div class="fact"><dt>Status</dt><dd>Active law</dd></div>
-        <div class="fact"><dt>Primary law</dt><dd>PIPL (2021)</dd></div>
-        <div class="fact"><dt>Page status</dt><dd class="no">Stub — awaiting verification</dd></div>
+        <div class="fact"><dt>Law</dt><dd>Personal Information Protection Law (PIPL, 2021)</dd></div>
+        <div class="fact"><dt>Authority</dt><dd>CAC<span class="sub">Cyberspace Administration of China</span></dd></div>
+        <div class="fact"><dt>DPO</dt><dd>Personal information protection officer required above CAC thresholds; foreign handlers must appoint a local representative</dd></div>
+        <div class="fact"><dt>Registration</dt><dd>No general registration; filings required for SCC transfers, security assessments and certain large-scale handlers</dd></div>
+        <div class="fact"><dt>Breach notification</dt><dd>Immediately — no fixed general deadline; remedial measures and notification to authorities and affected individuals</dd></div>
+        <div class="fact"><dt>Max fine</dt><dd>RMB 50 million or 5% of previous year&#x27;s turnover</dd></div>
+        <div class="fact"><dt>Cross-border transfers</dt><dd>Security assessment, CN standard contract filing, or certification; exemptions below volume thresholds</dd></div>
+        <div class="fact"><dt>Children&#x27;s data</dt><dd>Data of minors under 14 is sensitive; parental consent and dedicated rules required</dd></div>
+        <div class="fact"><dt>EU adequacy</dt><dd class="no">No</dd></div>
+
       </dl>
     </aside>
 
     <article>
       <section>
-        <h2>What we know</h2>
-        <span class="readtime">Stub page · not legal advice</span>
-        <p>China has an active comprehensive data protection law: <strong>PIPL (2021)</strong>. A full plain-English dossier for this page — supervisory authority, DPO and registration requirements, breach deadlines, penalties, and links to official sources — is being prepared and verified against primary sources.</p>
-        <p>For an example of what this page will become, see the completed
-        <a href="nigeria.html">Nigeria dossier</a>.</p>
+        <h2>Executive summary</h2>
+        <span class="readtime">Compiled from public sources · not legal advice</span>
+        <p>China&#x27;s Personal Information Protection Law (PIPL), in force since 1 November 2021, is a GDPR-inspired but distinctly Chinese regime that applies to processing of personal information inside China and extraterritorially to handlers targeting or analyzing individuals in China. It sits atop a broader stack — the Cybersecurity Law, Data Security Law, and the Network Data Security Management Regulation effective 1 January 2025 — and is enforced principally by the Cyberspace Administration of China (CAC) alongside MIIT, public security and market regulators. Consent (often &#x27;separate consent&#x27; for sensitive data, transfers and disclosures) dominates the legal bases, and data of minors under 14 is treated as sensitive.</p>
+        <p>Its most distinctive feature is the cross-border transfer regime: exports of personal information must go through a CAC security assessment, a filed Chinese standard contract, or third-party certification — the last route completed by certification measures effective 1 January 2026 — with exemptions for low-volume, non-sensitive transfers (up to 100,000 individuals a year). Handlers above thresholds must appoint a personal information protection officer, conduct personal information protection impact assessments for high-risk processing, and foreign handlers caught extraterritorially must designate a local representative.</p>
+        <p>Enforcement is real and escalating: fines reach RMB 50 million or 5% of the prior year&#x27;s turnover (the DiDi case exceeded RMB 8 billion), and a joint four-agency national enforcement campaign launched in March 2025 has specifically targeted cross-border transfer compliance, with published penalty cases through 2025-2026. Companies operating in or selling into China should treat PIPL compliance — especially transfer mechanisms and consent hygiene — as a board-level issue.</p>
       </section>
 
       <section>
-        <h2>Help verify this page</h2>
-        <p>Governance Atlas is community-maintained. If you know China's data protection
-        landscape — the law, the regulator, official sources — a pull request with citations
-        makes this page real.
-        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">Contribute on GitHub ↗</a></p>
+        <h2>Key obligations</h2>
+        <ul class="obligations">
+          <li><span class="n">01</span><div><b>Lawful basis and separate consent</b> — Establish a legal basis for each processing activity; obtain separate consent for sensitive personal information, cross-border transfers, public disclosure and provision to third parties.</div></li>
+          <li><span class="n">02</span><div><b>Cross-border transfer mechanism</b> — Before exporting personal information, complete a CAC security assessment, file China standard contractual clauses, or obtain certification — unless an exemption threshold applies.</div></li>
+          <li><span class="n">03</span><div><b>Impact assessments (PIPIA)</b> — Conduct and retain personal information protection impact assessments for sensitive data, automated decision-making, transfers and other high-risk processing.</div></li>
+          <li><span class="n">04</span><div><b>Appoint PIPO / local representative</b> — Designate a personal information protection officer above CAC-set volume thresholds; overseas handlers must establish a dedicated entity or representative in China.</div></li>
+          <li><span class="n">05</span><div><b>Incident response and notification</b> — On a breach, take immediate remedial measures and notify the regulator and affected individuals as required, per PIPL and the 2025 Network Data Security Regulation.</div></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+        <div class="sources">
+          <a class="source" href="https://www.cac.gov.cn/" target="_blank" rel="noopener"><span class="kind">Regulator</span><span class="t">Cyberspace Administration of China (CAC)</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://www.dlapiperdataprotection.com/countries/china/transfer.html" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">DLA Piper — Transfer of personal data in China</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://www.china-briefing.com/news/china-cross-border-data-transfer-certification/" target="_blank" rel="noopener"><span class="kind">Guidance</span><span class="t">China Briefing — Cross-Border Data Transfer Certification Measures</span> <span class="ext">↗</span></a>
+          <a class="source" href="https://www.twobirds.com/en/insights/2025/china/an-indepth-analysis-of-chinas-network-data-security-regime-part-iii" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">Bird &amp; Bird — China&#x27;s Network Data Security Regime: Cross-Border Transfer</span> <span class="ext">↗</span></a>
+        </div>
+      </section>
+
+      <section>
+        <p class="sect-sub"><em>Note: The Network Data Security Management Regulation (in force Jan 2025) and cross-border certification measures (in force Jan 2026) have materially expanded PIPL implementation; enforcement campaigns since March 2025 focus on cross-border transfers.</em></p>
+      </section>
+
+      <section>
+        <h2>Help improve this page</h2>
+        <p>Governance Atlas is community-maintained. Corrections and official sources for China are always welcome —
+        <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">contribute on GitHub ↗</a></p>
       </section>
 
       <section>
         <h2>Compare</h2>
-        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how verified countries compare side by side</a></p>
+        <p class="comparecta"><a href="../compare.html">Open the comparison tool → see how China compares side by side</a></p>
       </section>
     </article>
   </div>
