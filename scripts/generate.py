@@ -58,6 +58,7 @@ PAGE_SHELL = """<!doctype html>
     <nav class="main">
       <a href="../index.html" class="active">Browse</a>
       <a href="../compare.html">Compare</a>
+      <a href="../learn.html">Learn</a>
       <a href="../resources.html">Resources</a>
       <a href="../about.html">About</a>
     </nav>
