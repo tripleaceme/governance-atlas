@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learn — Governance Atlas</title>
-<meta name="description" content="A primer on global data privacy: the GDPR, Nigeria's NDPA, the US sectoral model, cross-border transfers, ethical governance — plus interactive knowledge checks.">
+<meta name="description" content="A primer on global data privacy: the GDPR, Nigeria's NDPA, the US sectoral model, cross-border transfers, ethical governance — and the milestones that shaped global privacy standards.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
 <link rel="stylesheet" href="assets/styles.css">
 <style>
@@ -16,57 +16,31 @@
   .concept p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; }
   .concept .go3 { display: inline-block; margin-top: 10px; font-size: 0.82rem; font-weight: 600; }
 
-  /* Timeline quiz */
-  .quizbox { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px; }
-  .quizbox .qhint { font-size: 0.85rem; color: var(--ink-faint); margin: 0 0 16px; }
-  .milestones { display: grid; gap: 10px; }
-  .mstone {
-    display: flex; gap: 14px; align-items: flex-start; text-align: left; width: 100%;
-    background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
-    padding: 13px 16px; cursor: pointer; font-family: var(--sans); color: var(--ink); font-size: 0.89rem;
+  /* Timeline */
+  .timeline { position: relative; max-width: 720px; padding-left: 4px; }
+  .tl-item { position: relative; display: flex; gap: 18px; padding-bottom: 26px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: ""; position: absolute; left: 15px; top: 34px; bottom: 0;
+    width: 2px; background: var(--line);
   }
-  .mstone:hover { border-color: var(--accent); }
-  .mstone .slot {
-    font-family: var(--mono); font-size: 0.78rem; font-weight: 700; min-width: 30px; height: 30px;
-    border-radius: 50%; border: 1.5px dashed var(--ink-faint); color: var(--ink-faint);
+  .tl-item:last-child::before { display: none; }
+  .tl-marker {
+    font-family: var(--mono); font-size: 0.78rem; font-weight: 700; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--accent); color: var(--tile-ink);
     display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    position: relative; z-index: 1;
   }
-  .mstone.picked { cursor: default; }
-  .mstone.picked .slot { border-style: solid; }
-  .mstone.good { border-color: var(--accent); background: var(--accent-soft); }
-  .mstone.good .slot { border-color: var(--accent); color: var(--accent); }
-  .mstone.bad { border-color: var(--danger); }
-  .mstone.bad .slot { border-color: var(--danger); color: var(--danger); }
-  .mstone b { color: var(--ink); }
-  .quizfoot { display: flex; gap: 14px; align-items: center; margin-top: 16px; flex-wrap: wrap; }
-  .qbtn {
-    font-size: 0.84rem; font-weight: 600; padding: 8px 18px; border-radius: 999px;
-    border: 1px solid var(--line); background: var(--panel); color: var(--ink-soft); cursor: pointer; font-family: var(--sans);
-  }
-  .qbtn:hover { border-color: var(--accent); color: var(--accent); }
-  .qresult { font-size: 0.88rem; font-weight: 600; }
-  .qresult.ok { color: var(--accent); }
-  .qresult.err { color: var(--danger); }
+  .tl-body { padding-top: 3px; }
+  .tl-year { font-family: var(--mono); font-size: 0.74rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; }
+  .tl-body h3 { margin: 2px 0 5px; font-family: var(--serif); font-size: 1.08rem; letter-spacing: -0.005em; }
+  .tl-body p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; max-width: 60ch; }
 
-  /* Multiple choice */
-  .choices { display: grid; gap: 10px; }
-  .choice {
-    display: flex; gap: 12px; align-items: center; text-align: left; width: 100%;
-    background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
-    padding: 12px 16px; cursor: pointer; font-family: var(--sans); color: var(--ink); font-size: 0.89rem;
-  }
-  .choice:hover { border-color: var(--accent); }
-  .choice .key {
-    font-family: var(--mono); font-size: 0.74rem; font-weight: 700; min-width: 26px; height: 26px;
-    border-radius: 6px; border: 1px solid var(--line); color: var(--ink-faint);
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
-  .choice.good { border-color: var(--accent); background: var(--accent-soft); }
-  .choice.good .key { border-color: var(--accent); color: var(--accent); }
-  .choice.bad { border-color: var(--danger); }
-  .choice.bad .key { border-color: var(--danger); color: var(--danger); }
-  .explain { font-size: 0.86rem; color: var(--ink-soft); margin: 14px 0 0; display: none; max-width: 66ch; }
-  .explain.show { display: block; }
+  /* In-practice Q&A block */
+  .qa { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; max-width: 760px; }
+  .qa .q { font-size: 0.98rem; font-weight: 700; margin: 0 0 10px; max-width: 66ch; }
+  .qa .a { margin: 0; font-size: 0.9rem; color: var(--ink-soft); line-height: 1.65; max-width: 66ch; }
+  .qa .a strong { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -96,7 +70,7 @@
   <div class="hero">
     <div class="eyebrow">Primer</div>
     <h1>Data privacy, from first principles</h1>
-    <p class="lawline">Five ideas that shape every privacy law on the atlas — then test yourself with the milestones that got us here.</p>
+    <p class="lawline">Five ideas that shape every privacy law on the atlas, and the regulatory milestones that got us here.</p>
   </div>
 
   <div class="learnzone">
@@ -137,25 +111,50 @@
   </div>
 
   <div class="learnzone">
-    <h2 class="sect">Knowledge check · The road to today</h2>
-    <p class="sect-sub">The development of data privacy is marked by legal milestones that shifted power back to the data subject.</p>
-    <div class="quizbox">
-      <p class="qhint">Click the milestones in chronological order — earliest first.</p>
-      <div class="milestones" id="milestones"></div>
-      <div class="quizfoot">
-        <button class="qbtn" id="qreset">Reset</button>
-        <span class="qresult" id="qresult"></span>
+    <h2 class="sect">The road to today</h2>
+    <p class="sect-sub">The development of data privacy is marked by significant legal milestones that have shifted power back to the data subject. These are the regulatory milestones, in the chronological order of the evolution of global privacy standards.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-marker">1</div>
+        <div class="tl-body">
+          <span class="tl-year">1980</span>
+          <h3>The OECD Privacy Guidelines</h3>
+          <p>The first international set of principles is established to harmonise data protection and facilitate transborder data flows.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">2</div>
+        <div class="tl-body">
+          <span class="tl-year">2016</span>
+          <h3>Adoption of the GDPR</h3>
+          <p>The European Union implements a comprehensive framework that sets the global benchmark for data protection and privacy rights.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">3</div>
+        <div class="tl-body">
+          <span class="tl-year">2018</span>
+          <h3>Passage of the California CCPA</h3>
+          <p>A significant regional law in the United States is enacted, granting consumers specific rights over their personal information.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">4</div>
+        <div class="tl-body">
+          <span class="tl-year">2023</span>
+          <h3>Enactment of the NDPA</h3>
+          <p>Nigeria establishes its primary data protection legislation, creating a unified legal framework for the processing of personal data.</p>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="learnzone">
-    <h2 class="sect">Knowledge check · Cross-border transfers</h2>
-    <p class="sect-sub">One question, straight from a compliance meeting.</p>
-    <div class="quizbox">
-      <p style="margin:0 0 16px; font-size:0.95rem; max-width:66ch"><strong>Which mechanism is primarily used to ensure legal compliance when transferring personal data from a GDPR-compliant region to a country lacking an adequacy decision?</strong></p>
-      <div class="choices" id="choices"></div>
-      <p class="explain" id="explain">Correct — <strong>Standard Contractual Clauses (SCCs)</strong> are the workhorse of international transfers: pre-approved contract terms that bind the receiving party to GDPR-level protections. Adequacy decisions remove the need for them, but where none exists, SCCs are the primary mechanism.</p>
+    <h2 class="sect">In practice · Cross-border transfers</h2>
+    <p class="sect-sub">A question that comes up in almost every compliance meeting.</p>
+    <div class="qa">
+      <p class="q">Which mechanism is primarily used to ensure legal compliance when transferring personal data from a GDPR-compliant region to a country lacking an adequacy decision?</p>
+      <p class="a"><strong>Signing Standard Contractual Clauses (SCCs).</strong> SCCs are the workhorse of international transfers — pre-approved contract terms that bind the receiving party to GDPR-level protections. An adequacy decision removes the need for them, but where none exists, SCCs are the primary mechanism for keeping the transfer lawful.</p>
     </div>
   </div>
 </div>
@@ -172,93 +171,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-  // ── Timeline ordering quiz ──────────────────
-  // order = correct chronological position (1-based).
-  const MILESTONES = [
-    { order: 1, title: "The OECD Privacy Guidelines", year: "1980", text: "The first international set of principles is established to harmonise data protection and facilitate transborder data flows." },
-    { order: 2, title: "Adoption of the GDPR", year: "2016", text: "The European Union implements a comprehensive framework that sets the global benchmark for data protection and privacy rights." },
-    { order: 3, title: "Passage of the California CCPA", year: "2018", text: "A significant regional law in the United States is enacted, granting consumers specific rights over their personal information." },
-    { order: 4, title: "Enactment of the NDPA", year: "2023", text: "Nigeria establishes its primary data protection legislation, creating a unified legal framework for the processing of personal data." }
-  ];
-  // Fixed shuffle (no Math.random so the page is stable): display order 3,1,4,2
-  const DISPLAY = [2, 0, 3, 1];
-
-  const milestonesEl = document.getElementById("milestones");
-  const qresult = document.getElementById("qresult");
-  let nextPick = 1;
-
-  function renderQuiz() {
-    nextPick = 1;
-    qresult.textContent = "";
-    qresult.className = "qresult";
-    milestonesEl.innerHTML = "";
-    DISPLAY.forEach(i => {
-      const m = MILESTONES[i];
-      const b = document.createElement("button");
-      b.className = "mstone";
-      b.innerHTML = '<span class="slot">?</span><span><b>' + m.title + "</b> — " + m.text + "</span>";
-      b.addEventListener("click", () => pick(b, m));
-      milestonesEl.appendChild(b);
-    });
-  }
-
-  function pick(btn, m) {
-    if (btn.classList.contains("picked")) return;
-    btn.classList.add("picked");
-    const slot = btn.querySelector(".slot");
-    slot.textContent = nextPick;
-    if (m.order === nextPick) {
-      btn.classList.add("good");
-      slot.textContent = nextPick + " · " + m.year;
-      btn.style.minWidth = "0";
-    } else {
-      btn.classList.add("bad");
-    }
-    nextPick++;
-    if (nextPick > MILESTONES.length) {
-      const wrong = milestonesEl.querySelectorAll(".mstone.bad").length;
-      if (wrong === 0) {
-        qresult.textContent = "Perfect — that's the story of modern privacy law in four steps.";
-        qresult.classList.add("ok");
-      } else {
-        qresult.textContent = wrong + " out of order — hit Reset and try again.";
-        qresult.classList.add("err");
-      }
-    }
-  }
-  document.getElementById("qreset").addEventListener("click", renderQuiz);
-  renderQuiz();
-
-  // ── Multiple choice ─────────────────────────
-  const CHOICES = [
-    { key: "A", text: "Relying on the data subject's implied consent", ok: false },
-    { key: "B", text: "Signing Standard Contractual Clauses (SCCs)", ok: true },
-    { key: "C", text: "Waiting for the destination country to pass a comprehensive law", ok: false },
-    { key: "D", text: "Anonymising nothing and transferring under a gentleman's agreement", ok: false }
-  ];
-  const choicesEl = document.getElementById("choices");
-  const explain = document.getElementById("explain");
-  let answered = false;
-  CHOICES.forEach(c => {
-    const b = document.createElement("button");
-    b.className = "choice";
-    b.innerHTML = '<span class="key">' + c.key + "</span><span>" + c.text + "</span>";
-    b.addEventListener("click", () => {
-      if (answered) return;
-      answered = true;
-      if (c.ok) {
-        b.classList.add("good");
-      } else {
-        b.classList.add("bad");
-        choicesEl.querySelectorAll(".choice").forEach((el, i) => { if (CHOICES[i].ok) el.classList.add("good"); });
-      }
-      explain.classList.add("show");
-    });
-    choicesEl.appendChild(b);
-  });
-</script>
 
 </body>
 </html>
