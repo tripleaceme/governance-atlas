@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Governance Atlas — Data protection law for every country</title>
+<meta name="description" content="Executive summaries, obligations, and official sources for data protection and privacy law in every country. Free and open source.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html" title="GovernanceAtlas home">
+      <div class="mark">Governance<span>Atlas</span></div>
+      <div class="tag">Data protection law, by country</div>
+    </a>
+    <nav class="main">
+      <a href="index.html" class="active">Browse</a>
+      <a href="compare.html">Compare</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="herogrid">
+      <div>
+        <div class="eyebrow">Free · Open source · Community-verified</div>
+        <h1 class="big">Every data protection law on Earth, in plain English.</h1>
+        <p class="lawline">Executive summaries you can take into a meeting, at-a-glance obligations, side-by-side country comparisons — with links to every official source.</p>
+
+        <div class="searchbig">
+          <input type="search" id="homesearch" placeholder="Search a country… e.g. Nigeria, Kenya, Ghana" aria-label="Search a country" autocomplete="off">
+          <div class="sugg" id="homesugg"></div>
+        </div>
+        <div class="popchips">
+          <span>Popular:</span>
+          <button onclick="openCountry('Nigeria')">Nigeria</button>
+          <button onclick="openCountry('Kenya')">Kenya</button>
+          <button onclick="openCountry('South Africa')">South Africa</button>
+          <button onclick="openCountry('Ghana')">Ghana</button>
+          <button onclick="openCountry('Egypt')">Egypt</button>
+        </div>
+      </div>
+
+      <div class="heroart" aria-hidden="true">
+        <div class="bgpanel"></div>
+        <div class="tilesdeco"><i class="ta"></i><i class="ta"></i><i class="td"></i><i class="ta"></i><i class="tn"></i></div>
+        <div class="mini card1" id="herocard"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">194</div><div class="lbl">Countries tracked</div></div>
+      <div class="stat s-active"><div class="num">138</div><div class="lbl">Active laws</div></div>
+      <div class="stat s-draft"><div class="num">19</div><div class="lbl">Bills in progress</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">Continents</div></div>
+    </div>
+  </div>
+
+  <div class="contzone">
+    <h2 class="sect">Browse by continent</h2>
+    <p class="sect-sub">Each bar shows legislative coverage — active laws, bills in progress, and countries with no comprehensive law yet.</p>
+    <div class="contgrid" id="contgrid"></div>
+  </div>
+
+  <div class="recentzone">
+    <h2 class="sect">Recently updated</h2>
+    <p class="sect-sub">Every change is tracked in the open — the full history lives on GitHub.</p>
+    <div class="rrow"><span class="rd">2026-08-01</span><span class="rt"><b>Nigeria</b> — added the NDPC's GAID implementation directive to official sources.</span></div>
+    <div class="rrow"><span class="rd">2026-07-24</span><span class="rt"><b>Malawi</b> — Data Protection Act 2024 summary published and verified.</span></div>
+    <div class="rrow"><span class="rd">2026-07-18</span><span class="rt"><b>Ethiopia</b> — new country page for Proclamation 1321/2024.</span></div>
+    <div class="rrow"><span class="rd">2026-07-09</span><span class="rt"><b>Africa</b> — Malabo Convention ratification tracker updated (16 states).</span></div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>GovernanceAtlas is a community-maintained reference. It is not legal advice — always verify against the official sources linked on each page.</div>
+    <div class="credits">
+      <a href="#" onclick="notify('GitHub repo — coming soon');return false;">Suggest a correction on GitHub ↗</a>
+      <span>Developed by <a href="https://ayoadeabel.tech" target="_blank" rel="noopener">Ayoade Adegbite</a></span>
+      <a class="li" href="https://www.linkedin.com/in/tripleaceme/" target="_blank" rel="noopener" aria-label="Ayoade Adegbite on LinkedIn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status"></div>
+
+<script>
+  const toast = document.getElementById("toast");
+  let toastTimer;
+  function notify(msg) {
+    clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.classList.add("show");
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+  }
+
+  // Countries with built pages get a URL; the rest show a notice.
+  const PAGES = {
+    "Nigeria": "countries/nigeria.html",
+    "Kenya": "countries/kenya.html",
+    "South Africa": "countries/south-africa.html"
+  };
+  function openCountry(name) {
+    if (PAGES[name]) { location.href = PAGES[name]; return; }
+    notify("Only Nigeria's page is built so far — " + name + " is on the roadmap.");
+  }
+
+  // ── Searchable countries: [name, status, law, continent] ──
+  // status: a = active law, d = draft/bill, n = none. Illustrative data.
+  const SEARCHABLE = [
+    ["Nigeria","a","NDPA 2023","Africa"], ["Kenya","a","DPA 2019","Africa"], ["South Africa","a","POPIA 2013","Africa"],
+    ["Ghana","a","DPA 2012 (Act 843)","Africa"], ["Egypt","a","Law 151 (2020)","Africa"], ["Morocco","a","Law 09-08 (2009)","Africa"],
+    ["Algeria","a","Law 18-07 (2018)","Africa"], ["Tunisia","a","Organic Act 2004-63","Africa"], ["Senegal","a","Law 2008-12","Africa"],
+    ["Côte d'Ivoire","a","Law 2013-450","Africa"], ["Uganda","a","DPPA 2019","Africa"], ["Tanzania","a","PDPA 2022","Africa"],
+    ["Rwanda","a","Law 058/2021","Africa"], ["Zambia","a","DPA 2021","Africa"], ["Zimbabwe","a","DPA 2021","Africa"],
+    ["Botswana","a","DPA 2018","Africa"], ["Mauritius","a","DPA 2017","Africa"], ["Ethiopia","a","Proclamation 1321 (2024)","Africa"],
+    ["Malawi","a","DPA 2024","Africa"], ["Somalia","a","DPA 2023","Africa"], ["Cameroon","d","Bill in progress","Africa"],
+    ["Namibia","d","Bill in progress","Africa"], ["Mozambique","d","Bill in progress","Africa"],
+    ["Germany","a","GDPR + BDSG","Europe"], ["France","a","GDPR + Loi Informatique","Europe"], ["United Kingdom","a","UK GDPR + DPA 2018","Europe"],
+    ["India","a","DPDP Act 2023","Asia"], ["Singapore","a","PDPA 2012","Asia"], ["Japan","a","APPI","Asia"],
+    ["Brazil","a","LGPD 2018","South America"], ["Argentina","a","Law 25.326","South America"],
+    ["Canada","a","PIPEDA","North America"], ["United States","d","State laws only (no federal)","North America"],
+    ["Australia","a","Privacy Act 1988","Oceania"], ["New Zealand","a","Privacy Act 2020","Oceania"]
+  ];
+
+  // ── Hero card: one country per continent, continent shown on the card ──
+  const HEROCARDS = [
+    { title: "Nigeria — NDPA 2023", continent: "Africa", rows: [["DPO required", "Yes"], ["Breach notification", "72 hours"], ["Max fine", "₦10m / 2%"], ["Last verified", "Aug 2026"]] },
+    { title: "Germany — GDPR + BDSG", continent: "Europe", rows: [["DPO required", "Yes"], ["Breach notification", "72 hours"], ["Max fine", "€20m / 4%"], ["Last verified", "Jul 2026"]] },
+    { title: "India — DPDP Act 2023", continent: "Asia", rows: [["DPO required", "Significant fiduciaries"], ["Breach notification", "Report to Board"], ["Max fine", "₹250 crore"], ["Last verified", "Jul 2026"]] },
+    { title: "Brazil — LGPD 2018", continent: "South America", rows: [["DPO required", "Yes"], ["Breach notification", "Reasonable time"], ["Max fine", "R$50m / 2%"], ["Last verified", "Jun 2026"]] },
+    { title: "Canada — PIPEDA", continent: "North America", rows: [["Accountable person", "Required"], ["Breach notification", "As soon as feasible"], ["Max fine", "C$100k / offence"], ["Last verified", "Jun 2026"]] },
+    { title: "Australia — Privacy Act 1988", continent: "Oceania", rows: [["Privacy officer", "Recommended"], ["Breach notification", "30 days (NDB)"], ["Max fine", "A$50m"], ["Last verified", "Jul 2026"]] }
+  ];
+  const herocard = document.getElementById("herocard");
+  function renderHerocard(c) {
+    herocard.innerHTML = '<div class="mhead"><span class="mdot"></span>' + c.title +
+      '<span class="mcont">' + c.continent + "</span></div>" +
+      c.rows.map((r, i) =>
+        '<div class="mrow"><span>' + r[0] + "</span><b" + (i === c.rows.length - 1 ? ' class="gold"' : "") + ">" + r[1] + "</b></div>"
+      ).join("");
+  }
+  renderHerocard(HEROCARDS[0]);
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let heroIdx = 0;
+    setInterval(() => {
+      herocard.classList.add("fading");
+      setTimeout(() => {
+        heroIdx = (heroIdx + 1) % HEROCARDS.length;
+        renderHerocard(HEROCARDS[heroIdx]);
+        herocard.classList.remove("fading");
+      }, 360);
+    }, 3400);
+  }
+
+  // ── Continent cards ──
+  // [name, countries, active, draft, none, href] — coverage is illustrative.
+  const CONTINENTS = [
+    ["Africa", 54, 37, 6, 11, "continents/africa.html"],
+    ["Europe", 44, 44, 0, 0, "continents/europe.html"],
+    ["Asia", 47, 33, 5, 9, "continents/asia.html"],
+    ["North America", 23, 14, 3, 6, "continents/north-america.html"],
+    ["South America", 12, 8, 1, 3, "continents/south-america.html"],
+    ["Oceania", 14, 2, 4, 8, "continents/oceania.html"]
+  ];
+  const contgrid = document.getElementById("contgrid");
+  CONTINENTS.forEach(([name, total, a, d, n, href]) => {
+    const el = document.createElement("a");
+    el.className = "cont";
+    el.href = href;
+    el.innerHTML =
+      "<h3>" + name + "</h3>" +
+      '<div class="meta">' + total + " countries</div>" +
+      '<div class="covbar">' +
+        '<span class="ba" style="flex:' + a + '"></span>' +
+        '<span class="bd" style="flex:' + d + '"></span>' +
+        '<span class="bn" style="flex:' + n + '"></span>' +
+      "</div>" +
+      '<div class="covlbl">' + a + " active · " + d + " drafts · " + n + " none</div>" +
+      '<div class="go2">Explore ' + name + " →</div>";
+    contgrid.appendChild(el);
+  });
+
+  // ── Country search with suggestions ──
+  const homesearch = document.getElementById("homesearch");
+  const homesugg = document.getElementById("homesugg");
+  function renderSugg() {
+    const q = homesearch.value.trim().toLowerCase();
+    homesugg.innerHTML = "";
+    if (!q) { homesugg.classList.remove("show"); return; }
+    const matches = SEARCHABLE.filter(c => c[0].toLowerCase().includes(q)).slice(0, 6);
+    if (!matches.length) { homesugg.classList.remove("show"); return; }
+    matches.forEach(([name, status, law, continent]) => {
+      const b = document.createElement("button");
+      b.innerHTML = '<span class="st ' + status + '"></span>' + name +
+        '<span class="slaw">' + law + " · " + continent + "</span>";
+      b.addEventListener("click", () => {
+        homesugg.classList.remove("show");
+        homesearch.value = "";
+        openCountry(name);
+      });
+      homesugg.appendChild(b);
+    });
+    homesugg.classList.add("show");
+  }
+  homesearch.addEventListener("input", renderSugg);
+  homesearch.addEventListener("blur", () => setTimeout(() => homesugg.classList.remove("show"), 180));
+  homesearch.addEventListener("focus", renderSugg);
+</script>
+
+</body>
+</html>

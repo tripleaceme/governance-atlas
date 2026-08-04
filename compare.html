@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare countries — Governance Atlas</title>
+<meta name="description" content="Compare data protection laws side by side — DPO requirements, breach deadlines, fines, and cross-border rules for any countries.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .pickrow { display: flex; gap: 12px; flex-wrap: wrap; margin: 26px 0 22px; }
+  .pick { display: flex; flex-direction: column; gap: 5px; }
+  .pick label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--ink-faint); font-weight: 700; }
+  .pick select {
+    min-width: 200px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--panel); color: var(--ink); font-size: 0.92rem; font-family: var(--sans);
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html" title="GovernanceAtlas home">
+      <div class="mark">Governance<span>Atlas</span></div>
+      <div class="tag">Data protection law, by country</div>
+    </a>
+    <nav class="main">
+      <a href="index.html">Browse</a>
+      <a href="compare.html" class="active">Compare</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumbs">
+    <a href="index.html">Home</a><span class="sep">›</span>
+    <span class="here">Compare</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Tool</div>
+    <h1>Compare countries</h1>
+    <p class="lawline">Pick up to three countries and see their data protection requirements side by side — the fastest way to scope a multi-country rollout.</p>
+  </div>
+
+  <div class="pickrow">
+    <div class="pick">
+      <label for="sel0">Country 1</label>
+      <select id="sel0"></select>
+    </div>
+    <div class="pick">
+      <label for="sel1">Country 2</label>
+      <select id="sel1"></select>
+    </div>
+    <div class="pick">
+      <label for="sel2">Country 3</label>
+      <select id="sel2"></select>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table id="cmptable"></table>
+  </div>
+  <p class="sect-sub" style="margin-top:14px">Values are illustrative pending verification — always confirm against the official sources on each country's page.</p>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>GovernanceAtlas is a community-maintained reference. It is not legal advice — always verify against the official sources linked on each page.</div>
+    <div class="credits">
+      <a href="#" onclick="notify('GitHub repo — coming soon');return false;">Suggest a correction on GitHub ↗</a>
+      <span>Developed by <a href="https://ayoadeabel.tech" target="_blank" rel="noopener">Ayoade Adegbite</a></span>
+      <a class="li" href="https://www.linkedin.com/in/tripleaceme/" target="_blank" rel="noopener" aria-label="Ayoade Adegbite on LinkedIn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status"></div>
+
+<script>
+  const toast = document.getElementById("toast");
+  let toastTimer;
+  function notify(msg) {
+    clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.classList.add("show");
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+  }
+
+  // Each record mirrors the future country YAML. Fields are illustrative.
+  const DATA = {
+    "Nigeria":        { continent: "Africa", law: "NDPA 2023", authority: "NDPC", dpo: "Yes — major importance", reg: "Yes — major importance", breach: "72 hours", fine: "₦10m or 2% of turnover", xborder: "Adequacy or safeguards", children: "Under 18" },
+    "Kenya":          { continent: "Africa", law: "DPA 2019", authority: "ODPC", dpo: "Designation encouraged", reg: "Yes — mandatory", breach: "72 hours", fine: "KES 5m or 1% of turnover", xborder: "Safeguards + proof to ODPC", children: "Under 18" },
+    "South Africa":   { continent: "Africa", law: "POPIA 2013", authority: "Information Regulator", dpo: "Information Officer — mandatory", reg: "IO registration only", breach: "As soon as reasonably possible", fine: "R10m or 10 years prison", xborder: "Adequacy, consent, or contract", children: "Under 18" },
+    "Ghana":          { continent: "Africa", law: "DPA 2012 (Act 843)", authority: "Data Protection Commission", dpo: "Data protection supervisor", reg: "Yes — mandatory", breach: "No general deadline", fine: "Fines + imprisonment", xborder: "Accountability principles", children: "Parental consent" },
+    "Egypt":          { continent: "Africa", law: "Law 151 (2020)", authority: "PDPC", dpo: "Yes", reg: "Licence required", breach: "72 hours", fine: "Up to EGP 5m", xborder: "Licence required", children: "Parental consent" },
+    "Germany":        { continent: "Europe", law: "GDPR + BDSG", authority: "BfDI + state DPAs", dpo: "Yes — thresholds", reg: "No", breach: "72 hours", fine: "€20m or 4% of turnover", xborder: "Adequacy or SCCs", children: "16" },
+    "United Kingdom": { continent: "Europe", law: "UK GDPR + DPA 2018", authority: "ICO", dpo: "Yes — thresholds", reg: "ICO fee", breach: "72 hours", fine: "£17.5m or 4% of turnover", xborder: "Adequacy or IDTA", children: "13" },
+    "France":         { continent: "Europe", law: "GDPR + Loi Informatique", authority: "CNIL", dpo: "Yes — thresholds", reg: "No", breach: "72 hours", fine: "€20m or 4% of turnover", xborder: "Adequacy or SCCs", children: "15" },
+    "India":          { continent: "Asia", law: "DPDP Act 2023", authority: "Data Protection Board", dpo: "Significant fiduciaries", reg: "No", breach: "Report to Board + users", fine: "Up to ₹250 crore", xborder: "Blacklist approach", children: "Under 18" },
+    "Singapore":      { continent: "Asia", law: "PDPA 2012", authority: "PDPC", dpo: "Yes — mandatory", reg: "No", breach: "3 days once notifiable", fine: "S$1m or 10% of turnover", xborder: "Comparable protection", children: "13" },
+    "Brazil":         { continent: "South America", law: "LGPD 2018", authority: "ANPD", dpo: "Yes — mandatory", reg: "No", breach: "Reasonable time", fine: "R$50m or 2% of turnover", xborder: "Adequacy or SCCs", children: "Parental consent" },
+    "Canada":         { continent: "North America", law: "PIPEDA 2000", authority: "OPC", dpo: "Accountable person", reg: "No", breach: "As soon as feasible", fine: "C$100k per offence", xborder: "Comparable protection", children: "Meaningful consent" },
+    "United States":  { continent: "North America", law: "State laws only", authority: "FTC + state AGs", dpo: "Varies by state", reg: "No", breach: "Varies (30–60 days)", fine: "Varies by state", xborder: "No general restriction", children: "13 (COPPA)" },
+    "Australia":      { continent: "Oceania", law: "Privacy Act 1988", authority: "OAIC", dpo: "No general requirement", reg: "No", breach: "30-day assessment (NDB)", fine: "A$50m or 30% of benefit", xborder: "APP 8 accountability", children: "No fixed age" }
+  };
+  const ROWS = [
+    ["Primary law", "law"], ["Supervisory authority", "authority"], ["DPO", "dpo"],
+    ["Registration", "reg"], ["Breach deadline", "breach"], ["Max penalty", "fine"],
+    ["Cross-border transfers", "xborder"], ["Children's data", "children"]
+  ];
+  const NAMES = Object.keys(DATA);
+  const DEFAULTS = ["Nigeria", "Kenya", "South Africa"];
+
+  const sels = [0, 1, 2].map(i => document.getElementById("sel" + i));
+  sels.forEach((sel, i) => {
+    if (i === 2) sel.add(new Option("— none —", ""));
+    NAMES.forEach(n => sel.add(new Option(n + " (" + DATA[n].continent + ")", n)));
+    sel.value = DEFAULTS[i];
+    sel.addEventListener("change", render);
+  });
+
+  function render() {
+    const chosen = sels.map(s => s.value).filter(Boolean);
+    const table = document.getElementById("cmptable");
+    table.innerHTML =
+      "<thead><tr><th>Requirement</th>" + chosen.map(n => "<th>" + n + "</th>").join("") + "</tr></thead>" +
+      "<tbody>" + ROWS.map(([label, key]) =>
+        "<tr><td>" + label + "</td>" + chosen.map(n => "<td>" + DATA[n][key] + "</td>").join("") + "</tr>"
+      ).join("") + "</tbody>";
+  }
+  render();
+</script>
+
+</body>
+</html>

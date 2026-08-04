@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South America — Governance Atlas</title>
+<meta name="description" content="Data protection law across 12 South American countries — Brazil's LGPD, Argentina and Uruguay's Convention 108 accession, and the Ibero-American standards.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="../index.html" title="GovernanceAtlas home">
+      <div class="mark">Governance<span>Atlas</span></div>
+      <div class="tag">Data protection law, by country</div>
+    </a>
+    <nav class="main">
+      <a href="../index.html" class="active">Browse</a>
+      <a href="../compare.html">Compare</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumbs">
+    <a href="../index.html">Home</a><span class="sep">›</span>
+    <span class="here">South America</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Continent</div>
+    <h1>South America</h1>
+    <p class="lawline">Latin America's privacy tradition runs deep — <strong>habeas data</strong> rights date back decades, Argentina and Uruguay hold <strong>EU adequacy</strong>, and Brazil's <strong>LGPD</strong> brought GDPR-scale enforcement to the region's largest economy.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">12</div><div class="lbl">Countries</div></div>
+      <div class="stat s-active"><div class="num" id="stat-a">–</div><div class="lbl">Active laws</div></div>
+      <div class="stat s-draft"><div class="num" id="stat-d">–</div><div class="lbl">Bills in progress</div></div>
+      <div class="stat s-none"><div class="num" id="stat-n">–</div><div class="lbl">No comprehensive law</div></div>
+    </div>
+  </div>
+
+  <div class="mapzone">
+    <h2 class="sect">Map of coverage</h2>
+    <p class="sect-sub">Each square is a country, placed by rough geography and coloured by legislative status. Click a country to open its page.</p>
+    <div class="tilemap" id="tilemap" style="grid-template-columns: repeat(5, minmax(30px, 120px));" role="group" aria-label="South America data protection status map"></div>
+    <div class="maplegend">
+      <span><i class="dot a"></i> Active law</span>
+      <span><i class="dot d"></i> Bill / draft in progress</span>
+      <span><i class="dot n"></i> No comprehensive law</span>
+    </div>
+    <div class="hoverbar" id="hoverbar">Hover a square to see the country and its law.</div>
+  </div>
+
+  <div class="fwzone">
+    <h2 class="sect">Continental &amp; regional frameworks</h2>
+    <p class="sect-sub">Laws and models that apply above the national level.</p>
+    <div class="frameworks">
+      <div class="fw model">
+        <span class="scope">RIPD · Model</span>
+        <h3>Ibero-American Data Protection Standards (2017)</h3>
+        <p>The Ibero-American Network's common standards — the template behind several of the region's modernised laws, including Ecuador's LOPDP.</p>
+        <a class="more" href="#" onclick="notify('Framework summaries — coming soon');return false;">Read summary →</a>
+      </div>
+      <div class="fw">
+        <span class="scope">Council of Europe · Binding treaty</span>
+        <h3>Convention 108 accessions</h3>
+        <p>Argentina and Uruguay are parties to Convention 108 — the reason both hold EU adequacy decisions, a rarity outside Europe.</p>
+        <a class="more" href="#" onclick="notify('Framework summaries — coming soon');return false;">Read summary →</a>
+      </div>
+      <div class="fw model">
+        <span class="scope">OAS · Model</span>
+        <h3>OAS Principles on Privacy and Data Protection (2021)</h3>
+        <p>The Organization of American States' updated principles for modernising national frameworks across the Americas.</p>
+        <a class="more" href="#" onclick="notify('Framework summaries — coming soon');return false;">Read summary →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="indexzone">
+    <h2 class="sect">All countries</h2>
+    <p class="sect-sub">Browse or search — the same data that powers the map.</p>
+    <div class="searchrow">
+      <input type="search" id="csearch" placeholder="Search countries… e.g. Brazil" aria-label="Search countries">
+      <div class="filterbtns">
+        <button class="fbtn on" data-f="all">All</button>
+        <button class="fbtn" data-f="a">Active</button>
+        <button class="fbtn" data-f="d">Drafts</button>
+        <button class="fbtn" data-f="n">None</button>
+      </div>
+    </div>
+    <div class="cgrid" id="cgrid"></div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>GovernanceAtlas is a community-maintained reference. It is not legal advice — always verify against the official sources linked on each page. <em>Map statuses are illustrative pending verification.</em></div>
+    <div class="credits">
+      <a href="#" onclick="notify('GitHub repo — coming soon');return false;">Suggest a correction on GitHub ↗</a>
+      <span>Developed by <a href="https://ayoadeabel.tech" target="_blank" rel="noopener">Ayoade Adegbite</a></span>
+      <a class="li" href="https://www.linkedin.com/in/tripleaceme/" target="_blank" rel="noopener" aria-label="Ayoade Adegbite on LinkedIn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status"></div>
+
+<script>
+  const toast = document.getElementById("toast");
+  let toastTimer;
+  function notify(msg) {
+    clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.classList.add("show");
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+  }
+
+  // [name, code, col, row, status, law] — illustrative pending verification.
+  const COUNTRIES = [
+    ["Colombia","CO",1,0,"a","Law 1581 (2012)"], ["Venezuela","VE",2,0,"n",""], ["Guyana","GY",3,0,"a","DPA (2023)"], ["Suriname","SR",4,0,"n",""],
+    ["Ecuador","EC",0,1,"a","LOPDP (2021)"], ["Peru","PE",1,1,"a","Law 29733 (2011)"], ["Brazil","BR",3,1,"a","LGPD (2018)"],
+    ["Bolivia","BO",1,2,"n",""], ["Paraguay","PY",2,2,"d","Bill in progress"],
+    ["Chile","CL",0,3,"a","Law 21.719 (2024)"], ["Argentina","AR",1,3,"a","Law 25.326 (2000)"], ["Uruguay","UY",2,3,"a","Law 18.331 (2008)"]
+  ];
+  const STATUS_LABEL = { a: "Active law", d: "Bill / draft in progress", n: "No comprehensive law" };
+
+  const PAGES = {};
+  function openCountry(name) {
+    if (PAGES[name]) { location.href = PAGES[name]; return; }
+    notify("Country pages for South America are on the roadmap — " + name + " will use the same layout as Nigeria.");
+  }
+
+  const tilemap = document.getElementById("tilemap");
+  const hoverbar = document.getElementById("hoverbar");
+  const cgrid = document.getElementById("cgrid");
+
+  COUNTRIES.forEach(([name, code, col, row, status, law]) => {
+    const t = document.createElement("button");
+    t.className = "tile " + status + (PAGES[name] ? " linked" : "");
+    t.style.gridColumn = col + 1;
+    t.style.gridRow = row + 1;
+    t.textContent = code;
+    t.title = name + " — " + STATUS_LABEL[status] + (law ? " · " + law : "");
+    t.setAttribute("aria-label", t.title);
+    t.addEventListener("mouseenter", () => {
+      hoverbar.innerHTML = "<b>" + name + "</b> — " + STATUS_LABEL[status] + (law ? " · " + law : "");
+    });
+    t.addEventListener("click", () => openCountry(name));
+    tilemap.appendChild(t);
+  });
+
+  const counts = { a: 0, d: 0, n: 0 };
+  COUNTRIES.forEach(c => counts[c[4]]++);
+  document.getElementById("stat-a").textContent = counts.a;
+  document.getElementById("stat-d").textContent = counts.d;
+  document.getElementById("stat-n").textContent = counts.n;
+
+  let activeFilter = "all";
+  function renderIndex() {
+    const q = document.getElementById("csearch").value.trim().toLowerCase();
+    cgrid.innerHTML = "";
+    COUNTRIES
+      .slice().sort((x, y) => x[0].localeCompare(y[0]))
+      .filter(c => (activeFilter === "all" || c[4] === activeFilter) && c[0].toLowerCase().includes(q))
+      .forEach(([name, code, col, row, status, law]) => {
+        const el = document.createElement("button");
+        el.className = "ccard";
+        el.innerHTML = '<span class="st ' + status + '"></span><span class="nm">' + name +
+          '<span class="law">' + (law || STATUS_LABEL[status]) + "</span></span><span class='go'>→</span>";
+        el.addEventListener("click", () => openCountry(name));
+        cgrid.appendChild(el);
+      });
+  }
+  document.getElementById("csearch").addEventListener("input", renderIndex);
+  document.querySelectorAll(".fbtn").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".fbtn").forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    activeFilter = b.dataset.f;
+    renderIndex();
+  }));
+  renderIndex();
+</script>
+
+</body>
+</html>

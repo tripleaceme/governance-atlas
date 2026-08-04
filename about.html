@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Governance Atlas</title>
+<meta name="description" content="Why Governance Atlas exists, how the data is maintained and verified, and how to contribute.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html" title="GovernanceAtlas home">
+      <div class="mark">Governance<span>Atlas</span></div>
+      <div class="tag">Data protection law, by country</div>
+    </a>
+    <nav class="main">
+      <a href="index.html">Browse</a>
+      <a href="compare.html">Compare</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html" class="active">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumbs">
+    <a href="index.html">Home</a><span class="sep">›</span>
+    <span class="here">About</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">About the project</div>
+    <h1>The open reference for data protection law</h1>
+    <p class="lawline">Privacy law shouldn't require a law degree to look up. Governance Atlas turns every country's data protection regime into a page you can read in six minutes — and trust.</p>
+  </div>
+
+  <div style="padding: 34px 0 10px">
+    <article style="max-width: 72ch">
+      <section>
+        <h2>Why this exists</h2>
+        <p>If you're expanding a product into Ghana tomorrow, you don't want to read a 120-page act. You want a trustworthy summary, the key obligations, links to the official law, and a way to compare it with the countries you already operate in. That resource didn't exist — especially for Africa, where a wave of new data protection laws has arrived in the last decade with far less coverage than the GDPR gets.</p>
+        <p>Governance Atlas exists for the startup founder scoping a new market, the analytics engineer asked "are we compliant?", the DPO managing five jurisdictions, and the student trying to understand how the world regulates data.</p>
+      </section>
+
+      <section>
+        <h2>How the data is maintained</h2>
+        <p>Every country is a structured data file in an open GitHub repository — the law, the regulator, the obligations, the sources, and a <strong>last-verified date</strong>. The website is generated from those files, so the country pages, comparison tables, and statistics can never drift apart.</p>
+        <p>When a law changes, anyone can open a pull request with the correction and a link to the official source. Every fact on this site should be traceable to a primary source — if you find one that isn't, that's a bug.</p>
+      </section>
+
+      <section>
+        <h2>What this is not</h2>
+        <p>Governance Atlas is <strong>not legal advice</strong>. Summaries are written for orientation, not for compliance decisions. Laws change, interpretations differ, and your situation is specific — always verify against the official sources linked on every page, and consult a qualified lawyer for decisions that matter.</p>
+      </section>
+
+      <section>
+        <h2>Who builds it</h2>
+        <p>Governance Atlas is built by <a href="https://ayoadeabel.tech" target="_blank" rel="noopener"><strong>Ayoade Adegbite</strong></a>, a data engineer working across analytics engineering and data governance. You can find them on <a href="https://www.linkedin.com/in/tripleaceme/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+        <p>Contributions are welcome — country verifications, corrections, translations, and new official sources are the most valuable. The GitHub repository link will appear here at launch.</p>
+      </section>
+    </article>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>GovernanceAtlas is a community-maintained reference. It is not legal advice — always verify against the official sources linked on each page.</div>
+    <div class="credits">
+      <a href="#" onclick="notify('GitHub repo — coming soon');return false;">Suggest a correction on GitHub ↗</a>
+      <span>Developed by <a href="https://ayoadeabel.tech" target="_blank" rel="noopener">Ayoade Adegbite</a></span>
+      <a class="li" href="https://www.linkedin.com/in/tripleaceme/" target="_blank" rel="noopener" aria-label="Ayoade Adegbite on LinkedIn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status"></div>
+
+<script>
+  const toast = document.getElementById("toast");
+  let toastTimer;
+  function notify(msg) {
+    clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.classList.add("show");
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+  }
+</script>
+
+</body>
+</html>
