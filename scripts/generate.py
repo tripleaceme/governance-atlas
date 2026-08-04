@@ -76,7 +76,7 @@ PAGE_SHELL = """<!doctype html>
   </div>
 
   <div class="hero">
-    <div class="eyebrow">{continent}</div>
+    <div class="plate">Plate {code} · {continent}</div>
     <h1>{name}</h1>
     <p class="lawline">{lawline}</p>
     <div class="chips">
@@ -175,7 +175,7 @@ def render_stub(c):
     return PAGE_SHELL.format(
         title=esc(c["name"]), meta_desc=esc(f'Data protection law in {c["name"]} — status and updates.'),
         continent=esc(c["continent"]), continent_slug=c["continent_slug"], name=esc(c["name"]),
-        lawline=stub_lawline(c), chips=chips, facts=facts, article=article,
+        code=esc(c["code"]), lawline=stub_lawline(c), chips=chips, facts=facts, article=article,
     )
 
 
@@ -267,7 +267,7 @@ def render_full(c, d):
         title=esc(c["name"]) + (f' — {esc(d["law"])}' if d.get("law") else ""),
         meta_desc=esc(f'Data protection law in {c["name"]}: ' + (d.get("law") or "status, landscape, and sources") + " — plain-English summary, obligations, and official sources."),
         continent=esc(c["continent"]), continent_slug=c["continent_slug"], name=esc(c["name"]),
-        lawline=full_lawline(c, d), chips=chips, facts=facts, article=article,
+        code=esc(c["code"]), lawline=full_lawline(c, d), chips=chips, facts=facts, article=article,
     )
 
 
