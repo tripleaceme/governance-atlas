@@ -38,30 +38,6 @@
     <a class="cta" href="#continents">Open the Atlas</a>
   </div>
 
-  <div class="specimenzone">
-    <div class="specgrid">
-      <div class="mapcol">
-        <div class="mapfilters" id="mapfilters"></div>
-        <div class="worldmap" id="worldmap" role="img" aria-label="World map of data protection law status by country"></div>
-        <div class="maplegend">
-          <span><i class="dot a"></i> Active law</span>
-          <span><i class="dot d"></i> Bill / draft in progress</span>
-          <span><i class="dot n"></i> No comprehensive law</span>
-        </div>
-        <div class="hoverbar" id="maphover">Hover a country — click to open its plate.</div>
-      </div>
-
-      <div class="sidecol">
-        <div class="stats grid2">
-          <div class="stat"><div class="num">194</div><div class="lbl">Countries tracked</div></div>
-          <div class="stat s-active"><div class="num">151</div><div class="lbl">Active laws</div></div>
-          <div class="stat s-draft"><div class="num">20</div><div class="lbl">Bills in progress</div></div>
-          <div class="stat"><div class="num">6</div><div class="lbl">Continents</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="stepzone">
     <h2 class="sect">How it works</h2>
     <p class="sect-sub">Three steps from question to answer — no legal background needed.</p>
@@ -74,7 +50,15 @@
 
   <div class="contzone" id="continents">
     <h2 class="sect">Browse by continent</h2>
-    <p class="sect-sub">Search a country directly, or explore the coverage bars — active laws, bills in progress, and countries with no comprehensive law yet.</p>
+    <p class="sect-sub">Search a country directly, or explore the map — sea-blue for active laws, ochre for bills in progress, hatched where no comprehensive law exists yet.</p>
+
+    <div class="stats bare">
+      <div class="stat"><div class="num">194</div><div class="lbl">Countries tracked</div></div>
+      <div class="stat s-active"><div class="num">151</div><div class="lbl">Active laws</div></div>
+      <div class="stat s-draft"><div class="num">20</div><div class="lbl">Bills in progress</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">Continents</div></div>
+    </div>
+
     <div class="findrow">
       <div class="searchbig">
         <input type="search" id="homesearch" placeholder="Which country do you need? e.g. Nigeria, Germany, Brazil" aria-label="Search a country" autocomplete="off">
@@ -92,7 +76,28 @@
         <button onclick="openCountry('Australia')">Australia</button>
       </div>
     </div>
-    <div class="contgrid" id="contgrid"></div>
+
+    <div class="browsebar">
+      <div class="viewtoggle">
+        <button class="fbtn on" id="viewmap">Map</button>
+        <button class="fbtn" id="viewcards">Cards</button>
+      </div>
+      <div class="mapfilters" id="mapfilters"></div>
+    </div>
+
+    <div id="mapview">
+      <div class="worldmap" id="worldmap" role="img" aria-label="World map of data protection law status by country"></div>
+      <div class="maplegend">
+        <span><i class="dot a"></i> Active law</span>
+        <span><i class="dot d"></i> Bill / draft in progress</span>
+        <span><i class="dot n"></i> No comprehensive law</span>
+      </div>
+      <div class="hoverbar" id="maphover">Hover a country — click to open its plate.</div>
+    </div>
+
+    <div id="cardview" hidden>
+      <div class="contgrid" id="contgrid"></div>
+    </div>
   </div>
 
   <div class="audzone">
@@ -232,6 +237,22 @@
   homesearch.addEventListener("blur", () => setTimeout(() => homesugg.classList.remove("show"), 180));
   homesearch.addEventListener("focus", renderSugg);
 
+  // ── Map / Cards view toggle ─────────────────
+  const mapviewEl = document.getElementById("mapview");
+  const cardviewEl = document.getElementById("cardview");
+  const btnMap = document.getElementById("viewmap");
+  const btnCards = document.getElementById("viewcards");
+  const mapfilters = document.getElementById("mapfilters");
+  function setView(showMap) {
+    mapviewEl.hidden = !showMap;
+    cardviewEl.hidden = showMap;
+    mapfilters.style.display = showMap ? "" : "none";
+    btnMap.classList.toggle("on", showMap);
+    btnCards.classList.toggle("on", !showMap);
+  }
+  btnMap.addEventListener("click", () => setView(true));
+  btnCards.addEventListener("click", () => setView(false));
+
   // ── Interactive world map ───────────────────
   const STATUS_LABEL = { a: "Active law", d: "Bill / draft in progress", n: "No comprehensive law" };
   const MAP_CONTINENTS = [
@@ -239,13 +260,40 @@
     ["north-america", "N. America"], ["south-america", "S. America"], ["oceania", "Oceania"]
   ];
   const maphover = document.getElementById("maphover");
-  const mapfilters = document.getElementById("mapfilters");
   let mapEls = [];
+  let svgEl = null, origVB = null;
+
+  function parseVB(s) { return s.split(/[\s,]+/).map(Number); }
+  function animateViewBox(target) {
+    const from = parseVB(svgEl.getAttribute("viewBox"));
+    const start = performance.now(), dur = 380;
+    function step(t) {
+      const k = Math.min(1, (t - start) / dur), e = k * (2 - k);
+      svgEl.setAttribute("viewBox", from.map((v, i) => v + (target[i] - v) * e).join(" "));
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
 
   function applyMapFilter(cont) {
-    mapEls.forEach(({ el, rec }) => {
-      el.classList.toggle("dimmed", cont !== "all" && rec[3] !== cont);
+    let x1 = 1e9, y1 = 1e9, x2 = -1e9, y2 = -1e9, found = false;
+    mapEls.forEach(({ el, rec, label }) => {
+      const inCont = rec[3] === cont;
+      el.classList.toggle("dimmed", cont !== "all" && !inCont);
+      if (label) label.classList.toggle("show", cont !== "all" && inCont);
+      if (inCont) {
+        const b = el.getBBox();
+        if (b.width || b.height) {
+          found = true;
+          x1 = Math.min(x1, b.x); y1 = Math.min(y1, b.y);
+          x2 = Math.max(x2, b.x + b.width); y2 = Math.max(y2, b.y + b.height);
+        }
+      }
     });
+    if (!svgEl) return;
+    if (cont === "all" || !found) { animateViewBox(origVB); return; }
+    const pad = Math.max(x2 - x1, y2 - y1) * 0.06;
+    animateViewBox([x1 - pad, y1 - pad, (x2 - x1) + 2 * pad, (y2 - y1) + 2 * pad]);
   }
 
   MAP_CONTINENTS.forEach(([slug, label], i) => {
@@ -260,15 +308,32 @@
     mapfilters.appendChild(b);
   });
 
+  // Label anchor: for multi-part countries (US + Alaska, archipelagos),
+  // anchor the code label on the largest landmass, not the bbox centre.
+  function anchorBox(el) {
+    if (el.tagName.toLowerCase() === "g") {
+      let best = null, bestA = 0;
+      el.querySelectorAll("path").forEach(p => {
+        const b = p.getBBox(), a = b.width * b.height;
+        if (a > bestA) { bestA = a; best = b; }
+      });
+      if (best) return best;
+    }
+    return el.getBBox();
+  }
+
   fetch("assets/world.svg")
     .then(r => r.text())
     .then(text => {
       const worldmap = document.getElementById("worldmap");
       worldmap.innerHTML = text;
       const svg = worldmap.querySelector("svg");
+      svgEl = svg;
+      origVB = parseVB(svg.getAttribute("viewBox"));
       svg.insertAdjacentHTML("afterbegin",
         '<defs><pattern id="hatchmap" width="5" height="5" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">' +
         '<line x1="0" y1="0" x2="0" y2="5" stroke="var(--hatch)" stroke-width="1.8"/></pattern></defs>');
+      const SVGNS = "http://www.w3.org/2000/svg";
       Object.entries(MAP_DATA).forEach(([code, rec]) => {
         const el = svg.querySelector("#" + code.toLowerCase());
         if (!el) return;
@@ -277,10 +342,17 @@
           maphover.innerHTML = "<b>" + rec[0] + "</b> — " + STATUS_LABEL[rec[2]] + (rec[4] ? " · " + rec[4] : "");
         });
         el.addEventListener("click", () => { location.href = "countries/" + rec[1] + ".html"; });
-        mapEls.push({ el, rec });
+        const b = anchorBox(el);
+        const t = document.createElementNS(SVGNS, "text");
+        t.setAttribute("x", b.x + b.width / 2);
+        t.setAttribute("y", b.y + b.height / 2);
+        t.setAttribute("class", "clabel" + (rec[2] === "n" ? " n" : ""));
+        t.textContent = code;
+        svg.appendChild(t);
+        mapEls.push({ el, rec, label: t });
       });
     })
-    .catch(() => { maphover.textContent = "The map needs the site to be served over HTTP — open the country index below instead."; });
+    .catch(() => { setView(false); });
 </script>
 
 </body>

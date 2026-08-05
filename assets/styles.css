@@ -231,10 +231,13 @@ td .n2 { color: var(--ink-faint); }
   min-height: calc(100vh - 96px);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
-.specimenzone { padding: 76px 0 72px; border-bottom: 1px solid var(--line); }
-.specgrid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 44px; align-items: stretch; }
-@media (max-width: 940px) { .specgrid { grid-template-columns: 1fr; } }
-.mapfilters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+/* Browse section: view toggle + map */
+.browsebar { display: flex; gap: 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin: 0 0 22px; }
+.viewtoggle { display: flex; }
+.viewtoggle .fbtn:first-child { border-right-width: 0; }
+.mapfilters { display: flex; gap: 6px; flex-wrap: wrap; }
+.mapfilters .fbtn { white-space: nowrap; }
+@media (min-width: 860px) { .mapfilters { flex-wrap: nowrap; } }
 .worldmap { background: transparent; padding: 0; }
 .worldmap svg { width: 100%; height: auto; display: block; }
 .worldmap svg path { fill: var(--map-base); stroke: var(--panel); stroke-width: 0.5; }
@@ -245,12 +248,16 @@ td .n2 { color: var(--ink-faint); }
 .worldmap .st-n, .worldmap .st-n path { fill: url(#hatchmap); }
 .worldmap .cty:hover, .worldmap .cty:hover path { fill: var(--accent); }
 .worldmap .dimmed, .worldmap .dimmed path { opacity: 0.15; }
-.sidecol { display: flex; flex-direction: column; }
-.sidecol .stats { margin: 0; flex: 1; }
-.stats.grid2 { display: grid; grid-template-columns: 1fr 1fr; border: 0; box-shadow: none; background: transparent; }
-.stats.grid2 .stat { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; }
-.stats.grid2 .stat:nth-child(2n) { border-right: 0; }
-.stats.grid2 .stat:nth-child(n+3) { border-bottom: 0; }
+.worldmap .clabel {
+  font-family: var(--mono); font-size: 7px; font-weight: 700; letter-spacing: 0.5px;
+  fill: var(--tile-ink); text-anchor: middle; dominant-baseline: middle;
+  pointer-events: none; opacity: 0; transition: opacity 0.25s ease;
+}
+.worldmap .clabel.n { fill: var(--ink-soft); }
+.worldmap .clabel.show { opacity: 1; }
+.stats.bare { border: 0; box-shadow: none; background: transparent; margin: 0 0 36px; }
+.stats.bare .stat { flex: 0 0 auto; padding: 4px 28px 4px 0; margin-right: 28px; border-right: 1px solid var(--line); }
+.stats.bare .stat:last-child { border-right: 0; margin-right: 0; }
 .hero.ceremony h1 { margin-left: auto; margin-right: auto; }
 .hero.ceremony .lawline { margin-left: auto; margin-right: auto; font-style: italic; color: var(--green); }
 .plate { font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; font-weight: 700; }
