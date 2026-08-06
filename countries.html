@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All countries — Governance Atlas</title>
+<meta name="description" content="Every country's data protection law: browse by continent or search all 194 countries — status, primary law, and links to each country's brief.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='24' cy='24' r='22' fill='none' stroke='%23a23c2a' stroke-width='1.5' stroke-dasharray='2 3'/><circle cx='24' cy='24' r='17' fill='none' stroke='%2322304a' stroke-width='2.5'/><ellipse cx='24' cy='24' rx='8' ry='17' fill='none' stroke='%2322304a' stroke-width='1.6'/><line x1='7' y1='24' x2='41' y2='24' stroke='%2322304a' stroke-width='1.6'/><line x1='24' y1='7' x2='24' y2='41' stroke='%2322304a' stroke-width='1.6'/><circle cx='21' cy='27' r='3' fill='%23a23c2a'/></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html" title="GovernanceAtlas home">
+      <svg class="logomark" width="36" height="36" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 3"/><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="2"/><ellipse cx="24" cy="24" rx="8" ry="17" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="7" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="1.4"/><line x1="24" y1="7" x2="24" y2="41" stroke="currentColor" stroke-width="1.4"/><circle cx="21" cy="27" r="2.4" fill="var(--accent)"/></svg>
+      <div>
+        <div class="mark">Governance<span>·</span>Atlas</div>
+        <div class="tag">Data protection law, by country</div>
+      </div>
+    </a>
+    <nav class="main">
+      <a href="index.html" class="active">Atlas</a>
+      <a href="compare.html">Compare</a>
+      <a href="learn.html">Learn</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumbs">
+    <a href="index.html">Home</a><span class="sep">›</span>
+    <span class="here">All countries</span>
+  </div>
+
+  <div class="hero">
+    <div class="plate">Index · The World</div>
+    <h1>Every country in the atlas</h1>
+    <p class="lawline">Start with a continent to see how the region is regulated, or jump straight to a country from the full index below.</p>
+  </div>
+
+  <div class="contzone">
+    <h2 class="sect">By continent</h2>
+    <p class="sect-sub">How each region is regulated today — active laws, bills in progress, and countries with no comprehensive law yet.</p>
+    <div class="contgrid" id="contgrid"></div>
+  </div>
+
+  <div class="indexzone">
+    <h2 class="sect">All countries, A–Z</h2>
+    <p class="sect-sub">194 countries — search by name, or filter by status.</p>
+    <div class="findrow">
+      <div class="searchbig">
+        <input type="search" id="csearch" placeholder="Search a country… e.g. Nigeria, Germany, Brazil" aria-label="Search countries" autocomplete="off">
+      </div>
+      <div class="browsebar">
+        <div class="filterbtns">
+          <button class="fbtn on" data-f="all">All</button>
+          <button class="fbtn" data-f="a">Active law</button>
+          <button class="fbtn" data-f="d">Bills</button>
+          <button class="fbtn" data-f="n">No law</button>
+        </div>
+        <div class="filterbtns" id="contfilters"></div>
+      </div>
+    </div>
+    <p class="resultcount" id="resultcount"></p>
+    <div class="cgrid" id="cgrid"></div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>GovernanceAtlas is a community-maintained reference. It is not legal advice — always verify against the official sources linked on each page.</div>
+    <div class="credits">
+      <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">Suggest a correction on GitHub ↗</a>
+      <span>Developed by <a href="https://ayoadeabel.tech" target="_blank" rel="noopener">Ayoade Adegbite</a></span>
+      <a class="li" href="https://www.linkedin.com/in/tripleaceme/" target="_blank" rel="noopener" aria-label="Ayoade Adegbite on LinkedIn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/index-data.js"></script>
+<script>
+  const STATUS_LABEL = { a: "Active law", d: "Bill / draft in progress", n: "No comprehensive law" };
+
+  // ── Continent cards ──
+  const contgrid = document.getElementById("contgrid");
+  CONTINENTS.forEach(c => {
+    const el = document.createElement("a");
+    el.className = "cont";
+    el.href = "continents/" + c.slug + ".html";
+    el.innerHTML =
+      "<h3>" + c.name + "</h3>" +
+      '<div class="meta">' + c.total + " countries</div>" +
+      '<div class="covbar">' +
+        '<span class="ba" style="flex:' + c.active + '"></span>' +
+        '<span class="bd" style="flex:' + c.draft + '"></span>' +
+        '<span class="bn" style="flex:' + c.none + '"></span>' +
+      "</div>" +
+      '<div class="covlbl">' + c.active + " active · " + c.draft + " bills · " + c.none + " none</div>" +
+      '<div class="go2">Explore ' + c.name + " →</div>";
+    contgrid.appendChild(el);
+  });
+
+  // ── A–Z index with search + filters ──
+  const cgrid = document.getElementById("cgrid");
+  const resultcount = document.getElementById("resultcount");
+  const csearch = document.getElementById("csearch");
+  const contfilters = document.getElementById("contfilters");
+  let fStatus = "all", fCont = "all";
+
+  const contBtns = [["all", "Everywhere"]].concat(CONTINENTS.map(c => [c.name, c.name]));
+  contBtns.forEach(([val, label], i) => {
+    const b = document.createElement("button");
+    b.className = "fbtn" + (i === 0 ? " on" : "");
+    b.textContent = label;
+    b.addEventListener("click", () => {
+      contfilters.querySelectorAll(".fbtn").forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+      fCont = val;
+      render();
+    });
+    contfilters.appendChild(b);
+  });
+
+  document.querySelectorAll(".filterbtns [data-f]").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".filterbtns [data-f]").forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    fStatus = b.dataset.f;
+    render();
+  }));
+
+  function render() {
+    const q = csearch.value.trim().toLowerCase();
+    const rows = COUNTRY_INDEX.filter(r =>
+      (fStatus === "all" || r.status === fStatus) &&
+      (fCont === "all" || r.continent === fCont) &&
+      (!q || r.name.toLowerCase().includes(q) || (r.law || "").toLowerCase().includes(q))
+    );
+    cgrid.innerHTML = "";
+    rows.forEach(r => {
+      const a = document.createElement("a");
+      a.className = "ccard";
+      a.href = "countries/" + r.slug + ".html";
+      a.innerHTML = '<span class="st ' + r.status + '"></span><span class="nm">' + r.name +
+        '<span class="law">' + (r.law || STATUS_LABEL[r.status]) + "</span></span><span class='go'>→</span>";
+      cgrid.appendChild(a);
+    });
+    resultcount.textContent = rows.length + (rows.length === 1 ? " country" : " countries");
+  }
+  csearch.addEventListener("input", render);
+  render();
+</script>
+
+</body>
+</html>
