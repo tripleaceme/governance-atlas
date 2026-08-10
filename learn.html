@@ -9,26 +9,28 @@
 <link rel="stylesheet" href="assets/styles.css">
 <style>
   .learnzone { padding: 64px 0 12px; }
-  .prose { max-width: 68ch; margin: 0 auto; }
-  .prose p { color: var(--ink-soft); margin: 0 0 16px; font-size: 1rem; line-height: 1.75; }
+  /* Full-width prose, set in columns so lines stay readable */
+  .prose { columns: 2; column-gap: 56px; }
+  @media (max-width: 820px) { .prose { columns: 1; } }
+  .prose p { color: var(--ink-soft); margin: 0 0 16px; font-size: 1rem; line-height: 1.75; break-inside: avoid; }
   .prose p strong { color: var(--ink); }
 
   /* Applies-to-you checklist */
-  .triggers { max-width: 760px; margin: 0 auto; }
+  .triggers { width: 100%; }
   .trigger { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
   .trigger:last-of-type { border-bottom: 0; }
   .trigger .tick { color: var(--green); font-weight: 700; flex-shrink: 0; }
   .trigger p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
   .trigger b { color: var(--ink); }
   .verdict {
-    max-width: 760px; margin: 24px auto 0; padding: 18px 22px;
+    margin: 24px 0 0; padding: 20px 24px;
     background: var(--panel); border: 1.5px solid var(--ink); box-shadow: 6px 6px 0 var(--shadow);
     font-size: 0.95rem; color: var(--ink-soft);
   }
   .verdict strong { color: var(--ink); }
 
   /* Glossary */
-  .glossary { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 40px; max-width: 900px; margin: 0 auto; }
+  .glossary { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 0 44px; }
   .term { padding: 15px 0; border-bottom: 1px solid var(--line); }
   .term dt { font-family: var(--display); font-weight: 700; font-size: 0.98rem; color: var(--ink); margin: 0 0 4px; }
   .term dd { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.62; }
@@ -41,7 +43,7 @@
   .person p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.62; }
 
   /* First-steps ladder */
-  .ladder { max-width: 780px; margin: 0 auto; }
+  .ladder { width: 100%; }
   .rung { display: flex; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
   .rung:last-child { border-bottom: 0; }
   .rung .step-n {
@@ -56,22 +58,6 @@
     color: var(--green); margin-left: auto; flex-shrink: 0; padding-top: 8px; white-space: nowrap;
   }
   @media (max-width: 620px) { .rung .effort { display: none; } }
-
-  /* Timeline */
-  .timeline { position: relative; max-width: 720px; margin: 0 auto; padding-left: 4px; }
-  .tl-item { position: relative; display: flex; gap: 18px; padding-bottom: 26px; text-align: left; }
-  .tl-item:last-child { padding-bottom: 0; }
-  .tl-item::before { content: ""; position: absolute; left: 15px; top: 34px; bottom: 0; width: 2px; background: var(--line); }
-  .tl-item:last-child::before { display: none; }
-  .tl-marker {
-    font-family: var(--mono); font-size: 0.78rem; font-weight: 700; width: 32px; height: 32px;
-    border-radius: 50%; background: var(--accent); color: var(--tile-ink);
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1;
-  }
-  .tl-body { padding-top: 3px; }
-  .tl-year { font-family: var(--mono); font-size: 0.74rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; }
-  .tl-body h3 { margin: 2px 0 5px; font-family: var(--display); font-size: 1.08rem; font-weight: 700; }
-  .tl-body p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; max-width: 60ch; }
 </style>
 </head>
 <body>
@@ -246,45 +232,6 @@
           <p>Vendor agreements, transfer mechanisms such as SCCs, DPIAs for high-risk projects, registration and audits where required. By now you will know which of these you actually need.</p>
         </div>
         <span class="effort">Ongoing</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="learnzone">
-    <h2 class="sect">The road to today</h2>
-    <p class="sect-sub">Modern privacy law arrived in steps, each one shifting power further towards the individual.</p>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-marker">1</div>
-        <div class="tl-body">
-          <span class="tl-year">1980</span>
-          <h3>The OECD Privacy Guidelines</h3>
-          <p>The first international set of principles is established to harmonise data protection and facilitate transborder data flows.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-marker">2</div>
-        <div class="tl-body">
-          <span class="tl-year">2016</span>
-          <h3>Adoption of the GDPR</h3>
-          <p>The European Union implements a comprehensive framework that sets the global benchmark for data protection and privacy rights.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-marker">3</div>
-        <div class="tl-body">
-          <span class="tl-year">2018</span>
-          <h3>Passage of the California CCPA</h3>
-          <p>A significant regional law in the United States is enacted, granting consumers specific rights over their personal information.</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-marker">4</div>
-        <div class="tl-body">
-          <span class="tl-year">2023</span>
-          <h3>Enactment of the NDPA</h3>
-          <p>Nigeria establishes its primary data protection legislation, creating a unified legal framework for the processing of personal data.</p>
-        </div>
       </div>
     </div>
   </div>
