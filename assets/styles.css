@@ -280,6 +280,15 @@ td .n2 { color: var(--ink-faint); }
   color: var(--ink); background: transparent; cursor: pointer; font-family: var(--display);
 }
 .cta:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+.ctarow { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.cta.ghost { border-color: var(--line); color: var(--green); }
+.cta.ghost:hover { background: transparent; border-color: var(--green); color: var(--green); }
+/* Proof bar — trust signals at the moment of doubt, right under the CTA */
+.stats.proof { border: 0; box-shadow: none; background: transparent; margin: 48px auto 0; max-width: 800px; }
+.stats.proof .stat { flex: 1 1 0; padding: 2px 22px; border-right: 1px solid var(--line); border-bottom: 0; text-align: center; }
+.stats.proof .stat:last-child { border-right: 0; }
+.stats.proof .num { font-size: 1.75rem; }
+.stats.proof .lbl { font-size: 0.64rem; margin-top: 3px; }
 .searchbig.center { margin-left: auto; margin-right: auto; }
 .popchips.center { justify-content: center; margin-bottom: 34px; }
 .herostrip { display: flex; justify-content: center; gap: 8px; margin: 56px 0 0; flex-wrap: wrap; }
