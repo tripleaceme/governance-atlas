@@ -87,6 +87,10 @@ nav.main a:hover { text-decoration: none; color: var(--ink); }
 .hero .eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
 .hero h1 { font-family: var(--display); font-size: clamp(1.9rem, 4.5vw, 2.9rem); line-height: 1.16; margin: 0 auto 16px; letter-spacing: -0.005em; font-weight: 700; text-wrap: balance; }
 .hero .lawline { color: var(--ink-soft); font-size: 1.05rem; max-width: 60ch; margin: 0 auto 20px; }
+/* Multi-paragraph hero intros: wider measure, real paragraph rhythm */
+.heroprose { max-width: 86ch; margin: 0 auto 18px; }
+.heroprose p { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 12px; }
+.heroprose p:last-child { margin-bottom: 0; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .hero .chips { justify-content: center; }
 .chip { font-size: 0.7rem; font-weight: 700; padding: 5px 13px; border: 1px solid var(--line); color: var(--ink-soft); background: var(--panel); letter-spacing: 0.08em; text-transform: uppercase; }
