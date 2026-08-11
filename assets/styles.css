@@ -410,3 +410,10 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
   max-width: 90vw; text-align: center; font-family: var(--serif);
 }
 #toast.show { opacity: 1; }
+
+/* ── A/B design switch banner ────────────── */
+.vbanner {
+  background: var(--ink); color: var(--paper); text-align: center; font-size: 0.78rem;
+  padding: 9px 20px; letter-spacing: 0.06em; font-family: var(--sans);
+}
+.vbanner a { color: var(--gold); font-weight: 700; }
