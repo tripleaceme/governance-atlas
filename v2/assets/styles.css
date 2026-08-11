@@ -264,7 +264,7 @@ article p strong { color: var(--ink); }
 .obl li { display: flex; gap: 16px; background: var(--violet-pale); border-radius: var(--r); padding: 18px 22px; font-size: 0.96rem; color: var(--ink-soft); }
 .obl .n { font-family: var(--display); font-weight: 800; color: var(--violet); flex-shrink: 0; }
 .obl b { color: var(--ink); }
-.srcs { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.srcs { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 16px; }
 .src { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; display: block; color: var(--ink); box-shadow: var(--shadow-sm); }
 .src:hover { text-decoration: none; box-shadow: var(--shadow); border-color: var(--violet-lt); }
 .src .k { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: .09em; color: var(--violet); font-weight: 700; margin-bottom: 5px; }
@@ -335,3 +335,5 @@ footer.site .fbase a { color: rgba(255,255,255,.86); }
 .vbanner a { color: var(--yellow); font-weight: 600; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.src .d { display: block; margin-top: 9px; font-size: 0.86rem; color: var(--ink-soft); font-weight: 400; line-height: 1.6; }
