@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Compare countries — Governance Atlas</title>
-<meta name="description" content="Compare data protection laws side by side — DPO rules, registration, breach deadlines, penalties and transfer requirements for any three countries.">
+<meta name="description" content="Compare data protection laws side by side — DPO requirements, breach deadlines, fines, and cross-border rules for any countries.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' rx='13' fill='%236D5AE6'/><circle cx='24' cy='24' r='13' fill='none' stroke='white' stroke-width='2.4'/><ellipse cx='24' cy='24' rx='6' ry='13' fill='none' stroke='white' stroke-width='2'/><line x1='11' y1='24' x2='37' y2='24' stroke='white' stroke-width='2'/></svg>">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -32,8 +32,8 @@
 <section class="pagehead">
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a><span>›</span><span class="here">Compare</span></div>
-    <h1>Compare any three countries</h1>
-    <p class="lede">Pick up to three countries and see exactly where their requirements diverge — the fastest way to scope a multi-country rollout.</p>
+    <h1>Compare countries</h1>
+    <p class="lede">Pick up to three countries and compare their data protection requirements side by side. Use the comparison to get a quick overview of how requirements differ across countries.</p>
   </div>
 </section>
 
@@ -45,32 +45,9 @@
       <div class="pick"><label for="sel2">Country 3</label><select id="sel2"></select></div>
     </div>
     <div class="tablewrap"><table id="cmptable"></table></div>
-    <p style="text-align:center;color:var(--ink-faint);font-size:.9rem;margin-top:18px">
-      Values are researched from public sources and pending legal review — confirm against the official sources on each country page.
-    </p>
+    <p class="lede" style="margin:22px auto 0;text-align:center">The comparison is a starting point, not a legal assessment. Values are illustrative and may change. Always check the official sources linked on each country's page before relying on them.</p>
   </div>
 </section>
-
-<script src="assets/compare-data.js"></script>
-<script>
-  const ROWS = [["Primary law","law"],["Regulator","authority"],["DPO","dpo"],["Registration","reg"],
-                ["Breach deadline","breach"],["Maximum penalty","fine"],["Cross-border transfers","xborder"],["Children's data","children"]];
-  const NAMES = Object.keys(DATA).sort();
-  const DEFAULTS = ["Nigeria","Germany","Brazil"];
-  const sels = [0,1,2].map(i => document.getElementById("sel"+i));
-  sels.forEach((sel,i) => {
-    if (i === 2) sel.add(new Option("— none —",""));
-    NAMES.forEach(n => sel.add(new Option(n + " (" + DATA[n].continent + ")", n)));
-    sel.value = DEFAULTS[i]; sel.addEventListener("change", render);
-  });
-  function render() {
-    const chosen = sels.map(s => s.value).filter(Boolean);
-    document.getElementById("cmptable").innerHTML =
-      "<thead><tr><th>Requirement</th>" + chosen.map(n => "<th>"+n+"</th>").join("") + "</tr></thead><tbody>" +
-      ROWS.map(([l,k]) => "<tr><td>"+l+"</td>" + chosen.map(n => "<td>"+DATA[n][k]+"</td>").join("") + "</tr>").join("") + "</tbody>";
-  }
-  render();
-</script>
 
 <footer class="site">
   <div class="wrap">
@@ -97,6 +74,25 @@
   const head = document.getElementById("sitehead");
   addEventListener("scroll", () => head.classList.toggle("stuck", scrollY > 8));
 </script>
-
+<script src="assets/compare-data.js"></script>
+<script>
+  const ROWS = [["Primary law","law"],["Supervisory authority","authority"],["DPO","dpo"],["Registration","reg"],
+                ["Breach deadline","breach"],["Max penalty","fine"],["Cross-border transfers","xborder"],["Children's data","children"]];
+  const NAMES = Object.keys(DATA).sort();
+  const DEFAULTS = ["Nigeria", "Kenya", "South Africa"];
+  const sels = [0,1,2].map(i => document.getElementById("sel"+i));
+  sels.forEach((sel,i) => {
+    if (i === 2) sel.add(new Option("— none —",""));
+    NAMES.forEach(n => sel.add(new Option(n + " (" + DATA[n].continent + ")", n)));
+    sel.value = DEFAULTS[i]; sel.addEventListener("change", render);
+  });
+  function render() {
+    const chosen = sels.map(s => s.value).filter(Boolean);
+    document.getElementById("cmptable").innerHTML =
+      "<thead><tr><th>Requirement</th>" + chosen.map(n => "<th>"+n+"</th>").join("") + "</tr></thead><tbody>" +
+      ROWS.map(([l,k]) => "<tr><td>"+l+"</td>" + chosen.map(n => "<td>"+DATA[n][k]+"</td>").join("") + "</tr>").join("") + "</tbody>";
+  }
+  render();
+</script>
 </body>
 </html>

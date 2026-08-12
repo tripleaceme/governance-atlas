@@ -337,3 +337,26 @@ footer.site .fbase a { color: rgba(255,255,255,.86); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
 .src .d { display: block; margin-top: 9px; font-size: 0.86rem; color: var(--ink-soft); font-weight: 400; line-height: 1.6; }
+
+/* ── Callout / note ──────────────────────── */
+.callout {
+  background: var(--violet-pale); border: 1px solid var(--line); border-left: 5px solid var(--violet);
+  border-radius: var(--r); padding: 24px 28px; font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7;
+}
+.callout strong { color: var(--ink); }
+.soon {
+  font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--amber); background: var(--amber-soft); padding: 5px 13px; border-radius: 999px;
+  margin-left: 10px; vertical-align: middle;
+}
+/* Article + right-hand aside (About) */
+.cols.aside-right { grid-template-columns: 1fr 330px; }
+@media (max-width: 900px) { .cols.aside-right { grid-template-columns: 1fr; } }
+.sidestack { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 92px; align-self: start; }
+.sidestack .glance { position: static; }
+.trigrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.trig { display: flex; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 20px 22px; box-shadow: var(--shadow-sm); }
+.sec.tint .trig { background: #fff; }
+.trig .tick { color: var(--green); font-weight: 800; flex-shrink: 0; font-size: 1.05rem; }
+.trig p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
+.trig b { color: var(--ink); }
