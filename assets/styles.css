@@ -109,7 +109,7 @@ nav.main a:hover { text-decoration: none; color: var(--ink); }
 
 /* ── Section headings — centered, plate style ── */
 h2.sect { font-family: var(--display); font-size: 1.55rem; margin: 0 0 10px; letter-spacing: -0.005em; font-weight: 700; text-align: center; }
-.sect-sub { font-size: 0.94rem; color: var(--ink-faint); margin: 0 auto 32px; max-width: 62ch; font-style: italic; text-align: center; }
+.sect-sub { font-size: 0.94rem; color: var(--ink-faint); margin: 0 auto 32px; max-width: 92ch; font-style: italic; text-align: center; }
 
 /* ── Home: how it works ──────────────────── */
 .stepzone { padding: 96px 0 12px; }
