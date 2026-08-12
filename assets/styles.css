@@ -108,11 +108,11 @@ nav.main a:hover { text-decoration: none; color: var(--ink); }
 .stat.s-none .num { color: var(--ink-faint); }
 
 /* ── Section headings — centered, plate style ── */
-h2.sect { font-family: var(--display); font-size: 1.55rem; margin: 0 0 8px; letter-spacing: -0.005em; font-weight: 700; text-align: center; }
+h2.sect { font-family: var(--display); font-size: 1.55rem; margin: 0 0 10px; letter-spacing: -0.005em; font-weight: 700; text-align: center; }
 .sect-sub { font-size: 0.94rem; color: var(--ink-faint); margin: 0 auto 32px; max-width: 62ch; font-style: italic; text-align: center; }
 
 /* ── Home: how it works ──────────────────── */
-.stepzone { padding: 68px 0 12px; }
+.stepzone { padding: 96px 0 12px; }
 .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
 .step { background: var(--panel); border: 1px solid var(--line); padding: 26px 24px 24px; }
 .step .n { font-family: var(--display); font-size: 0.82rem; font-weight: 700; color: var(--paper); background: var(--ink); width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
@@ -120,7 +120,7 @@ h2.sect { font-family: var(--display); font-size: 1.55rem; margin: 0 0 8px; lett
 .step p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); line-height: 1.62; }
 
 /* ── Home: audience cards ────────────────── */
-.audzone { padding: 68px 0 12px; }
+.audzone { padding: 96px 0 12px; }
 .audgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 18px; }
 .aud { background: var(--panel); border: 1px solid var(--line); padding: 26px 24px; display: block; color: var(--ink); }
 .aud:hover { border-color: var(--ink); text-decoration: none; box-shadow: 5px 5px 0 var(--shadow); }
@@ -130,7 +130,7 @@ h2.sect { font-family: var(--display); font-size: 1.55rem; margin: 0 0 8px; lett
 .aud .go2 { font-size: 0.86rem; color: var(--accent); font-weight: 700; }
 
 /* ── Continent: full-width tile map ──────── */
-.mapzone { padding: 72px 0 12px; }
+.mapzone { padding: 96px 0 12px; }
 .tilemap { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; }
 .tile {
   height: 46px; border: 0; cursor: pointer;
@@ -156,7 +156,7 @@ h2.sect { font-family: var(--display); font-size: 1.55rem; margin: 0 0 8px; lett
 .hoverbar b { color: var(--ink); font-style: normal; }
 
 /* ── Regional frameworks ─────────────────── */
-.fwzone { padding: 64px 0 12px; }
+.fwzone { padding: 96px 0 12px; }
 .frameworks { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 16px; }
 .fw { background: var(--panel); border: 1px solid var(--line); padding: 19px 20px; }
 .fw .scope { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 700; color: var(--green); }
@@ -166,7 +166,7 @@ h2.sect { font-family: var(--display); font-size: 1.55rem; margin: 0 0 8px; lett
 .fw a.more { font-size: 0.84rem; display: inline-block; margin-top: 10px; font-weight: 700; }
 
 /* ── Country index ───────────────────────── */
-.indexzone { padding: 64px 0 24px; }
+.indexzone { padding: 96px 0 24px; }
 .searchrow { display: flex; gap: 12px; margin: 0 0 22px; flex-wrap: wrap; align-items: center; }
 .searchrow input {
   flex: 1 1 260px; max-width: 380px; padding: 10px 14px; border: 1.5px solid var(--ink);
@@ -372,10 +372,10 @@ td .n2 { color: var(--ink-faint); }
 .popchips button:hover { border-color: var(--ink); color: var(--ink); }
 
 /* ── Home: sections ──────────────────────── */
-.contzone { padding: 68px 0 12px; }
+.contzone { padding: 96px 0 12px; }
 .findrow { margin: 0 0 34px; }
 .findrow .searchbig { margin: 0 0 14px; max-width: none; }
-.recentzone { padding: 68px 0 24px; }
+.recentzone { padding: 96px 0 24px; }
 .contgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); gap: 18px; }
 .cont {
   background: var(--panel); border: 1px solid var(--line);
