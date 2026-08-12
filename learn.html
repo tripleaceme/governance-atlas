@@ -42,22 +42,15 @@
   .person h3 { font-family: var(--display); font-size: 1.06rem; margin: 5px 0 8px; font-weight: 700; }
   .person p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.62; }
 
-  /* First-steps ladder */
-  .ladder { width: 100%; }
-  .rung { display: flex; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-  .rung:last-child { border-bottom: 0; }
-  .rung .step-n {
-    font-family: var(--display); font-size: 0.82rem; font-weight: 700; color: var(--paper);
-    background: var(--ink); width: 30px; height: 30px; flex-shrink: 0;
+  /* First steps — same card treatment as the people cards, numbered */
+  .stepcard { display: flex; flex-direction: column; }
+  .stephead { display: flex; align-items: center; gap: 11px; margin-bottom: 8px; }
+  .stepnum {
+    font-family: var(--display); font-size: 0.8rem; font-weight: 700;
+    color: var(--paper); background: var(--ink);
+    width: 26px; height: 26px; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
   }
-  .rung .body h3 { font-family: var(--display); font-size: 1.02rem; margin: 3px 0 5px; font-weight: 700; }
-  .rung .body p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); line-height: 1.62; }
-  .rung .effort {
-    font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700;
-    color: var(--green); margin-left: auto; flex-shrink: 0; padding-top: 8px; white-space: nowrap;
-  }
-  @media (max-width: 620px) { .rung .effort { display: none; } }
 </style>
 </head>
 <body>
@@ -186,62 +179,41 @@
   <div class="learnzone">
     <h2 class="sect">How to start with minimal effort</h2>
     <p class="sect-sub">You do not need a compliance department. These steps are ordered so the cheapest, highest-value work comes first.</p>
-    <div class="ladder">
-      <div class="rung">
-        <span class="step-n">1</span>
-        <div class="body">
-          <h3>Find out which law applies</h3>
-          <p>Look up the country where your customers, staff or users are. Note the regulator, the breach deadline, and whether you must register. <a href="countries.html">Open the country index →</a></p>
-        </div>
-        <span class="effort">30 minutes</span>
+    <div class="people steps-grid">
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">1</span><span class="when">30 minutes</span></div>
+        <h3>Find out which law applies</h3>
+        <p>Look up the country where your customers, staff or users are. Note the regulator, the breach deadline, and whether you must register. <a href="countries.html">Open the country index →</a></p>
       </div>
-      <div class="rung">
-        <span class="step-n">2</span>
-        <div class="body">
-          <h3>Write down what you collect</h3>
-          <p>A single spreadsheet: what personal data you hold, why you have it, where it lives, who can see it, and who you share it with. This is the seed of a RoPA and makes every later step easier.</p>
-        </div>
-        <span class="effort">An afternoon</span>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">2</span><span class="when">An afternoon</span></div>
+        <h3>Write down what you collect</h3>
+        <p>A single spreadsheet: what personal data you hold, why you have it, where it lives, who can see it, and who you share it with. This is the seed of a RoPA and makes every later step easier.</p>
       </div>
-      <div class="rung">
-        <span class="step-n">3</span>
-        <div class="body">
-          <h3>Name someone accountable</h3>
-          <p>Even where the law does not demand a DPO, pick a person. Privacy that belongs to everyone belongs to no one.</p>
-        </div>
-        <span class="effort">An hour</span>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">3</span><span class="when">An hour</span></div>
+        <h3>Name someone accountable</h3>
+        <p>Even where the law does not demand a DPO, pick a person. Privacy that belongs to everyone belongs to no one.</p>
       </div>
-      <div class="rung">
-        <span class="step-n">4</span>
-        <div class="body">
-          <h3>Publish a plain-language privacy notice</h3>
-          <p>Say what you collect, why, who you share it with, how long you keep it, what rights people have, and how to contact you. Write it for a customer, not a court.</p>
-        </div>
-        <span class="effort">A day</span>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">4</span><span class="when">A day</span></div>
+        <h3>Publish a plain-language privacy notice</h3>
+        <p>Say what you collect, why, who you share it with, how long you keep it, what rights people have, and how to contact you. Write it for a customer, not a court.</p>
       </div>
-      <div class="rung">
-        <span class="step-n">5</span>
-        <div class="body">
-          <h3>Delete what you should not have, lock down the rest</h3>
-          <p>Old exports, abandoned spreadsheets, shared logins. Reduce who can reach personal data to those who need it, and set retention periods so data expires on purpose.</p>
-        </div>
-        <span class="effort">A week</span>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">5</span><span class="when">A week</span></div>
+        <h3>Delete what you should not have, lock down the rest</h3>
+        <p>Old exports, abandoned spreadsheets, shared logins. Reduce who can reach personal data to those who need it, and set retention periods so data expires on purpose.</p>
       </div>
-      <div class="rung">
-        <span class="step-n">6</span>
-        <div class="body">
-          <h3>Agree what happens if there is a breach</h3>
-          <p>One page: who is told first, who decides whether it is reportable, who contacts the regulator, and the deadline. Deciding this calmly in advance is worth more than any policy document.</p>
-        </div>
-        <span class="effort">Half a day</span>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">6</span><span class="when">Half a day</span></div>
+        <h3>Agree what happens if there is a breach</h3>
+        <p>One page: who is told first, who decides whether it is reportable, who contacts the regulator, and the deadline. Deciding this calmly in advance is worth more than any policy document.</p>
       </div>
-      <div class="rung">
-        <span class="step-n">7</span>
-        <div class="body">
-          <h3>Then, and only then, scale up</h3>
-          <p>Vendor agreements, transfer mechanisms such as SCCs, DPIAs for high-risk projects, registration and audits where required. By now you will know which of these you actually need.</p>
-        </div>
-        <span class="effort">Ongoing</span>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">7</span><span class="when">Ongoing</span></div>
+        <h3>Then, and only then, scale up</h3>
+        <p>Vendor agreements, transfer mechanisms such as SCCs, DPIAs for high-risk projects, registration and audits where required. By now you will know which of these you actually need.</p>
       </div>
     </div>
   </div>
@@ -273,7 +245,6 @@
 
   <div class="reszone">
     <h2 class="sect">Further reading</h2>
-    <p class="sect-sub">External libraries and communities for going deeper than any summary can — the tools for putting this into practice are on <a href="resources.html">Resources</a>.</p>
     <div class="sources">
       <a class="source" href="https://gdpr-info.eu" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">GDPR full text, hyperlinked</span> <span class="ext">↗</span><span class="desc">The complete regulation, cross-linked article by article with its recitals.</span></a>
       <a class="source" href="https://www.edpb.europa.eu" target="_blank" rel="noopener"><span class="kind">Guidance</span><span class="t">EDPB guidelines</span> <span class="ext">↗</span><span class="desc">Official interpretation and guidance from Europe's data protection board.</span></a>
