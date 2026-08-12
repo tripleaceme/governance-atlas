@@ -429,3 +429,16 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
   padding: 20px 24px; font-size: 0.94rem; color: var(--ink-soft); line-height: 1.66;
 }
 .toolnote strong { color: var(--ink); }
+
+/* ── About: article + supporting side panel ── */
+.cols.aside-right { grid-template-columns: 1fr 330px; }
+@media (max-width: 900px) { .cols.aside-right { grid-template-columns: 1fr; } }
+.sidestack { display: flex; flex-direction: column; gap: 18px; position: sticky; top: 18px; align-self: start; }
+.sidestack .dossier { position: static; }
+.portrait { border: 1.5px solid var(--ink); box-shadow: 6px 6px 0 var(--shadow); background: var(--panel); }
+.portrait img { width: 100%; height: auto; display: block; }
+.portrait figcaption {
+  padding: 12px 16px; border-top: 1.5px solid var(--ink);
+  font-size: 0.78rem; color: var(--ink-soft); font-style: italic;
+}
+.portrait figcaption b { color: var(--ink); font-style: normal; display: block; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.72rem; margin-bottom: 2px; }
