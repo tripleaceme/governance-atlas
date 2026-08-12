@@ -422,3 +422,10 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
   padding: 9px 20px; letter-spacing: 0.06em; font-family: var(--sans);
 }
 .vbanner a { color: var(--gold); font-weight: 700; }
+
+/* ── Resources: single closing caveat ────── */
+.toolnote {
+  background: var(--panel); border: 1.5px solid var(--ink); box-shadow: 6px 6px 0 var(--shadow);
+  padding: 20px 24px; font-size: 0.94rem; color: var(--ink-soft); line-height: 1.66;
+}
+.toolnote strong { color: var(--ink); }

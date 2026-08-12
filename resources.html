@@ -53,7 +53,8 @@
 
   <div class="reszone">
     <h2 class="sect">Know what data you have</h2>
-    <p class="sect-sub">You can't govern data you can't see. A data catalog helps you understand what data your organisation holds, where it comes from, who is responsible for it, and how it is used.</p>
+    <p class="sect-sub">You can't govern data you can't see. A data catalog helps you 
+      understand what data your organisation holds, where it comes from, who is responsible for it, and how it is used.</p>
     <div class="sources">
       <a class="source" href="https://datahubproject.io" target="_blank" rel="noopener"><span class="kind">Catalog · Open source</span><span class="t">DataHub</span> <span class="ext">↗</span><span class="desc">An open-source platform for discovering, documenting, and managing metadata about data across an organisation.</span></a>
       <a class="source" href="https://open-metadata.org" target="_blank" rel="noopener"><span class="kind">Catalog · Open source</span><span class="t">OpenMetadata</span> <span class="ext">↗</span><span class="desc">An open-source platform for data discovery, metadata management, and governance.</span></a>
@@ -62,36 +63,56 @@
   </div>
 
   <div class="reszone">
-    <h2 class="sect">Data lineage</h2>
-    <p class="sect-sub">Trace where personal data flows — essential for RoPA and deletion requests.</p>
+    <h2 class="sect">Understand where your data goes</h2>
+    <p class="sect-sub">Data lineage shows where data comes from, how it changes, and where it goes as it moves through your organisation.
+
+        This can help you understand how personal data flows between systems, identify who or what uses it, investigate data quality issues, and support privacy activities such as records of processing and deletion requests.
+    </p>
     <div class="sources">
-      <a class="source" href="https://openlineage.io" target="_blank" rel="noopener"><span class="kind">Standard · Open source</span><span class="t">OpenLineage</span> <span class="ext">↗</span><span class="desc">An open standard for collecting lineage metadata as data moves through pipelines.</span></a>
-      <a class="source" href="https://marquezproject.ai" target="_blank" rel="noopener"><span class="kind">Lineage · Open source</span><span class="t">Marquez</span> <span class="ext">↗</span><span class="desc">An open-source service that stores and visualises the lineage collected via OpenLineage.</span></a>
+      <a class="source" href="https://openlineage.io" target="_blank" rel="noopener"><span class="kind">Standard · Open source</span><span class="t">OpenLineage</span> <span class="ext">↗</span><span class="desc">An open standard for collecting and sharing metadata about data pipelines and their lineage.</span></a>
+      <a class="source" href="https://marquezproject.ai" target="_blank" rel="noopener"><span class="kind">Lineage · Open source</span><span class="t">Marquez</span> <span class="ext">↗</span><span class="desc">AAn open-source metadata service that collects and visualises lineage information using the OpenLineage standard.</span></a>
+      <a class="source" href="https://datahub.com" target="_blank" rel="noopener"><span class="kind">Catalog · Open source</span><span class="t">DataHub</span> <span class="ext">↗</span><span class="desc">A data catalog that can also capture and display lineage between datasets and systems.</span></a>
     </div>
   </div>
 
   <div class="reszone">
-    <h2 class="sect">Data quality &amp; testing</h2>
-    <p class="sect-sub">Accuracy is a legal principle in most privacy laws — these tools enforce it.</p>
+    <h2 class="sect">Keep your data accurate</h2>
+    <p class="sect-sub">
+      Privacy laws often require organisations to take reasonable steps to keep personal data accurate and up to date. Data quality tools can help you find problems such as missing, invalid, inconsistent, or outdated data.
+
+      They can also help you test data automatically and catch problems before they spread to other systems.
+    
+    </p>
     <div class="sources">
-      <a class="source" href="https://greatexpectations.io" target="_blank" rel="noopener"><span class="kind">Quality · Open source</span><span class="t">Great Expectations</span> <span class="ext">↗</span><span class="desc">A framework for defining, running, and documenting tests that validate your data.</span></a>
-      <a class="source" href="https://www.soda.io" target="_blank" rel="noopener"><span class="kind">Quality · Open core</span><span class="t">Soda</span> <span class="ext">↗</span><span class="desc">Data quality testing driven by checks written in a simple, readable language.</span></a>
+      <a class="source" href="https://greatexpectations.io" target="_blank" rel="noopener"><span class="kind">Quality · Open source</span><span class="t">Great Expectations</span> <span class="ext">↗</span><span class="desc">An open-source framework for defining and testing expectations about your data.</span></a>
+      <a class="source" href="https://www.soda.io" target="_blank" rel="noopener"><span class="kind">Quality · Open core</span><span class="t">Soda</span> <span class="ext">↗</span><span class="desc">A data quality platform for checking data, monitoring quality, and detecting issues.</span></a>
+    <a class="source" href="https://docs.getdbt.com/docs/build/data-tests" target="_blank" rel="noopener"><span class="kind">Quality · Open source</span><span class="t">dbt tests</span> <span class="ext">↗</span><span class="desc">Built-in tests for checking common data quality conditions such as uniqueness, non-null values, and relationships between data.</span></a>
     </div>
   </div>
 
   <div class="reszone">
-    <h2 class="sect">Data contracts</h2>
-    <p class="sect-sub">Agree what data means and who owns it — before it crosses team boundaries.</p>
+    <h2 class="sect">Make data expectations explicit</h2>
+    <p class="sect-sub">
+      A data contract defines what a dataset should contain and how it should behave. It can specify things such as the expected fields, data types, allowed values, ownership, and quality requirements.
+
+      Data contracts help teams agree on what data producers should provide and what data consumers can rely on. They can also make it easier to detect changes that could affect downstream systems.
+
+    </p>
     <div class="sources">
       <a class="source" href="https://bitol-io.github.io/open-data-contract-standard/latest/" target="_blank" rel="noopener"><span class="kind">Standard · Bitol / Linux Foundation</span><span class="t">Open Data Contract Standard</span> <span class="ext">↗</span><span class="desc">A vendor-neutral YAML specification for describing a dataset and the guarantees it offers.</span></a>
       <a class="source" href="https://datacontract.com" target="_blank" rel="noopener"><span class="kind">Guide + tooling</span><span class="t">datacontract.com &amp; Data Contract CLI</span> <span class="ext">↗</span><span class="desc">Guidance and command-line tooling for authoring, testing, and enforcing data contracts.</span></a>
       <a class="source" href="https://editor.datacontract.com" target="_blank" rel="noopener"><span class="kind">Editor</span><span class="t">Data Contract Editor</span> <span class="ext">↗</span><span class="desc">A browser-based editor for writing and validating data contracts.</span></a>
-    </div>
+    </div> 
   </div>
 
   <div class="reszone">
-    <h2 class="sect">Documentation &amp; policy as code</h2>
-    <p class="sect-sub">Make the rules readable — and machine-enforceable.</p>
+    <h2 class="sect">Keep your documentation and policies up to date</h2>
+    <p class="sect-sub">
+      Documentation is part of good governance. It helps people understand what data you have, how it is used, who is responsible for it, and what rules apply.
+
+      Treating documentation and policies as code means keeping them in version-controlled files and updating them through the same workflows used for software. 
+      This makes changes easier to review, track, and audit.
+    </p>
     <div class="sources">
       <a class="source" href="https://www.getdbt.com" target="_blank" rel="noopener"><span class="kind">Docs · Open source</span><span class="t">dbt Docs</span> <span class="ext">↗</span><span class="desc">Generates browsable documentation and lineage directly from your dbt project.</span></a>
       <a class="source" href="https://backstage.io" target="_blank" rel="noopener"><span class="kind">Portal · Open source</span><span class="t">Backstage</span> <span class="ext">↗</span><span class="desc">An open-source developer portal for cataloguing services, ownership, and documentation.</span></a>
@@ -101,26 +122,24 @@
   </div>
 
   <div class="reszone">
-    <h2 class="sect">Templates <span class="soon">Coming soon</span></h2>
+    <h2 class="sect">Templates to get started <span class="soon">Coming soon</span></h2>
     <p class="sect-sub">The documents every compliance programme needs, ready to adapt.</p>
     <div class="sources">
-      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">Privacy policy</span><span class="desc">The public notice explaining what you collect, why, and what rights people have.</span></a>
-      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">Data Processing Agreement (DPA)</span><span class="desc">The contract governing how a processor may handle personal data on your behalf.</span></a>
-      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">DPIA — impact assessment</span><span class="desc">A structured assessment of privacy risk, completed before high-risk processing begins.</span></a>
-      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">RoPA — records of processing</span><span class="desc">Your internal record of what data you hold, why, where it lives, and who it is shared with.</span></a>
+      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">Data Retention Schedule</span><span class="desc">Documents how long different types of data should be kept and what happens when the retention period ends.</span></a>
+      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">Data Processing Agreement (DPA)</span><span class="desc">An agreement that sets out how a processor handles personal data on behalf of a controller.</span></a>
+      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">DPIA — impact assessment</span><span class="desc">A structured assessment for identifying and addressing privacy risks associated with processing activities.</span></a>
+      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">RoPA — records of processing</span><span class="desc">A structured way to document what personal data your organisation processes, why you process it, who it is shared with, and how long you keep it.</span></a>
+      <a class="source" href="#" onclick="notify('Templates — coming soon');return false;"><span class="kind">Template</span><span class="t">Data Subject Request Log</span><span class="desc">Helps track requests from people exercising their rights over their personal data.</span></a>
     </div>
   </div>
 
+
   <div class="reszone">
-    <h2 class="sect">Further reading</h2>
-    <p class="sect-sub">External libraries and communities for going deeper than any summary can — start with <a href="learn.html">Learn</a> if you want the plain-English grounding first.</p>
-    <div class="sources">
-      <a class="source" href="https://gdpr-info.eu" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">GDPR full text, hyperlinked</span> <span class="ext">↗</span><span class="desc">The complete regulation, cross-linked article by article with its recitals.</span></a>
-      <a class="source" href="https://www.edpb.europa.eu" target="_blank" rel="noopener"><span class="kind">Guidance</span><span class="t">EDPB guidelines</span> <span class="ext">↗</span><span class="desc">Official interpretation and guidance from Europe's data protection board.</span></a>
-      <a class="source" href="https://iapp.org" target="_blank" rel="noopener"><span class="kind">Community</span><span class="t">IAPP — privacy professionals</span> <span class="ext">↗</span><span class="desc">The largest professional association for privacy practitioners, with training and certification.</span></a>
-      <a class="source" href="https://fpf.org" target="_blank" rel="noopener"><span class="kind">Research</span><span class="t">Future of Privacy Forum</span> <span class="ext">↗</span><span class="desc">Research and analysis on emerging privacy issues and technology.</span></a>
+    <div class="toolnote">
+      <strong>No tool makes an organisation compliant.</strong> Everything on this page can support good governance — helping you see what data you hold, how it moves, and whether it is accurate — but compliance depends on the processes around these tools and on the requirements that apply to you. Check <a href="countries.html">your country's brief</a> for those requirements, and adapt any template to your actual practices.
     </div>
   </div>
+
 </div>
 
 <footer class="site">
