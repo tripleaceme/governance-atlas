@@ -450,3 +450,19 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
 .hero.ceremony .rule-orn { margin-bottom: 48px; }
 .hero.ceremony .ctarow { gap: 20px; }
 .hero.ceremony .stats.proof { margin-top: 72px; }
+
+/* Keep stat labels on a single line */
+.stats.proof { max-width: 860px; }
+.stats.proof .stat { flex: 1 1 auto; padding: 2px 16px; }
+.stats.proof .lbl { white-space: nowrap; }
+.stats.bare .lbl { white-space: nowrap; }
+@media (max-width: 460px) {
+  .stats.proof .lbl, .stats.bare .lbl { white-space: normal; }
+}
+
+/* Phones: let the nav wrap instead of pushing the page sideways */
+@media (max-width: 560px) {
+  header.site .wrap { justify-content: center; }
+  nav.main { gap: 14px 18px; flex-wrap: wrap; justify-content: center; font-size: 0.7rem; }
+  .logo { justify-content: center; }
+}
