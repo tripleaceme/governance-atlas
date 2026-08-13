@@ -86,7 +86,7 @@ nav.main a:hover { text-decoration: none; color: var(--ink); }
 .hero { padding: 56px 0 76px; border-bottom: 1px solid var(--line); text-align: center; }
 .hero .eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
 .hero h1 { font-family: var(--display); font-size: clamp(1.9rem, 4.5vw, 2.9rem); line-height: 1.16; margin: 0 auto 16px; letter-spacing: -0.005em; font-weight: 700; text-wrap: balance; }
-.hero .lawline { color: var(--ink-soft); font-size: 1.05rem; max-width: 60ch; margin: 0 auto 20px; }
+.hero .lawline { color: var(--ink-soft); font-size: 1.05rem; max-width: 70ch; margin: 0 auto 20px; }
 /* Multi-paragraph hero intros: wider measure, real paragraph rhythm */
 .heroprose { max-width: 86ch; margin: 0 auto 18px; }
 .heroprose p { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 12px; }
@@ -442,3 +442,11 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
   font-size: 0.78rem; color: var(--ink-soft); font-style: italic;
 }
 .portrait figcaption b { color: var(--ink); font-style: normal; display: block; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.72rem; margin-bottom: 2px; }
+
+/* ── Ceremony hero: let each element breathe ── */
+.hero.ceremony .plate { margin-bottom: 38px; }
+.hero.ceremony h1 { margin-bottom: 32px; }
+.hero.ceremony .lawline { margin-bottom: 48px; }
+.hero.ceremony .rule-orn { margin-bottom: 48px; }
+.hero.ceremony .ctarow { gap: 20px; }
+.hero.ceremony .stats.proof { margin-top: 72px; }
