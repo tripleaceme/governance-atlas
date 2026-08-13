@@ -102,6 +102,19 @@ def head(title, desc, prefix=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Governance Atlas">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="https://tripleaceme.github.io/governance-atlas/v2/assets/og-image.png">
+<meta property="og:image:secure_url" content="https://tripleaceme.github.io/governance-atlas/v2/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="https://tripleaceme.github.io/governance-atlas/v2/assets/og-image.png">
 <link rel="icon" href="{FAVICON}">
 <link rel="stylesheet" href="{prefix}assets/styles.css">
 </head>
