@@ -466,3 +466,12 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
   nav.main { gap: 14px 18px; flex-wrap: wrap; justify-content: center; font-size: 0.7rem; }
   .logo { justify-content: center; }
 }
+
+/* Footer: disclaimer left, credit right */
+footer.site .wrap { align-items: flex-start; gap: 24px 48px; }
+footer.site .wrap > div:first-child { flex: 1 1 460px; max-width: 76ch; }
+footer.site .credits { flex: 0 0 auto; margin-left: auto; }
+@media (max-width: 720px) {
+  footer.site .wrap > div:first-child { flex-basis: 100%; }
+  footer.site .credits { margin-left: 0; }
+}

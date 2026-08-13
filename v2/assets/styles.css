@@ -360,3 +360,12 @@ footer.site .fbase a { color: rgba(255,255,255,.86); }
 .trig .tick { color: var(--green); font-weight: 800; flex-shrink: 0; font-size: 1.05rem; }
 .trig p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
 .trig b { color: var(--ink); }
+
+/* Footer base: disclaimer left, credit right */
+footer.site .fbase { align-items: flex-start; gap: 20px 48px; }
+footer.site .fbase span:first-child { flex: 1 1 460px; max-width: 76ch; }
+footer.site .fbase span:last-child { flex: 0 0 auto; margin-left: auto; }
+@media (max-width: 720px) {
+  footer.site .fbase span:first-child { flex-basis: 100%; }
+  footer.site .fbase span:last-child { margin-left: 0; }
+}
