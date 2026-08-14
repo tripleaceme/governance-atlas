@@ -94,18 +94,20 @@ def footer(prefix=""):
 </footer>'''
 
 
-def head(title, desc, prefix=""):
+def head(title, desc, prefix="", page="index.html"):
     return f'''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
+<link rel="canonical" href="https://tripleaceme.github.io/governance-atlas/v2/{page}">
 <meta name="description" content="{desc}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Governance Atlas">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
+<meta property="og:url" content="https://tripleaceme.github.io/governance-atlas/v2/{page}">
 <meta property="og:image" content="https://tripleaceme.github.io/governance-atlas/v2/assets/og-image.png">
 <meta property="og:image:secure_url" content="https://tripleaceme.github.io/governance-atlas/v2/assets/og-image.png">
 <meta property="og:image:type" content="image/png">
@@ -228,7 +230,7 @@ def country_page(c, d):
     title = f'{esc(name)}' + (f' — {esc(law)}' if law else "") + ' — Governance Atlas'
     desc = esc(f'Data protection law in {name}: ' + (law or "status and landscape") + " — plain-English brief, obligations and official sources.")
 
-    return f'''{head(title, desc, "../")}
+    return f'''{head(title, desc, "../", "countries/" + c["slug"] + ".html")}
 
 {chrome("../", "countries.html", "countries/" + c["slug"] + ".html")}
 
@@ -294,7 +296,7 @@ def index_page(countries, details):
 {items}      </div>
     </div>
 '''
-    return f'''{head("All countries — Governance Atlas", "Every country's data protection law, A to Z — 194 plain-English briefs with regulators, deadlines, penalties and official sources.")}
+    return f'''{head("All countries — Governance Atlas", "Every country's data protection law, A to Z — 194 plain-English briefs with regulators, deadlines, penalties and official sources.", "", "countries.html")}
 
 {chrome("", "countries.html", "countries.html")}
 
