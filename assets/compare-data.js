@@ -7,7 +7,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "Not required — no law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "Not required — no law",
     "xborder": "—"
   },
@@ -216,7 +216,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "Not required — no comprehensive law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "Not required",
     "xborder": "—"
   },
@@ -227,7 +227,7 @@ const DATA = {
     "continent": "South America",
     "dpo": "Not required — no general data protection law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "No — no registration regime exists",
     "xborder": "No general restriction — no data protection framework"
   },
@@ -535,7 +535,7 @@ const DATA = {
     "continent": "North America",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -601,7 +601,7 @@ const DATA = {
     "continent": "Africa",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -755,7 +755,7 @@ const DATA = {
     "continent": "North America",
     "dpo": "—",
     "fine": "—",
-    "law": "Bill / draft in progress",
+    "law": "In progress",
     "reg": "—",
     "xborder": "—"
   },
@@ -777,7 +777,7 @@ const DATA = {
     "continent": "Africa",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -799,7 +799,7 @@ const DATA = {
     "continent": "North America",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -810,7 +810,7 @@ const DATA = {
     "continent": "North America",
     "dpo": "—",
     "fine": "—",
-    "law": "Bill / draft in progress",
+    "law": "In progress",
     "reg": "—",
     "xborder": "—"
   },
@@ -865,7 +865,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "Not required",
     "fine": "Cyber Crime Act: IRR 1m–10m fines and 61 days–6 months imprisonment for publishing private data without consent",
-    "law": "Bill / draft in progress",
+    "law": "In progress",
     "reg": "No",
     "xborder": "—"
   },
@@ -876,7 +876,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "Not required",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "No",
     "xborder": "—"
   },
@@ -1063,7 +1063,7 @@ const DATA = {
     "continent": "Africa",
     "dpo": "Not applicable — no comprehensive law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "No — no registration regime",
     "xborder": "—"
   },
@@ -1294,7 +1294,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "Not required — no data protection law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "No data protection registration; digital platforms with 100,000+ Myanmar users must register under the 2025 Cybersecurity Law",
     "xborder": "—"
   },
@@ -1316,7 +1316,7 @@ const DATA = {
     "continent": "Oceania",
     "dpo": "Not applicable — no law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "Not applicable — no law",
     "xborder": "—"
   },
@@ -1393,7 +1393,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -1448,7 +1448,7 @@ const DATA = {
     "continent": "Oceania",
     "dpo": "Not required — no data protection law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "No",
     "xborder": "No restrictions"
   },
@@ -1580,7 +1580,7 @@ const DATA = {
     "continent": "Oceania",
     "dpo": "Not applicable — no law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "Not applicable — no law",
     "xborder": "—"
   },
@@ -1734,7 +1734,7 @@ const DATA = {
     "continent": "Africa",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -1789,7 +1789,7 @@ const DATA = {
     "continent": "North America",
     "dpo": "Not required — no data protection law in force",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "Not required",
     "xborder": "No general restrictions"
   },
@@ -1800,7 +1800,7 @@ const DATA = {
     "continent": "Africa",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -1811,7 +1811,7 @@ const DATA = {
     "continent": "South America",
     "dpo": "Not required — no law enacted",
     "fine": "—",
-    "law": "Bill / draft in progress",
+    "law": "In progress",
     "reg": "Not required",
     "xborder": "No general rule"
   },
@@ -1844,7 +1844,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -1910,7 +1910,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "—",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "—",
     "xborder": "—"
   },
@@ -1987,7 +1987,7 @@ const DATA = {
     "continent": "Oceania",
     "dpo": "Not applicable — no law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "Not applicable — no law",
     "xborder": "—"
   },
@@ -2086,7 +2086,7 @@ const DATA = {
     "continent": "South America",
     "dpo": "Not required",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "Not required",
     "xborder": "No general rule"
   },
@@ -2108,7 +2108,7 @@ const DATA = {
     "continent": "Asia",
     "dpo": "Not required — no data protection law",
     "fine": "—",
-    "law": "No comprehensive law",
+    "law": "No comprehensive regulation",
     "reg": "No requirement",
     "xborder": "—"
   },

@@ -24,11 +24,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 RICH = {"nigeria", "kenya", "south-africa"}
 
 STATUS_CHIP = {
-    "a": '<span class="chip active">Active law</span>',
-    "d": '<span class="chip">Bill / draft in progress</span>',
-    "n": '<span class="chip">No comprehensive law</span>',
+    "a": '<span class="chip active">In force</span>',
+    "d": '<span class="chip">In progress</span>',
+    "n": '<span class="chip">No comprehensive regulation</span>',
 }
-STATUS_LABEL = {"a": "Active law", "d": "Bill / draft in progress", "n": "No comprehensive law"}
+STATUS_LABEL = {"a": "In force", "d": "In progress", "n": "No comprehensive regulation"}
 
 # Curated compare entries for the hand-written pages (never researched).
 CURATED_COMPARE = {
@@ -70,7 +70,7 @@ PAGE_SHELL = """<!doctype html>
       <svg class="logomark" width="36" height="36" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 3"/><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="2"/><ellipse cx="24" cy="24" rx="8" ry="17" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="7" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="1.4"/><line x1="24" y1="7" x2="24" y2="41" stroke="currentColor" stroke-width="1.4"/><circle cx="21" cy="27" r="2.4" fill="var(--accent)"/></svg>
       <div>
         <div class="mark">Governance<span>·</span>Atlas</div>
-        <div class="tag">Data protection law, by country</div>
+        <div class="tag">Personal data protection, by country</div>
       </div>
     </a>
     <nav class="main">
@@ -159,8 +159,8 @@ def stub_lawline(c):
     if c["status"] == "a":
         return f'Primary law: <strong>{esc(c["law"])}</strong>. Full dossier coming — this page is awaiting verification against official sources.'
     if c["status"] == "d":
-        return "No comprehensive law in force yet — data protection legislation is in progress."
-    return "No comprehensive data protection law identified yet."
+        return "No comprehensive regulation is in force yet — legislation is in progress."
+    return "No comprehensive personal data protection regulation identified yet."
 
 
 def render_stub(c):
@@ -172,7 +172,7 @@ def render_stub(c):
     facts = (
         fact("Continent", c["continent"])
         + fact("Status", STATUS_LABEL[c["status"]])
-        + fact("Primary law", c["law"] or "—")
+        + fact("Primary regulation", c["law"] or "—")
         + fact("Page status", "Stub — awaiting research", cls="no")
     )
     article = f"""      <section>
@@ -206,8 +206,8 @@ def full_lawline(c, d):
                 line += f' ({esc(d["authority_acronym"])})'
         return line + "."
     if d["status"] == "d":
-        return f'No comprehensive law in force yet — <strong>{esc(d.get("law") or "data protection legislation")}</strong> is in progress.'
-    return "No comprehensive data protection law is in force."
+        return f'No comprehensive regulation in force yet — <strong>{esc(d.get("law") or "data protection legislation")}</strong> is in progress.'
+    return "No comprehensive personal data protection regulation is in force."
 
 
 def render_full(c, d):
@@ -223,7 +223,7 @@ def render_full(c, d):
 
     adequacy = None if d.get("eu_adequacy") is None else ("Yes" if d["eu_adequacy"] else "No")
     facts = (
-        fact("Law", d.get("law") or "—")
+        fact("Regulation", d.get("law") or "—")
         + fact("Authority", d.get("authority_acronym") or d.get("authority"),
                sub=(d.get("authority") if d.get("authority_acronym") else None) or d.get("authority_url"))
         + fact("DPO", d.get("dpo"))
