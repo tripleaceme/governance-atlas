@@ -2,7 +2,7 @@
 """Point every absolute URL on the site at a new base.
 
 Usage:
-    python3 scripts/set_base_url.py https://governance-atlas.pages.dev/
+    python3 scripts/set_base_url.py https://atlas.ayoadeabel.tech/
     python3 scripts/set_base_url.py https://atlas.example.com/ --dry-run
 
 Canonical links, og:url and og:image are absolute by necessity — crawlers and
