@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn — Governance Atlas</title>
+<meta name="description" content="Personal data protection explained for people who are not lawyers: what the law actually asks of you, whether it applies to your organisation, the vocabulary you will hear, who to involve, and the smallest set of first steps that gets you started.">
+<link rel="canonical" href="https://tripleaceme.github.io/governance-atlas/learn.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Governance Atlas">
+<meta property="og:title" content="Learn — Governance Atlas">
+<meta property="og:description" content="Personal data protection explained for people who are not lawyers: what the law actually asks of you, whether it applies to your organisation, the vocabulary you will hear, who to involve, and the smallest set of first steps that gets you started.">
+<meta property="og:url" content="https://tripleaceme.github.io/governance-atlas/learn.html">
+<meta property="og:image" content="https://tripleaceme.github.io/governance-atlas/assets/og-image.png">
+<meta property="og:image:secure_url" content="https://tripleaceme.github.io/governance-atlas/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Governance Atlas — data protection law by country">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn — Governance Atlas">
+<meta name="twitter:description" content="Personal data protection explained for people who are not lawyers: what the law actually asks of you, whether it applies to your organisation, the vocabulary you will hear, who to involve, and the smallest set of first steps that gets you started.">
+<meta name="twitter:image" content="https://tripleaceme.github.io/governance-atlas/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='24' cy='24' r='22' fill='none' stroke='%23a23c2a' stroke-width='1.5' stroke-dasharray='2 3'/><circle cx='24' cy='24' r='17' fill='none' stroke='%2322304a' stroke-width='2.5'/><ellipse cx='24' cy='24' rx='8' ry='17' fill='none' stroke='%2322304a' stroke-width='1.6'/><line x1='7' y1='24' x2='41' y2='24' stroke='%2322304a' stroke-width='1.6'/><line x1='24' y1='7' x2='24' y2='41' stroke='%2322304a' stroke-width='1.6'/><circle cx='21' cy='27' r='3' fill='%23a23c2a'/></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .learnzone { padding: 96px 0 12px; }
+  /* Full-width prose, set in columns so lines stay readable */
+  .prose { columns: 2; column-gap: 56px; }
+  @media (max-width: 820px) { .prose { columns: 1; } }
+  .prose p { color: var(--ink-soft); margin: 0 0 16px; font-size: 1rem; line-height: 1.75; break-inside: avoid; }
+  .prose p strong { color: var(--ink); }
+
+  /* Applies-to-you checklist */
+  .triggers { width: 100%; }
+  .trigger { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .trigger:last-of-type { border-bottom: 0; }
+  .trigger .tick { color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .trigger p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
+  .trigger b { color: var(--ink); }
+  .verdict {
+    margin: 24px 0 0; padding: 20px 24px;
+    background: var(--panel); border: 1.5px solid var(--ink); box-shadow: 6px 6px 0 var(--shadow);
+    font-size: 0.95rem; color: var(--ink-soft);
+  }
+  .verdict strong { color: var(--ink); }
+
+  /* Glossary */
+  .glossary { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 0 44px; }
+  .term { padding: 15px 0; border-bottom: 1px solid var(--line); }
+  .term dt { font-family: var(--display); font-weight: 700; font-size: 0.98rem; color: var(--ink); margin: 0 0 4px; }
+  .term dd { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.62; }
+
+  /* People cards */
+  .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+  .person { background: var(--panel); border: 1px solid var(--line); padding: 22px 22px 20px; }
+  .person .when { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 700; color: var(--accent); }
+  .person h3 { font-family: var(--display); font-size: 1.06rem; margin: 5px 0 8px; font-weight: 700; }
+  .person p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.62; }
+
+  /* First steps — same card treatment as the people cards, numbered */
+  .stepcard { display: flex; flex-direction: column; }
+  .stephead { display: flex; align-items: center; gap: 11px; margin-bottom: 8px; }
+  .stepnum {
+    font-family: var(--display); font-size: 0.8rem; font-weight: 700;
+    color: var(--paper); background: var(--ink);
+    width: 26px; height: 26px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html" title="GovernanceAtlas home">
+      <svg class="logomark" width="36" height="36" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 3"/><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="2"/><ellipse cx="24" cy="24" rx="8" ry="17" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="7" y1="24" x2="41" y2="24" stroke="currentColor" stroke-width="1.4"/><line x1="24" y1="7" x2="24" y2="41" stroke="currentColor" stroke-width="1.4"/><circle cx="21" cy="27" r="2.4" fill="var(--accent)"/></svg>
+      <div>
+        <div class="mark">Governance<span>·</span>Atlas</div>
+        <div class="tag">Data regulation, by country</div>
+      </div>
+    </a>
+    <nav class="main">
+      <a href="index.html">Atlas</a>
+      <a href="learn.html" class="active">Learn</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumbs">
+    <a href="index.html">Home</a><span class="sep">›</span>
+    <span class="here">Learn</span>
+  </div>
+
+  <div class="hero">
+    <div class="plate">Start here</div>
+    <h1>Personal data protection explained for everyone</h1>
+    <p class="lawline">A practical guide to understanding whether the law applies to your organisation, what it requires, the key terms you need to know, who should be involved, and where to start.</p>
+  </div>
+
+  <div class="learnzone">
+    <h2 class="sect">What personal data protection is really about</h2>
+    <div class="prose">
+      <p>At its simplest, personal data protection is about how organisations handle information about people. 
+        Organisations need a good reason to collect and use personal data, 
+        they need to be clear about what they are doing with it, 
+        they need to protect it, and they need to respect people's rights.</p>
+
+      <p>That is the core idea. The differences between countries are mostly about who is covered, 
+        what organisations must do, what rights people have, who enforces the rules, and what happens 
+        when those rules are broken.</p>
+
+      <p>Two things surprise people most. First, these laws apply to ordinary organisations, 
+        not just tech companies: a clinic with patient records, a school with parent contacts, 
+        a shop with a mailing list, or an employer with staff records. Second, these regulations can apply 
+        across borders. An organisation may have to follow another country's regulations even when it 
+        is based somewhere else, depending on who it serves, what it does with personal data, and where those people are located.</p>
+    </div>
+  </div>
+
+  <div class="learnzone">
+    <h2 class="sect">Does this apply to you?</h2>
+    <p class="sect-sub">If any of these are true, at least one data protection law already covers what you do.</p>
+    <div class="triggers">
+      <div class="trigger"><span class="tick">✓</span><p><b>You keep names, emails, phone numbers or addresses: </b>for customers, staff, job applicants, donors, patients, or students.</p></div>
+      <div class="trigger"><span class="tick">✓</span><p><b>You have customers, users or employees in another country: </b>that country's law may reach you even if you have no office there.</p></div>
+      <div class="trigger"><span class="tick">✓</span><p><b>You use analytics, advertising, email marketing or a CRM: </b>these collect and share personal data by design.</p></div>
+      <div class="trigger"><span class="tick">✓</span><p><b>You handle sensitive information: </b>health, biometrics, financial details, religion, political views, or anything about children.</p></div>
+      <div class="trigger"><span class="tick">✓</span><p><b>Someone else processes data for you: </b>a payroll provider, cloud host, or agency. Their handling is still your responsibility.</p></div>
+    </div>
+    <div class="verdict">
+      <strong>Almost every organisation ticks at least one box.</strong> The useful question is therefore not <em>whether</em> a law applies, but <em>which</em> one. You can start with the country where your people are, using the <a href="personal/countries.html">country index</a>.
+    </div>
+  </div>
+
+  <div class="learnzone">
+    <h2 class="sect">The words you will hear</h2>
+    <p class="sect-sub">The vocabulary that makes every country page, contract, and regulator letter readable.</p>
+    <dl class="glossary">
+      <div class="term"><dt>Personal data</dt><dd>Any information that identifies a living person, directly or indirectly e.g a name, an email, an ID number, a location, even an IP address in many jurisdictions.</dd></div>
+      <div class="term"><dt>Data subject</dt><dd>The person the data is about. Laws grant them rights; you owe them duties.</dd></div>
+      <div class="term"><dt>Controller</dt><dd>The organisation that decides why and how data is processed. Most legal obligations land here. This is usually you as a company.</dd></div>
+      <div class="term"><dt>Processor</dt><dd>Anyone handling data on the controller's instructions e.g a cloud host, payroll firm, or agency. They carry their own duties too.</dd></div>
+      <div class="term"><dt>Lawful basis</dt><dd>The legal reason you are allowed to process data at all: consent, a contract, a legal obligation, vital interests, public task, or legitimate interests.</dd></div>
+      <div class="term"><dt>Consent</dt><dd>One lawful basis among several and often the weakest, because it must be freely given, specific, informed, and as easy to withdraw as it was to give.</dd></div>
+      <div class="term"><dt>Privacy notice</dt><dd>The public statement telling people what you collect, why, who you share it with, how long you keep it, and how to reach you. Usually the first thing a regulator checks.</dd></div>
+      <div class="term"><dt>Data Protection Officer (DPO)</dt><dd>The person accountable for privacy day to day. Mandatory above certain thresholds in many countries; South Africa calls the equivalent role an Information Officer.</dd></div>
+      <div class="term"><dt>Supervisory authority</dt><dd>The regulator that enforces the law, receives breach reports and complaints, and issues fines. Every country page names yours.</dd></div>
+      <div class="term"><dt>Personal data breach</dt><dd>Any incident where data is lost, stolen, altered, or exposed (not only hacking). A misdirected email counts. Most laws set a reporting deadline; 72 hours is the most common.</dd></div>
+      <div class="term"><dt>DPIA</dt><dd>A Data Protection Impact Assessment: a written risk assessment done <em>before</em> starting something high-risk, such as large-scale profiling or new surveillance technology.</dd></div>
+      <div class="term"><dt>Cross-border transfer</dt><dd>Sending personal data to another country, including simply using a cloud service hosted abroad. Most laws restrict this unless safeguards are in place.</dd></div>
+      <div class="term"><dt>Adequacy decision</dt><dd>A formal finding that another country protects data to an equivalent standard, letting data flow there freely. Few countries hold one.</dd></div>
+      <div class="term"><dt>Standard Contractual Clauses (SCCs)</dt><dd>Pre-approved contract terms that bind whoever receives your data abroad to protect it properly. The main workaround where no adequacy decision exists.</dd></div>
+      <div class="term"><dt>Retention</dt><dd>How long you keep data. "Forever" is not a lawful answer, you are expected to set a period tied to the purpose, and then delete.</dd></div>
+      <div class="term"><dt>RoPA</dt><dd>Records of Processing Activities: your internal inventory of what data you hold, why, where it lives, and who it is shared with. Several laws require it; everyone benefits from it.</dd></div>
+    </dl>
+  </div>
+
+  <div class="learnzone">
+    <h2 class="sect">Who you will be talking to</h2>
+    <p class="sect-sub">Privacy work is a team work. These are the people involved and when to bring them in.</p>
+    <div class="people">
+      <div class="person">
+        <span class="when">From day one</span>
+        <h3>Whoever runs your data</h3>
+        <p>Your engineers, analysts, or IT provider are the only people who truly know where personal data lives, who can reach it, and what your tools quietly collect. No privacy programme survives without them.</p>
+      </div>
+      <div class="person">
+        <span class="when">From day one</span>
+        <h3>An accountable owner</h3>
+        <p>One named person responsible for privacy e.g a Data Protection Officer where the law requires it, otherwise simply whoever will answer for it. Many countries mandate the role above a size or risk threshold.</p>
+      </div>
+      <div class="person">
+        <span class="when">Before you sign anything</span>
+        <h3>Your vendors and processors</h3>
+        <p>Every tool that touches customer data needs a written agreement covering what they may do with it and where it goes. Ask before adopting, not after.</p>
+      </div>
+      <div class="person">
+        <span class="when">At the decision points</span>
+        <h3>A privacy lawyer or licensed consultancy</h3>
+        <p>For binding advice, cross-border contracts, filings, and audits. Some countries license specific firms for this e.g Nigeria's DPCOs file compliance audits on your behalf, for instance.</p>
+      </div>
+      <div class="person">
+        <span class="when">When required or when in doubt</span>
+        <h3>Your regulator</h3>
+        <p>Not only an enforcer. Supervisory authorities publish guidance, run registration portals, and answer questions. You will also contact them to report a breach. Each country page links yours directly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="learnzone">
+    <h2 class="sect">How to start with minimal effort</h2>
+    <p class="sect-sub">You do not need a compliance department. These steps are ordered so the cheapest, highest-value work comes first.</p>
+    <div class="people steps-grid">
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">1</span><span class="when">30 minutes</span></div>
+        <h3>Find out which law applies</h3>
+        <p>Look up the country where your customers, staff or users are. Note the regulator, the breach deadline, and whether you must register. <a href="personal/countries.html">Open the country index →</a></p>
+      </div>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">2</span><span class="when">An afternoon</span></div>
+        <h3>Write down what you collect</h3>
+        <p>A single spreadsheet: what personal data you hold, why you have it, where it lives, who can see it, and who you share it with. This is the seed of a RoPA and makes every later step easier.</p>
+      </div>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">3</span><span class="when">An hour</span></div>
+        <h3>Name someone accountable</h3>
+        <p>Even where the law does not demand a DPO, pick a person. Privacy that belongs to everyone belongs to no one.</p>
+      </div>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">4</span><span class="when">A day</span></div>
+        <h3>Publish a plain-language privacy notice</h3>
+        <p>Say what you collect, why, who you share it with, how long you keep it, what rights people have, and how to contact you. Write it for a customer, not a court.</p>
+      </div>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">5</span><span class="when">A week</span></div>
+        <h3>Delete what you should not have, lock down the rest</h3>
+        <p>Old exports, abandoned spreadsheets, shared logins. Reduce who can reach personal data to those who need it, and set retention periods so data expires on purpose.</p>
+      </div>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">6</span><span class="when">Half a day</span></div>
+        <h3>Agree what happens if there is a breach</h3>
+        <p>One page: who is told first, who decides whether it is reportable, who contacts the regulator, and the deadline. Deciding this calmly in advance is worth more than any policy document.</p>
+      </div>
+      <div class="person stepcard">
+        <div class="stephead"><span class="stepnum">7</span><span class="when">Ongoing</span></div>
+        <h3>Then, and only then, scale up</h3>
+        <p>Vendor agreements, transfer mechanisms such as SCCs, DPIAs for high-risk projects, registration and audits where required. By now you will know which of these you actually need.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="audzone">
+    <h2 class="sect">Where to go next</h2>
+    <p class="sect-sub">Now that you know the shape of it, let's get specific.</p>
+    <div class="audgrid">
+      <a class="aud" href="personal/countries.html">
+        <span class="who">Step one</span>
+        <h3>Read your country's brief</h3>
+        <p>Start with the privacy law that applies to you. See the key requirements, regulator, deadlines, penalties, and links to official sources.</p>
+        <span class="go2">Browse all countries →</span>
+      </a>
+      <a class="aud" href="personal/compare.html">
+        <span class="who">Operating in several</span>
+        <h3>Compare obligations</h3>
+        <p>Compare up to three countries side by side to see where their privacy requirements are different.</p>
+        <span class="go2">Open Compare →</span>
+      </a>
+      <a class="aud" href="resources.html">
+        <span class="who">Ready to build</span>
+        <h3>Pick up the tools</h3>
+        <p>Find free and open-source tools, templates, and reference materials to help you put privacy requirements into practice.</p>
+        <span class="go2">Go to Resources →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="learnzone">
+    <h2 class="sect">Further reading</h2>
+    <p class="sect-sub">Official sources, guidance, and communities for privacy professionals.</p>
+    <div class="sources">
+      <a class="source" href="https://gdpr-info.eu" target="_blank" rel="noopener"><span class="kind">Reference</span><span class="t">GDPR full text, hyperlinked</span> <span class="ext">↗</span><span class="desc">The complete regulation, cross-linked article by article with its recitals.</span></a>
+      <a class="source" href="https://www.edpb.europa.eu" target="_blank" rel="noopener"><span class="kind">Guidance</span><span class="t">EDPB guidelines</span> <span class="ext">↗</span><span class="desc">Official interpretation and guidance from Europe's data protection board.</span></a>
+      <a class="source" href="https://iapp.org" target="_blank" rel="noopener"><span class="kind">Community</span><span class="t">IAPP — privacy professionals</span> <span class="ext">↗</span><span class="desc">The largest professional association for privacy practitioners, with training and certification.</span></a>
+      <a class="source" href="https://fpf.org" target="_blank" rel="noopener"><span class="kind">Research</span><span class="t">Future of Privacy Forum</span> <span class="ext">↗</span><span class="desc">Research and analysis on emerging privacy issues and technology.</span></a>
+    </div>
+  </div>
+</div>
+
+
+<footer class="site">
+  <div class="wrap">
+    <div>Governance Atlas is a reference tool, not legal advice. Laws change and the rules that apply depend on your organisation and its activities. Always check the official sources linked on each country page before relying on the information.</div>
+    <div class="credits">
+      <!-- <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">Suggest a correction on GitHub ↗</a> -->
+      <span>Developed by <a href="https://ayoadeabel.tech" target="_blank" rel="noopener">Ayoade Adegbite</a></span>
+      <!-- <a class="li" href="https://www.linkedin.com/in/tripleaceme/" target="_blank" rel="noopener" aria-label="Ayoade Adegbite on LinkedIn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a> -->
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

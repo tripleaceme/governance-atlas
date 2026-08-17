@@ -1,0 +1,1748 @@
+[
+  {
+    "slug": "morocco",
+    "name": "Morocco",
+    "code": "MA",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 09-08 (2009)"
+  },
+  {
+    "slug": "algeria",
+    "name": "Algeria",
+    "code": "DZ",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 18-07 (2018)"
+  },
+  {
+    "slug": "tunisia",
+    "name": "Tunisia",
+    "code": "TN",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Organic Act 2004-63"
+  },
+  {
+    "slug": "libya",
+    "name": "Libya",
+    "code": "LY",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "egypt",
+    "name": "Egypt",
+    "code": "EG",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 151 (2020)"
+  },
+  {
+    "slug": "cabo-verde",
+    "name": "Cabo Verde",
+    "code": "CV",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 133/V/2001, rev. 2021"
+  },
+  {
+    "slug": "mauritania",
+    "name": "Mauritania",
+    "code": "MR",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 2017-020"
+  },
+  {
+    "slug": "mali",
+    "name": "Mali",
+    "code": "ML",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 2013-015"
+  },
+  {
+    "slug": "niger",
+    "name": "Niger",
+    "code": "NE",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 2017-28"
+  },
+  {
+    "slug": "chad",
+    "name": "Chad",
+    "code": "TD",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 007/PR/2015"
+  },
+  {
+    "slug": "sudan",
+    "name": "Sudan",
+    "code": "SD",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "eritrea",
+    "name": "Eritrea",
+    "code": "ER",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "senegal",
+    "name": "Senegal",
+    "code": "SN",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 2008-12"
+  },
+  {
+    "slug": "burkina-faso",
+    "name": "Burkina Faso",
+    "code": "BF",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 001-2021"
+  },
+  {
+    "slug": "benin",
+    "name": "Benin",
+    "code": "BJ",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Digital Code (2018)"
+  },
+  {
+    "slug": "nigeria",
+    "name": "Nigeria",
+    "code": "NG",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "NDPA 2023"
+  },
+  {
+    "slug": "central-african-rep",
+    "name": "Central African Rep.",
+    "code": "CF",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "south-sudan",
+    "name": "South Sudan",
+    "code": "SS",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "ethiopia",
+    "name": "Ethiopia",
+    "code": "ET",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Proclamation 1321 (2024)"
+  },
+  {
+    "slug": "djibouti",
+    "name": "Djibouti",
+    "code": "DJ",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "gambia",
+    "name": "Gambia",
+    "code": "GM",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "guinea",
+    "name": "Guinea",
+    "code": "GN",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 2016-037"
+  },
+  {
+    "slug": "cote-d-ivoire",
+    "name": "Côte d'Ivoire",
+    "code": "CI",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 2013-450"
+  },
+  {
+    "slug": "togo",
+    "name": "Togo",
+    "code": "TG",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 2019-014"
+  },
+  {
+    "slug": "cameroon",
+    "name": "Cameroon",
+    "code": "CM",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "uganda",
+    "name": "Uganda",
+    "code": "UG",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPPA 2019"
+  },
+  {
+    "slug": "kenya",
+    "name": "Kenya",
+    "code": "KE",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2019"
+  },
+  {
+    "slug": "somalia",
+    "name": "Somalia",
+    "code": "SO",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2023"
+  },
+  {
+    "slug": "seychelles",
+    "name": "Seychelles",
+    "code": "SC",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2023"
+  },
+  {
+    "slug": "guinea-bissau",
+    "name": "Guinea-Bissau",
+    "code": "GW",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "sierra-leone",
+    "name": "Sierra Leone",
+    "code": "SL",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "liberia",
+    "name": "Liberia",
+    "code": "LR",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "ghana",
+    "name": "Ghana",
+    "code": "GH",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2012 (Act 843)"
+  },
+  {
+    "slug": "equatorial-guinea",
+    "name": "Equatorial Guinea",
+    "code": "GQ",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "congo",
+    "name": "Congo",
+    "code": "CG",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 29-2019"
+  },
+  {
+    "slug": "dr-congo",
+    "name": "DR Congo",
+    "code": "CD",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Digital Code (2023)"
+  },
+  {
+    "slug": "rwanda",
+    "name": "Rwanda",
+    "code": "RW",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 058/2021"
+  },
+  {
+    "slug": "tanzania",
+    "name": "Tanzania",
+    "code": "TZ",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "PDPA 2022"
+  },
+  {
+    "slug": "sao-tome-principe",
+    "name": "São Tomé & Príncipe",
+    "code": "ST",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 3/2016"
+  },
+  {
+    "slug": "gabon",
+    "name": "Gabon",
+    "code": "GA",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 001/2011"
+  },
+  {
+    "slug": "angola",
+    "name": "Angola",
+    "code": "AO",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 22/11"
+  },
+  {
+    "slug": "zambia",
+    "name": "Zambia",
+    "code": "ZM",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2021"
+  },
+  {
+    "slug": "burundi",
+    "name": "Burundi",
+    "code": "BI",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "malawi",
+    "name": "Malawi",
+    "code": "MW",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2024"
+  },
+  {
+    "slug": "comoros",
+    "name": "Comoros",
+    "code": "KM",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "namibia",
+    "name": "Namibia",
+    "code": "NA",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "botswana",
+    "name": "Botswana",
+    "code": "BW",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2018"
+  },
+  {
+    "slug": "zimbabwe",
+    "name": "Zimbabwe",
+    "code": "ZW",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2021"
+  },
+  {
+    "slug": "mozambique",
+    "name": "Mozambique",
+    "code": "MZ",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "madagascar",
+    "name": "Madagascar",
+    "code": "MG",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "Law 2014-038"
+  },
+  {
+    "slug": "mauritius",
+    "name": "Mauritius",
+    "code": "MU",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2017"
+  },
+  {
+    "slug": "south-africa",
+    "name": "South Africa",
+    "code": "ZA",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "POPIA 2013"
+  },
+  {
+    "slug": "lesotho",
+    "name": "Lesotho",
+    "code": "LS",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2012"
+  },
+  {
+    "slug": "eswatini",
+    "name": "Eswatini",
+    "code": "SZ",
+    "continent": "Africa",
+    "continent_slug": "africa",
+    "status": "a",
+    "law": "DPA 2022"
+  },
+  {
+    "slug": "iceland",
+    "name": "Iceland",
+    "code": "IS",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR (EEA) + Act 90/2018"
+  },
+  {
+    "slug": "norway",
+    "name": "Norway",
+    "code": "NO",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR (EEA) + PDA 2018"
+  },
+  {
+    "slug": "sweden",
+    "name": "Sweden",
+    "code": "SE",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "finland",
+    "name": "Finland",
+    "code": "FI",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + DPA 2018"
+  },
+  {
+    "slug": "russia",
+    "name": "Russia",
+    "code": "RU",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "FZ-152 (2006)"
+  },
+  {
+    "slug": "ireland",
+    "name": "Ireland",
+    "code": "IE",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + DPA 2018"
+  },
+  {
+    "slug": "united-kingdom",
+    "name": "United Kingdom",
+    "code": "GB",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "UK GDPR + DPA 2018"
+  },
+  {
+    "slug": "denmark",
+    "name": "Denmark",
+    "code": "DK",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "estonia",
+    "name": "Estonia",
+    "code": "EE",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "netherlands",
+    "name": "Netherlands",
+    "code": "NL",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + UAVG"
+  },
+  {
+    "slug": "germany",
+    "name": "Germany",
+    "code": "DE",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + BDSG"
+  },
+  {
+    "slug": "poland",
+    "name": "Poland",
+    "code": "PL",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "latvia",
+    "name": "Latvia",
+    "code": "LV",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "belarus",
+    "name": "Belarus",
+    "code": "BY",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "PDPL (2021)"
+  },
+  {
+    "slug": "belgium",
+    "name": "Belgium",
+    "code": "BE",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "luxembourg",
+    "name": "Luxembourg",
+    "code": "LU",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "czechia",
+    "name": "Czechia",
+    "code": "CZ",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "slovakia",
+    "name": "Slovakia",
+    "code": "SK",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "lithuania",
+    "name": "Lithuania",
+    "code": "LT",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "ukraine",
+    "name": "Ukraine",
+    "code": "UA",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "Law 2297 (2010)"
+  },
+  {
+    "slug": "france",
+    "name": "France",
+    "code": "FR",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + Loi Informatique"
+  },
+  {
+    "slug": "switzerland",
+    "name": "Switzerland",
+    "code": "CH",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "revFADP (2023)"
+  },
+  {
+    "slug": "austria",
+    "name": "Austria",
+    "code": "AT",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + DSG"
+  },
+  {
+    "slug": "hungary",
+    "name": "Hungary",
+    "code": "HU",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "liechtenstein",
+    "name": "Liechtenstein",
+    "code": "LI",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR (EEA)"
+  },
+  {
+    "slug": "moldova",
+    "name": "Moldova",
+    "code": "MD",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "Law 133 (2011)"
+  },
+  {
+    "slug": "portugal",
+    "name": "Portugal",
+    "code": "PT",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "spain",
+    "name": "Spain",
+    "code": "ES",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + LOPDGDD"
+  },
+  {
+    "slug": "italy",
+    "name": "Italy",
+    "code": "IT",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + Codice Privacy"
+  },
+  {
+    "slug": "slovenia",
+    "name": "Slovenia",
+    "code": "SI",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + ZVOP-2"
+  },
+  {
+    "slug": "croatia",
+    "name": "Croatia",
+    "code": "HR",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "romania",
+    "name": "Romania",
+    "code": "RO",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "andorra",
+    "name": "Andorra",
+    "code": "AD",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "LQPD (2021)"
+  },
+  {
+    "slug": "monaco",
+    "name": "Monaco",
+    "code": "MC",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "Law 1.565 (2024)"
+  },
+  {
+    "slug": "san-marino",
+    "name": "San Marino",
+    "code": "SM",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "Law 171 (2018)"
+  },
+  {
+    "slug": "bosnia-herzegovina",
+    "name": "Bosnia & Herzegovina",
+    "code": "BA",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "DP Law (2006)"
+  },
+  {
+    "slug": "serbia",
+    "name": "Serbia",
+    "code": "RS",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "ZZPL (2018)"
+  },
+  {
+    "slug": "bulgaria",
+    "name": "Bulgaria",
+    "code": "BG",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "malta",
+    "name": "Malta",
+    "code": "MT",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "montenegro",
+    "name": "Montenegro",
+    "code": "ME",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "PDPL (2008)"
+  },
+  {
+    "slug": "albania",
+    "name": "Albania",
+    "code": "AL",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "Law 9887 (2008)"
+  },
+  {
+    "slug": "north-macedonia",
+    "name": "North Macedonia",
+    "code": "MK",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "LPDP (2020)"
+  },
+  {
+    "slug": "greece",
+    "name": "Greece",
+    "code": "GR",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR + Law 4624"
+  },
+  {
+    "slug": "cyprus",
+    "name": "Cyprus",
+    "code": "CY",
+    "continent": "Europe",
+    "continent_slug": "europe",
+    "status": "a",
+    "law": "GDPR"
+  },
+  {
+    "slug": "turkey",
+    "name": "Turkey",
+    "code": "TR",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "KVKK (2016)"
+  },
+  {
+    "slug": "georgia",
+    "name": "Georgia",
+    "code": "GE",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "Personal Data Law (2023)"
+  },
+  {
+    "slug": "kazakhstan",
+    "name": "Kazakhstan",
+    "code": "KZ",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "Law 94-V (2013)"
+  },
+  {
+    "slug": "mongolia",
+    "name": "Mongolia",
+    "code": "MN",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PIPA (2021)"
+  },
+  {
+    "slug": "syria",
+    "name": "Syria",
+    "code": "SY",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "armenia",
+    "name": "Armenia",
+    "code": "AM",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDP Law (2015)"
+  },
+  {
+    "slug": "azerbaijan",
+    "name": "Azerbaijan",
+    "code": "AZ",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PD Law (2010)"
+  },
+  {
+    "slug": "uzbekistan",
+    "name": "Uzbekistan",
+    "code": "UZ",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "Law 547 (2019)"
+  },
+  {
+    "slug": "kyrgyzstan",
+    "name": "Kyrgyzstan",
+    "code": "KG",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PD Law (2008)"
+  },
+  {
+    "slug": "china",
+    "name": "China",
+    "code": "CN",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PIPL (2021)"
+  },
+  {
+    "slug": "north-korea",
+    "name": "North Korea",
+    "code": "KP",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "japan",
+    "name": "Japan",
+    "code": "JP",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "APPI (rev. 2022)"
+  },
+  {
+    "slug": "lebanon",
+    "name": "Lebanon",
+    "code": "LB",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "Law 81 (2018)"
+  },
+  {
+    "slug": "iraq",
+    "name": "Iraq",
+    "code": "IQ",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "iran",
+    "name": "Iran",
+    "code": "IR",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "turkmenistan",
+    "name": "Turkmenistan",
+    "code": "TM",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PD Law (2017)"
+  },
+  {
+    "slug": "tajikistan",
+    "name": "Tajikistan",
+    "code": "TJ",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PD Law (2018)"
+  },
+  {
+    "slug": "south-korea",
+    "name": "South Korea",
+    "code": "KR",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PIPA (2011)"
+  },
+  {
+    "slug": "israel",
+    "name": "Israel",
+    "code": "IL",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PPL (1981, am. 2024)"
+  },
+  {
+    "slug": "jordan",
+    "name": "Jordan",
+    "code": "JO",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPL (2023)"
+  },
+  {
+    "slug": "kuwait",
+    "name": "Kuwait",
+    "code": "KW",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "DPPR (2021)"
+  },
+  {
+    "slug": "afghanistan",
+    "name": "Afghanistan",
+    "code": "AF",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "pakistan",
+    "name": "Pakistan",
+    "code": "PK",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "nepal",
+    "name": "Nepal",
+    "code": "NP",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "Privacy Act (2018)"
+  },
+  {
+    "slug": "bhutan",
+    "name": "Bhutan",
+    "code": "BT",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "taiwan",
+    "name": "Taiwan",
+    "code": "TW",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPA (2010)"
+  },
+  {
+    "slug": "saudi-arabia",
+    "name": "Saudi Arabia",
+    "code": "SA",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPL (2021)"
+  },
+  {
+    "slug": "bahrain",
+    "name": "Bahrain",
+    "code": "BH",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPL (2018)"
+  },
+  {
+    "slug": "qatar",
+    "name": "Qatar",
+    "code": "QA",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "Law 13 (2016)"
+  },
+  {
+    "slug": "india",
+    "name": "India",
+    "code": "IN",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "DPDP Act (2023)"
+  },
+  {
+    "slug": "bangladesh",
+    "name": "Bangladesh",
+    "code": "BD",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "myanmar",
+    "name": "Myanmar",
+    "code": "MM",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "laos",
+    "name": "Laos",
+    "code": "LA",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "Electronic Data Law (2017)"
+  },
+  {
+    "slug": "yemen",
+    "name": "Yemen",
+    "code": "YE",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "united-arab-emirates",
+    "name": "United Arab Emirates",
+    "code": "AE",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPL (2021)"
+  },
+  {
+    "slug": "oman",
+    "name": "Oman",
+    "code": "OM",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPL (2022)"
+  },
+  {
+    "slug": "sri-lanka",
+    "name": "Sri Lanka",
+    "code": "LK",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPA (2022)"
+  },
+  {
+    "slug": "thailand",
+    "name": "Thailand",
+    "code": "TH",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPA (2019)"
+  },
+  {
+    "slug": "vietnam",
+    "name": "Vietnam",
+    "code": "VN",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPD (2023)"
+  },
+  {
+    "slug": "philippines",
+    "name": "Philippines",
+    "code": "PH",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "DPA (2012)"
+  },
+  {
+    "slug": "maldives",
+    "name": "Maldives",
+    "code": "MV",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "cambodia",
+    "name": "Cambodia",
+    "code": "KH",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "malaysia",
+    "name": "Malaysia",
+    "code": "MY",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPA (2010)"
+  },
+  {
+    "slug": "brunei",
+    "name": "Brunei",
+    "code": "BN",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "d",
+    "law": "PDPO consultation"
+  },
+  {
+    "slug": "singapore",
+    "name": "Singapore",
+    "code": "SG",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDPA (2012)"
+  },
+  {
+    "slug": "indonesia",
+    "name": "Indonesia",
+    "code": "ID",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "a",
+    "law": "PDP Law (2022)"
+  },
+  {
+    "slug": "timor-leste",
+    "name": "Timor-Leste",
+    "code": "TL",
+    "continent": "Asia",
+    "continent_slug": "asia",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "canada",
+    "name": "Canada",
+    "code": "CA",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "PIPEDA (2000)"
+  },
+  {
+    "slug": "united-states",
+    "name": "United States",
+    "code": "US",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "d",
+    "law": "State laws only — no federal"
+  },
+  {
+    "slug": "mexico",
+    "name": "Mexico",
+    "code": "MX",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "LFPDPPP (2010, rev. 2025)"
+  },
+  {
+    "slug": "bahamas",
+    "name": "Bahamas",
+    "code": "BS",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "DPA (2003)"
+  },
+  {
+    "slug": "belize",
+    "name": "Belize",
+    "code": "BZ",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "DPA (2021)"
+  },
+  {
+    "slug": "cuba",
+    "name": "Cuba",
+    "code": "CU",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "Law 149 (2022)"
+  },
+  {
+    "slug": "haiti",
+    "name": "Haiti",
+    "code": "HT",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "dominican-republic",
+    "name": "Dominican Republic",
+    "code": "DO",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "Law 172-13 (2013)"
+  },
+  {
+    "slug": "guatemala",
+    "name": "Guatemala",
+    "code": "GT",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "honduras",
+    "name": "Honduras",
+    "code": "HN",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "jamaica",
+    "name": "Jamaica",
+    "code": "JM",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "DPA (2020)"
+  },
+  {
+    "slug": "st-kitts-nevis",
+    "name": "St. Kitts & Nevis",
+    "code": "KN",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "antigua-barbuda",
+    "name": "Antigua & Barbuda",
+    "code": "AG",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "DPA (2013)"
+  },
+  {
+    "slug": "el-salvador",
+    "name": "El Salvador",
+    "code": "SV",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "LPDP (2024)"
+  },
+  {
+    "slug": "nicaragua",
+    "name": "Nicaragua",
+    "code": "NI",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "Law 787 (2012)"
+  },
+  {
+    "slug": "dominica",
+    "name": "Dominica",
+    "code": "DM",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "costa-rica",
+    "name": "Costa Rica",
+    "code": "CR",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "Law 8968 (2011)"
+  },
+  {
+    "slug": "panama",
+    "name": "Panama",
+    "code": "PA",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "Law 81 (2019)"
+  },
+  {
+    "slug": "st-vincent",
+    "name": "St. Vincent",
+    "code": "VC",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "barbados",
+    "name": "Barbados",
+    "code": "BB",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "DPA (2019)"
+  },
+  {
+    "slug": "st-lucia",
+    "name": "St. Lucia",
+    "code": "LC",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "grenada",
+    "name": "Grenada",
+    "code": "GD",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "trinidad-tobago",
+    "name": "Trinidad & Tobago",
+    "code": "TT",
+    "continent": "North America",
+    "continent_slug": "north-america",
+    "status": "a",
+    "law": "DPA (2011)"
+  },
+  {
+    "slug": "colombia",
+    "name": "Colombia",
+    "code": "CO",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "a",
+    "law": "Law 1581 (2012)"
+  },
+  {
+    "slug": "venezuela",
+    "name": "Venezuela",
+    "code": "VE",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "guyana",
+    "name": "Guyana",
+    "code": "GY",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "a",
+    "law": "DPA (2023)"
+  },
+  {
+    "slug": "suriname",
+    "name": "Suriname",
+    "code": "SR",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "ecuador",
+    "name": "Ecuador",
+    "code": "EC",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "a",
+    "law": "LOPDP (2021)"
+  },
+  {
+    "slug": "peru",
+    "name": "Peru",
+    "code": "PE",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "a",
+    "law": "Law 29733 (2011)"
+  },
+  {
+    "slug": "brazil",
+    "name": "Brazil",
+    "code": "BR",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "a",
+    "law": "LGPD (2018)"
+  },
+  {
+    "slug": "bolivia",
+    "name": "Bolivia",
+    "code": "BO",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "paraguay",
+    "name": "Paraguay",
+    "code": "PY",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "chile",
+    "name": "Chile",
+    "code": "CL",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "a",
+    "law": "Law 21.719 (2024)"
+  },
+  {
+    "slug": "argentina",
+    "name": "Argentina",
+    "code": "AR",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "a",
+    "law": "Law 25.326 (2000)"
+  },
+  {
+    "slug": "uruguay",
+    "name": "Uruguay",
+    "code": "UY",
+    "continent": "South America",
+    "continent_slug": "south-america",
+    "status": "a",
+    "law": "Law 18.331 (2008)"
+  },
+  {
+    "slug": "palau",
+    "name": "Palau",
+    "code": "PW",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "micronesia",
+    "name": "Micronesia",
+    "code": "FM",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "marshall-islands",
+    "name": "Marshall Islands",
+    "code": "MH",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "kiribati",
+    "name": "Kiribati",
+    "code": "KI",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "papua-new-guinea",
+    "name": "Papua New Guinea",
+    "code": "PG",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "nauru",
+    "name": "Nauru",
+    "code": "NR",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "tuvalu",
+    "name": "Tuvalu",
+    "code": "TV",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "australia",
+    "name": "Australia",
+    "code": "AU",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "a",
+    "law": "Privacy Act (1988)"
+  },
+  {
+    "slug": "solomon-islands",
+    "name": "Solomon Islands",
+    "code": "SB",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "d",
+    "law": "Consultation"
+  },
+  {
+    "slug": "vanuatu",
+    "name": "Vanuatu",
+    "code": "VU",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "fiji",
+    "name": "Fiji",
+    "code": "FJ",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "d",
+    "law": "Bill in progress"
+  },
+  {
+    "slug": "samoa",
+    "name": "Samoa",
+    "code": "WS",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "n",
+    "law": ""
+  },
+  {
+    "slug": "new-zealand",
+    "name": "New Zealand",
+    "code": "NZ",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "a",
+    "law": "Privacy Act (2020)"
+  },
+  {
+    "slug": "tonga",
+    "name": "Tonga",
+    "code": "TO",
+    "continent": "Oceania",
+    "continent_slug": "oceania",
+    "status": "n",
+    "law": ""
+  }
+]
