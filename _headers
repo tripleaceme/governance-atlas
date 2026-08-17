@@ -1,0 +1,20 @@
+# Cloudflare Pages — response headers
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Country pages change only when the data is re-researched
+/countries/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/continents/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Styles and the world map are edited more often than they are cached against,
+# so keep this short enough that a fix reaches people the same day
+/assets/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=604800

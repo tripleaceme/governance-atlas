@@ -1,0 +1,10 @@
+# Cloudflare Pages — redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# Placeholder for the v2 restructure. When personal-data pages move under
+# /personal/, these three lines replace what would otherwise be ~200 stub
+# pages on a host without redirect support:
+#
+#   /countries/*    /personal/countries/:splat    301
+#   /compare.html   /personal/compare.html        301
+#   /countries.html /personal/countries.html      301
