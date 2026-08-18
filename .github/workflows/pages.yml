@@ -1,8 +1,12 @@
-name: Deploy to GitHub Pages
+# Publishes the v2 three-domain prototype to GitHub Pages for feedback.
+# The production site lives on Cloudflare Pages at atlas.ayoadeabel.tech
+# and is built from `main`; this workflow deploys only the v2/ folder
+# from the v2-domains branch.
+name: Deploy v2 preview to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [v2-domains]
   workflow_dispatch:
 
 permissions:
@@ -25,6 +29,6 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./v2
       - id: deployment
         uses: actions/deploy-pages@v4
