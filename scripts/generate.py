@@ -166,7 +166,7 @@ def stub_lawline(c):
 
 def render_stub(c):
     summaries = {
-        "a": f'<p>{esc(c["name"])} has an active comprehensive data protection law: <strong>{esc(c["law"])}</strong>. A full plain-English dossier for this page is being prepared and verified against primary sources.</p>',
+        "a": f'<p>{esc(c["name"])} has an active comprehensive data protection law: <strong>{esc(c["law"])}</strong>. A full dossier for this page is being prepared and verified against primary sources.</p>',
         "d": f'<p>{esc(c["name"])} does not yet have a comprehensive data protection law in force, but legislation is in progress ({esc(c["law"])}). This page will be expanded as the bill advances.</p>',
         "n": f'<p>No comprehensive data protection law has been identified for {esc(c["name"])} yet. Sector-specific rules, cybercrime laws, or constitutional privacy rights may still apply.</p>',
     }
@@ -281,7 +281,7 @@ def render_full(c, d):
 """
     return PAGE_SHELL.format(
         title=esc(c["name"]) + (f' — {esc(d["law"])}' if d.get("law") else ""),
-        meta_desc=esc(f'Data protection law in {c["name"]}: ' + (d.get("law") or "status, landscape, and sources") + " — plain-English summary, obligations, and official sources."),
+        meta_desc=esc(f'Data protection law in {c["name"]}: ' + (d.get("law") or "status, landscape, and sources") + " — summary, obligations, and official sources."),
         continent=esc(c["continent"]), continent_slug=c["continent_slug"], name=esc(c["name"]),
         code=esc(c["code"]), slug=c["slug"], lawline=full_lawline(c, d), chips=chips, facts=facts, article=article,
     )
