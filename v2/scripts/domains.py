@@ -1,14 +1,30 @@
 """Domain configuration for Governance Atlas v2.
 
-Three separate bodies of regulation, each with its own regulator, its own
-obligations, and therefore its own at-a-glance fields. Everything else about
-a domain — page shape, map, compare tool, A–Z index — is shared, so adding a
-domain means adding an entry here plus a data file in data/domains/.
+Three areas of data regulation. Two of them differ enough between countries
+to be worth tracking country by country; one does not.
+
+    kind = "tracker"  a country-by-country area: map, A–Z index, compare tool,
+                      and one page per country, driven by data/domains/<slug>.json
+    kind = "guide"    a single explanatory page describing practice, built from
+                      a content fragment in content/. No per-country claims.
+
+Data security is a guide, not a tracker. In most countries there is no
+free-standing "data security regulation" to point at — the duties are spread
+across a cybersecurity act, sector rules from financial and telecoms
+regulators, and the security article of the privacy law. Drawing a national
+boundary around "data security" would mean inventing a distinction the source
+material does not make. The practices, by contrast, are essentially the same
+everywhere, so describing them once is both more honest and more useful.
+
+Everything else about a tracker — page shape, map, compare tool, A–Z index —
+is shared, so adding one means adding an entry here plus a data file in
+data/domains/.
 """
 
 DOMAINS = {
     "personal": {
         "slug": "personal",
+        "kind": "tracker",
         "label": "Personal data",
         "nav_label": "Personal data",
         "title": "Personal data protection",
@@ -16,7 +32,7 @@ DOMAINS = {
         "blurb": "Rules governing how organisations may collect, use, share, store and delete "
                  "information about identifiable people.",
         "regulator_label": "Data protection authority",
-        "hero_h1": "Personal data protection regulations, country by country, in plain English.",
+        "hero_h1": "Personal data protection regulations, country by country.",
         "hero_sub": "Clear summaries of the rules that govern <strong>personal data</strong> — how it may be "
                     "collected, used, shared and stored — with the official sources to help you verify them.",
         # (data key, panel label) — order defines the at-a-glance panel
@@ -42,36 +58,26 @@ DOMAINS = {
 
     "security": {
         "slug": "security",
+        "kind": "guide",
         "label": "Data security",
         "nav_label": "Data security",
-        "title": "Data security",
-        "tagline": "Data security regulation, by country",
-        "blurb": "Rules on protecting systems and data from attack: incident reporting, critical "
-                 "infrastructure duties, and minimum security standards.",
-        "regulator_label": "National CERT or cyber agency",
-        "hero_h1": "Data security regulation, country by country, in plain English.",
-        "hero_sub": "What each country requires when systems are attacked or data is exposed — who you "
-                    "must tell, how fast, and what standards apply.",
-        "fields": [
-            ("law", "Regulation"),
-            ("authority", "Authority"),
-            ("incident_deadline", "Incident reporting"),
-            ("critical_infrastructure", "Critical infrastructure"),
-            ("standards", "Mandated standards"),
-            ("sector_rules", "Sector duties"),
-            ("fine", "Maximum penalty"),
-            ("breach_overlap", "Overlap with privacy law"),
-        ],
-        "compare_rows": [
-            ("Primary regulation", "law"), ("Authority", "authority"),
-            ("Incident reporting", "incident_deadline"), ("Critical infrastructure", "critical_infrastructure"),
-            ("Mandated standards", "standards"), ("Maximum penalty", "fine"),
-        ],
-        "example": "Nigeria's Cybercrimes Act 2015 (amended 2024), with ngCERT",
+        "title": "Data security practices",
+        "tagline": "Data security practices, explained",
+        "blurb": "How data is actually protected in practice: access, encryption, backups, vendors, "
+                 "logging and incident response — the controls every regulator assumes you have.",
+        "hero_plate": "Practices",
+        "hero_h1": "Data security explained for everyone",
+        "hero_sub": "A practical guide to protecting the data you hold — what the controls are, which "
+                    "ones carry the most risk, who needs to be involved, and where to start.",
+        # A guide is one page assembled from this fragment.
+        "content": "security-practices.html",
+        "card_state": "A practice guide",
+        "example": "encryption, least privilege, backups, and an incident plan",
     },
 
     "general": {
         "slug": "general",
+        "kind": "tracker",
         "label": "General data",
         "nav_label": "General data",
         "title": "General data regulation",
@@ -79,7 +85,7 @@ DOMAINS = {
         "blurb": "Rules treating data as an economic asset: residency and localisation, non-personal "
                  "and industrial data, open data, and emerging AI and data acts.",
         "regulator_label": "Ministry of ICT or digital economy",
-        "hero_h1": "General data regulation, country by country, in plain English.",
+        "hero_h1": "General data regulation, country by country.",
         "hero_sub": "Where data must physically live, what may leave the country, and how non-personal "
                     "and industrial data may be shared or reused.",
         "fields": [

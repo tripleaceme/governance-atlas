@@ -67,16 +67,23 @@ def head(title, desc, up):
 
 
 def switcher(active_domain, country_slug=None, up="../"):
-    """Domain switcher. Keeps the country in context when switching."""
+    """Domain switcher.
+
+    Keeps the country in context when switching between trackers. A guide area
+    has no per-country pages, so it always lands on its own front page.
+    """
     items = ""
     for key in ORDER:
         d = DOMAINS[key]
-        target = f'{up}{key}/countries/{country_slug}.html' if country_slug else f'{up}{key}/index.html'
+        if country_slug and d.get("kind") != "guide":
+            target = f'{up}{key}/countries/{country_slug}.html'
+        else:
+            target = f'{up}{key}/index.html'
         cls = " on" if key == active_domain else ""
         items += f'      <a class="dbtn{cls}" href="{target}">{d["nav_label"]}</a>\n'
     return f'''<div class="domainbar">
   <div class="wrap">
-    <span class="dlabel">Regulation area</span>
+    <span class="dlabel">Area</span>
     <nav class="dswitch">
 {items}    </nav>
   </div>
@@ -89,6 +96,15 @@ def header(domain, up="../", active=""):
     def nav(page, label):
         cls = ' class="active"' if page == active else ""
         return f'<a href="{up}{domain}/{page}"{cls}>{label}</a>'
+
+    # A guide has one page, so it offers no country index or compare tool.
+    if d.get("kind") == "guide":
+        own = "      " + nav("index.html", "Practices")
+    else:
+        own = ("      " + nav("index.html", "Atlas") + "\n"
+               "      " + nav("countries.html", "Countries") + "\n"
+               "      " + nav("compare.html", "Compare"))
+
     return f'''<header class="site">
   <div class="wrap">
     <a class="logo" href="{up}index.html" title="Governance Atlas home">
@@ -99,9 +115,7 @@ def header(domain, up="../", active=""):
       </div>
     </a>
     <nav class="main">
-      {nav("index.html", "Atlas")}
-      {nav("countries.html", "Countries")}
-      {nav("compare.html", "Compare")}
+{own}
       <a href="{up}learn.html">Learn</a>
       <a href="{up}resources.html">Resources</a>
       <a href="{up}about.html">About</a>
@@ -175,11 +189,21 @@ def country_page(domain, c, d):
         nm, dt = esc(name), esc(cfg["title"].lower())
         bl = esc(cfg["blurb"][0].lower() + cfg["blurb"][1:])
         others = [k for k in ORDER if k != domain]
-        links = " or ".join(f'<a href="../../{k}/countries/{c["slug"]}.html">{DOMAINS[k]["label"].lower()}</a>' for k in others)
+        # Sibling trackers have a page for this country; a guide only has a front page.
+        tracked = [f'<a href="../../{k}/countries/{c["slug"]}.html">{DOMAINS[k]["label"].lower()}</a>'
+                   for k in others if DOMAINS[k].get("kind") != "guide"]
+        guides = [f'<a href="../../{k}/index.html">{DOMAINS[k]["label"].lower()} guide</a>'
+                  for k in others if DOMAINS[k].get("kind") == "guide"]
+        parts = []
+        if tracked:
+            parts.append(f'{nm}&#39;s ' + " or ".join(tracked) + " page")
+        if guides:
+            parts.append("the " + " or ".join(guides))
+        links = ", or ".join(parts)
         body += f'''      <section>
         <h2>Not yet researched</h2>
         <p>We have not yet compiled {nm}&#39;s position on {dt}. This area covers {bl}</p>
-        <p>In the meantime you can read {nm}&#39;s {links} page, or help by
+        <p>In the meantime you can read {links}, or help by
         <a href="https://github.com/tripleaceme/governance-atlas" target="_blank" rel="noopener">contributing what you know</a>.</p>
       </section>
 '''
@@ -255,6 +279,46 @@ def country_page(domain, c, d):
 </body>
 </html>
 '''
+
+
+# ── guide area (one explanatory page, no per-country data) ─────────────────
+
+def guide_page(domain):
+    """Front page of a 'guide' area.
+
+    The prose lives in content/<file> rather than in this module: it is long,
+    it is edited like copy rather than like code, and keeping it out of an
+    f-string avoids escaping every apostrophe and brace it contains.
+    """
+    cfg = DOMAINS[domain]
+    body = (V2 / "content" / cfg["content"]).read_text(encoding="utf-8")
+
+    shell = f'''{head(f'{esc(cfg["title"])} — Governance Atlas', esc(cfg["blurb"]), "../")}
+
+{switcher(domain, None, "../")}
+{header(domain, "../", "index.html")}
+
+<div class="wrap">
+  <div class="crumbs">
+    <a href="../index.html">Home</a><span class="sep">›</span>
+    <span class="here">{esc(cfg["label"])}</span>
+  </div>
+
+  <div class="hero">
+    <div class="plate">{esc(cfg["hero_plate"])}</div>
+    <h1>{esc(cfg["hero_h1"])}</h1>
+    <p class="lawline">{cfg["hero_sub"]}</p>
+  </div>
+
+@@BODY@@
+</div>
+
+{footer("../")}
+
+</body>
+</html>
+'''
+    return shell.replace("@@BODY@@", body)
 
 
 # ── domain home (search + map) ─────────────────────────────────────────────
@@ -442,9 +506,12 @@ def site_home(countries, all_details):
     cards = ""
     for key in ORDER:
         cfg = DOMAINS[key]
-        det = all_details[key]
-        n = sum(1 for c in countries if det.get(c["slug"]))
-        state = f"{n} of {len(countries)} researched" if n else "Not yet researched"
+        if cfg.get("kind") == "guide":
+            state = cfg["card_state"]
+        else:
+            det = all_details[key]
+            n = sum(1 for c in countries if det.get(c["slug"]))
+            state = f"{n} of {len(countries)} researched" if n else "Not yet researched"
         cards += f'''      <a class="aud" href="{key}/index.html">
         <span class="who">{esc(state)}</span>
         <h3>{esc(cfg["title"])}</h3>
@@ -453,7 +520,7 @@ def site_home(countries, all_details):
       </a>
 '''
     return f'''{head("Governance Atlas — Data regulation, country by country",
-                     "Personal data protection, data security and general data regulation for every country, in plain English.", "")}
+                     "Personal data protection and general data regulation for every country, plus a practical guide to data security.", "")}
 
 <header class="site">
   <div class="wrap">
@@ -476,13 +543,13 @@ def site_home(countries, all_details):
 <div class="wrap">
   <div class="hero ceremony">
     <div class="plate">The World</div>
-    <h1 class="big">Data regulation, country by country, in plain English.</h1>
-    <p class="lawline">Three separate bodies of regulation govern data — who may hold information about people, how systems must be secured, and where data may live. Pick the one you need.</p>
+    <h1 class="big">Data regulation, country by country.</h1>
+    <p class="lawline">Three questions govern data: who may hold information about people, how that data must be protected, and where it is allowed to live. Pick the one you need.</p>
   </div>
 
   <div class="audzone">
-    <h2 class="sect">Choose a regulation area</h2>
-    <p class="sect-sub">Each area has its own regulators, its own obligations, and its own map.</p>
+    <h2 class="sect">Choose an area</h2>
+    <p class="sect-sub">Two are tracked country by country, because the rules genuinely differ. The third is a practice guide, because the rules mostly do not.</p>
     <div class="audgrid">
 {cards}    </div>
   </div>
@@ -506,8 +573,15 @@ def main():
     for key in ORDER:
         cfg, details = DOMAINS[key], all_details[key]
         ddir = V2 / key
-        (ddir / "countries").mkdir(parents=True, exist_ok=True)
+        ddir.mkdir(parents=True, exist_ok=True)
 
+        # A guide is a single page: no country pages, index, compare or datasets.
+        if cfg.get("kind") == "guide":
+            (ddir / "index.html").write_text(guide_page(key), encoding="utf-8")
+            total_pages += 1
+            continue
+
+        (ddir / "countries").mkdir(parents=True, exist_ok=True)
         for c in countries:
             (ddir / "countries" / f'{c["slug"]}.html').write_text(
                 country_page(key, c, details.get(c["slug"])), encoding="utf-8")
@@ -546,10 +620,14 @@ def main():
     (V2 / "index.html").write_text(site_home(countries, all_details), encoding="utf-8")
     total_pages += 1
 
-    print(f"generated {total_pages} pages across {len(ORDER)} regulation areas")
+    print(f"generated {total_pages} pages across {len(ORDER)} areas")
     for key in ORDER:
-        n = sum(1 for c in countries if all_details[key].get(c["slug"]))
-        print(f"  {DOMAINS[key]['label']:<16} {n:>3}/{len(countries)} researched")
+        cfg = DOMAINS[key]
+        if cfg.get("kind") == "guide":
+            print(f"  {cfg['label']:<16} practice guide (no per-country data)")
+        else:
+            n = sum(1 for c in countries if all_details[key].get(c["slug"]))
+            print(f"  {cfg['label']:<16} {n:>3}/{len(countries)} researched")
 
 
 if __name__ == "__main__":
