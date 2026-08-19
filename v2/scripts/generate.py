@@ -118,6 +118,7 @@ def header(domain, up="../", active=""):
 {own}
       <a href="{up}learn.html">Learn</a>
       <a href="{up}resources.html">Resources</a>
+      <a href="{up}templates.html">Templates</a>
       <a href="{up}about.html">About</a>
     </nav>
   </div>
@@ -321,6 +322,18 @@ def guide_page(domain):
     return shell.replace("@@BODY@@", body)
 
 
+def intro(domain):
+    """Optional explanatory block appended to a tracker's front page.
+
+    Some areas need framing before a map of them means anything. General data
+    is one: the regulation is patchy and differently named everywhere, so the
+    page says what the field covers before showing which countries legislate
+    parts of it.
+    """
+    name = DOMAINS[domain].get("intro")
+    return "\n" + (V2 / "content" / name).read_text(encoding="utf-8") if name else ""
+
+
 # ── domain home (search + map) ─────────────────────────────────────────────
 
 def domain_home(domain, countries, details):
@@ -380,7 +393,7 @@ def domain_home(domain, countries, details):
       <div class="hoverbar" id="maphover">Hover a country or click to open its page.</div>
     </div>
   </div>
-</div>
+{intro(domain)}</div>
 
 {footer("../")}
 

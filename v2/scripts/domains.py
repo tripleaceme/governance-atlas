@@ -85,6 +85,10 @@ DOMAINS = {
         "blurb": "Rules treating data as an economic asset: residency and localisation, non-personal "
                  "and industrial data, open data, and emerging AI and data acts.",
         "regulator_label": "Ministry of ICT or digital economy",
+        # Framing block appended to the front page. The field is too patchy to
+        # be understood from a map alone, so the DAMA knowledge areas are used
+        # to show what it covers before showing who legislates parts of it.
+        "intro": "general-dama.html",
         "hero_h1": "General data regulation, country by country.",
         "hero_sub": "Where data must physically live, what may leave the country, and how non-personal "
                     "and industrial data may be shared or reused.",

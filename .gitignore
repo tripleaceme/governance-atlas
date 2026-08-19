@@ -1,3 +1,9 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# Paid template documents.
+# The repo is public and Cloudflare Pages serves everything in the output
+# directory, so neither the sources nor the built files may be committed.
+# R2 is the store of record — see templates/README.md.
+templates/
